@@ -94,3 +94,42 @@ body {
         order: 4;
     }
 }
+
+#events-container {
+    margin-top: 27px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.events-item {
+    width: 100%;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.69);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.events-item h1 {
+    text-align: right;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.events-item p {
+    text-align: right;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.events-item img {
+    border-radius: 10px;
+}
+.events-item > [title~="Event Map"]{
+    height: 52px;
+    width: 76px;
+    display: flex;
+
+}
