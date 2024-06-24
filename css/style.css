@@ -107,9 +107,7 @@ body {
     padding: 15px;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.69);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+
 }
 
 .events-item h1 {
@@ -123,13 +121,29 @@ body {
     font-size: 14px;
     line-height: 1.5;
 }
-
-.events-item img {
-    border-radius: 10px;
+.events-item table {
+    width: 100%;
+    text-align: right;
 }
-.events-item > [title~="Event Map"]{
+.event-item-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px; /* Add spacing between the span and the img */
+}
+span {
+    display: block;
+    text-align: right;
+}
+.events-item  img {
+    border-radius: 3px;
+}
+[title~="Event Map"]{
     height: 52px;
     width: 76px;
-    display: flex;
-
+}
+[title~="Event Photo"]{
+    text-align: right;
+    height: 52px;
+    width: 76px;
 }
