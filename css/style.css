@@ -3,13 +3,24 @@
     padding: 0;
 }
 
-header, main, footer, nav, aside, section, article, div {
+header,
+main,
+footer,
+nav,
+aside,
+section,
+article,
+div {
     display: block;
+}
+
+header {
+    margin-bottom: 8%;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(to bottom right,#000,#800000);
+    background: linear-gradient(to bottom right, #000, #800000);
 }
 
 .navbar-brand {
@@ -127,9 +138,93 @@ body {
 .events-item img {
     border-radius: 10px;
 }
-.events-item > [title~="Event Map"]{
+
+.events-item>[title~="Event Map"] {
     height: 52px;
     width: 76px;
     display: flex;
 
+}
+
+.icon-container {
+    display: flex;
+    font-size: 16px;
+    color: #FFC107;
+    margin-left: 81px;
+    margin-right: 80px;
+
+}
+
+.icon-container p {
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.event-photo {
+    display: flex;
+
+}
+
+.event-photo img {
+    width: 146px;
+    height: 120px;
+    margin-left: 109px;
+}
+
+.rectangle-container {
+    display: flex;
+    margin-left: 66px;
+}
+
+.green-rectangle {
+    width: 110px;
+    height: 37px;
+    margin-top: 5px;
+    border-radius: 5px;
+    background: #58D256;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button.red-rectangle {
+    width: 110px;
+    height: 37px;
+    margin-top: 5px;
+    margin-right: 37px;
+    border-radius: 5px;
+    background: #ED173D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rectangle-container p {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+}
+@media only screen and (min-width: 768px) {
+    #first-part {
+        margin-left: 150px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #first-part {
+        margin-left: 150px;
+    }
+}
+@media only screen and (min-width: 1000px) {
+    #first-part {
+        margin-left: 650px;
+    }
 }
