@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const section = document.getElementById("first-part");
 
-    // יצירת המיכל של האייקונים
+    
     const iconContainer = document.createElement("div");
     iconContainer.className = "icon-container";
 
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     iconContainer.appendChild(noticeText);
     iconContainer.appendChild(icon2);
 
-    // יצירת המיכל של התמונה
+   
     const eventPhoto = document.createElement("div");
     eventPhoto.className = "event-photo";
 
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     eventPhoto.appendChild(img);
 
-    // יצירת המיכל של הכפתורים
+    
     const rectangleContainer = document.createElement("div");
     rectangleContainer.className = "rectangle-container";
 
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     rectangleContainer.appendChild(redButton);
     rectangleContainer.appendChild(greenButton);
 
-    // הוספת כל האלמנטים לקטע
+    
     section.appendChild(iconContainer);
     section.appendChild(eventPhoto);
     section.appendChild(rectangleContainer);
