@@ -129,7 +129,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 10px; 
+    gap: 10px; /* Add spacing between the span and the img */
 }
 span {
     display: block;
