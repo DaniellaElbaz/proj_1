@@ -1,0 +1,240 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+header, main, footer, nav, aside, section, article, div {
+    display: block;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom right,#000,#BB1717);
+}
+
+.navbar-brand {
+    color: #fff;
+}
+
+.navbar-nav .nav-link.active {
+    color: #fff;
+}
+
+#wrapper {
+    margin: 23px 23px;
+    min-height: 100vh;
+}
+
+#logo {
+    width: 38px;
+    height: 39px;
+    border-radius: 50%;
+    background-image: url("../images/logo 1.png");
+    background-size: cover;
+}
+
+#UserImage {
+    background-color: #fff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-image: url("../images/noa 1.png");
+    background-size: cover;
+    display: block;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 992px) {
+    .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #logo {
+        order: 2;
+    }
+
+    .navbar-toggler {
+        order: 1;
+    }
+
+    #UserImage {
+        order: 3;
+    }
+
+    .navbar-collapse {
+        order: 4;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-collapse {
+        justify-content: center;
+    }
+
+    .navbar-brand {
+        position: static;
+        transform: none;
+    }
+
+    #logo {
+        order: 1;
+    }
+
+    .navbar-toggler {
+        order: 2;
+    }
+
+    #UserImage {
+        order: 3;
+    }
+
+    .navbar-collapse {
+        order: 4;
+    }
+}
+
+#events-container {
+    margin-top: 27px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.events-item {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.69);
+
+}
+
+.events-item h1 {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings:"slnt" 0;
+    font-size: 16px;
+    text-align: right;
+    margin: 0;
+    color: #FFFFFF;
+    font-weight:bold;
+}
+
+.events-item p {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings:"slnt" 0;
+    font-weight: 400;
+    text-align: right;
+    font-size: 14px;
+    margin: 0;
+    color: #FFFFFF;
+}
+.events-item table {
+    width: 100%;
+    border-bottom: 1px solid #000;
+    margin-bottom: 4px;
+}
+.event-item-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px; 
+}
+span {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings:"slnt" 0;
+    text-align: right;
+    color: #FFFFFF;
+}
+[title~="Event_Map"]{
+    height: 62px;
+    width: 85px;
+    margin-bottom: 7px;
+    border-radius: 8px;
+}
+[title~="Event_Photo"]{
+    height: 35px;
+    width: 35px;
+    border-radius: 1px;
+}
+.icon-container {
+    display: flex;
+    font-size: 16px;
+    color: #FFC107;
+    margin-left: 81px;
+    margin-right: 80px;
+    margin-top: 71px;
+
+}
+
+.icon-container p {
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.event-photo {
+    display: flex;
+
+}
+
+.event-photo img {
+    width: 146px;
+    height: 120px;
+    margin-left: 107px;
+}
+
+.rectangle-container {
+    display: flex;
+    margin-left: 58px;
+    gap: 30px;
+}
+
+.green-rectangle {
+    width: 110px;
+    height: 37px;
+    margin-top: 5px;
+    border-radius: 5px;
+    background: #58D256;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button.red-rectangle {
+    width: 110px;
+    height: 37px;
+    margin-top: 5px;
+    border-radius: 5px;
+    background: #ED173D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rectangle-container p {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+}
+@media only screen and (min-width: 768px) {
+    #first-part {
+        margin-left: 150px;
+    }
+}
+@media only screen and (min-width: 1000px) {
+    #first-part {
+        margin-left: 450px;
+    }
+}
+

@@ -1,0 +1,32 @@
+{
+    "category": "Events history",
+    "events": [
+        {
+            "id": "123",
+            "event_map":"../images/noaNewEvent 2.png",
+            "event_name": "תאונה קטלנית בכביש 2",
+            "date_and_time": " 29.3.2024 שעה 15:00",
+            "event_place": "כביש 2, סמוך למחלף קיסריה",
+            "event_status": "האירוע הסתיים, 3 הרוגים ו2 פצועים קל",
+            "event_photo": "../images/repportImage 2.jpg"
+        },
+        {
+            "id": "124",
+            "event_map":"../images/noaTerorEvent 1.png",
+            "event_name": "ניסיון דריסה",
+            "date_and_time": " 20.3.2024 שעה 19:00",
+            "event_place": "רחוב הרב קוק, ירושלים",
+            "event_status": "האירוע הסתיים ללא נפגעים",
+            "event_photo": "../images/noaTeror 2.jpg"
+        },
+        {
+           "id": "125",
+            "event_map":"../images/noaBabyInCar 2.png",
+            "event_name": "תינוק נשכח ברכב",
+            "date_and_time": " 19.3.2024 שעה 10:00",
+            "event_place": "רחוב הרצל 34, נתניה",
+            "event_status": "האירוע הסתיים ללא נפגעים",
+            "event_photo": "../images/noaBaby 2.jpg"
+        }
+   ]
+}
