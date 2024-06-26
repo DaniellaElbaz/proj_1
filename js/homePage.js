@@ -1,13 +1,35 @@
 
 window.onload = () => {
-    fetch('data/reports.json')
+    fetch("../data/Events.json")
+    .then(response => response.json())
+    .then(data => init_member_details(data));
+    fetch('../data/reports.json')
         .then(response => response.json())
         .then(reports => {
             drawFirstPart(reports);
             drawSecondPart(reports);
         });
 };
-
+function init_member_details(data){
+    const name = 'נועה לוינסון';
+    let user_photo;
+    let events;
+    let user;
+    for (const memberKey in data.members) {
+        user = data.members[memberKey];
+        if (user.name == name) {
+            user_photo = user.user_photo;
+            events = user.events;
+            break;
+            }
+    }
+    const userDetails = document.getElementById("UserImage");
+    const photo = document.createElement('img');
+    photo.src = user_photo;
+    photo.alt = "user_photo";
+    photo.title = "user_photo";
+    userDetails.appendChild(photo);
+}
 
 function drawFirstPart(reports) {
     const section1 = document.getElementById("first-part");

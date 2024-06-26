@@ -8,7 +8,7 @@
             {
                 "id": "123",
                 "event_map":"../images/noaNewEvent 2.png",
-                "event_name": "תאונה קטלנית בכביש 2",
+                "event_name": "תאונה קטלנית",
                 "date_and_time": " 29.3.2024 שעה 15:00",
                 "event_place": "כביש 2, סמוך למחלף קיסריה",
                 "event_status": "האירוע הסתיים, 3 הרוגים ו2 פצועים קל",
@@ -44,7 +44,7 @@
             {
                 "id": "123",
                 "event_map":"../images/noaNewEvent 2.png",
-                "event_name": "תאונה קטלנית בכביש 2",
+                "event_name": "תאונה קטלנית",
                 "date_and_time": " 29.3.2024 שעה 15:00",
                 "event_place": "כביש 2, סמוך למחלף קיסריה",
                 "event_status": "האירוע הסתיים, 3 הרוגים ו2 פצועים קל",
@@ -60,7 +60,7 @@
             {
                 "id": "123",
                 "event_map":"../images/noaNewEvent 2.png",
-                "event_name": "תאונה קטלנית בכביש 2",
+                "event_name": "תאונה קטלנית",
                 "date_and_time": " 29.3.2024 שעה 15:00",
                 "event_place": "כביש 2, סמוך למחלף קיסריה",
                 "event_status": "האירוע הסתיים, 3 הרוגים ו2 פצועים קל",

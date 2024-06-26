@@ -1,5 +1,9 @@
-
-let eventErea;
+let report;
+window.onload = () => {
+    fetch("../data/Events.json")
+    .then(response => response.json())
+    .then(data => init_member_details(data));
+}
 function init_member_details(data){
     const name = 'נועה לוינסון';
     let user_photo;
@@ -18,18 +22,18 @@ function init_member_details(data){
     photo.src = user_photo;
     photo.alt = "user_photo";
     photo.title = "user_photo";
-    userDetails.appendChild(photo)
-    initRectangles(user);
+    userDetails.appendChild(photo);
+    initReport(user);
 }
-function initRectangles(user) {
-    eventErea = document.getElementById("events-container");
-    eventErea.innerHTML = '';
+function initReport(user) {
+    report = document.getElementById("report");
+    report.innerHTML = '';
     user.events.forEach(event => {
-        const eventItem = document.createElement('div');
-        eventItem.classList.add('events-item');
+        const reportItem = document.createElement('div');
+        reportItem.classList.add('report-item');
         const h1 = document.createElement('h1');
-        h1.innerText = event.event_name;
-        eventItem.appendChild(h1);
+        h1.innerText = `<p style="font-size:12px;">דו"ח אירוע  <span style="font-size:12px;">${event.event_name}</span></p>` ;
+        reportItem.appendChild(h1);
         const table = document.createElement('table');
         const tr = document.createElement('tr');
         const td = document.createElement('td');
@@ -48,14 +52,14 @@ function initRectangles(user) {
         }
         tr.appendChild(td);
         table.appendChild(tr);
-        eventItem.appendChild(table);
+        reportItem.appendChild(table);
         if (event.event_photo) {
             const eventShow = document.createElement('p');
             eventShow.innerHTML = ` <p>:צפיה בדוח אירוע / מילוי דוח אירוע</p> `;
-            eventItem.appendChild(eventShow);
-            eventItem.appendChild(initBottomRectangles(event));
+            reportItem.appendChild(eventShow);
+            reportItem.appendChild(initBottomRectangles(event));
         }
-        eventErea.appendChild(eventItem);
+        report.appendChild(reportItem);
     });
 }
 function initBottomRectangles(event) {
@@ -71,15 +75,3 @@ function initBottomRectangles(event) {
     eventContainer.appendChild(eventLabel);
     return(eventContainer);
 }
-
-function initPage() {
-    fill_sort_container();
-
-    eventErea = document.getElementById("events-container");
-    fetch("../data/Events.json")
-        .then(response => response.json())
-        .then(data => init_member_details(data));
-}
-
-window.onload = initPage;
-
