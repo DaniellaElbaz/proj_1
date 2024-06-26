@@ -97,13 +97,23 @@ body {
 #sort-container{
     margin-top: 24px;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.sort{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: 55px;
 }
 .sort-item{
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: flex-end;
+    padding: 0;
+    margin-right: auto; 
 }
 [title~="checkbox"]{
     width: 11px;
@@ -112,11 +122,23 @@ body {
 }
 [title~="filter"]{
     width: 24px;
-    height: 24px;
+    height: 20px;
 }
-[title~="filter"]{
+[title~="clock"]{
     width: 20px;
-    height: 17px;
+    height: 20px;
+}
+.sort input{
+    width: 180px;
+    height: 32px;
+    border-color: #232323;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 32px;
+    font-family: "Plaster";
+    font-weight: 400;
+    font-size: 14px;
+    text-align: right;
 }
 #events-container {
     margin-top: 16px;
@@ -129,7 +151,6 @@ body {
     padding: 15px;
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.69);
-
 }
 
 .events-item h1 {

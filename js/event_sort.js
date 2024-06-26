@@ -1,9 +1,13 @@
 const sortContainer=document.getElementById('sort-container');
 function fill_sort_container(){
-    
+    const sort = document.createElement('div');
+    sort.classList.add('sort');
     const sortItem = document.createElement('div');
-   
     sortItem.classList.add('sort-item');
+    const sortInput =document.createElement('input');
+    sortInput.placeholder="חיפוש";
+    sortInput.id="search";
+    sort.appendChild(sortInput);
     const clock = document.createElement('img');
     clock.src = "../images/clock_down.png";
     clock.alt = "clock";
@@ -19,6 +23,6 @@ function fill_sort_container(){
     box.alt = "checkbox";
     box.title = "checkbox";
     sortItem.appendChild(box);
+    sortContainer.appendChild(sort);
     sortContainer.appendChild(sortItem);
-    
 }
