@@ -207,9 +207,8 @@ span {
     display: flex;
     font-size: 16px;
     color: #FFC107;
-    margin-left: 81px;
-    margin-right: 80px;
-    margin-top: 71px;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -221,18 +220,20 @@ span {
 
 .event-photo {
     display: flex;
-
+    justify-content: center;
+    align-items: center;
 }
 
 .event-photo img {
     width: 146px;
     height: 120px;
-    margin-left: 125px;
+   
 }
 
 .rectangle-container {
     display: flex;
-    margin-left: 58px;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
@@ -245,7 +246,7 @@ button.green-rectangle {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 30px;
+  
 }
 
 button.red-rectangle {
@@ -257,9 +258,6 @@ button.red-rectangle {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-
-    left: 10%;
 }
 
 .rectangle-container p {
