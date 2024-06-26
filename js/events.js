@@ -1,15 +1,7 @@
 
 let eventErea;
-
-window.onload = () => {
-    eventErea = document.getElementById("events-container");
-
-    fetch("../data/Events.json")
-    .then(response => response.json())
-    .then(data => initRectangles(data));
-}
-
 function initRectangles(data) {
+    eventErea = document.getElementById("events-container");
     eventErea.innerHTML = '';
     data.events.forEach(event => {
         const eventItem = document.createElement('div');
@@ -61,5 +53,14 @@ function initBottomRectangles(event) {
     return(eventContainer);
 }
 
+function initPage() {
+    fill_sort_container();
 
+    eventErea = document.getElementById("events-container");
+    fetch("../data/Events.json")
+        .then(response => response.json())
+        .then(data => initRectangles(data));
+}
+
+window.onload = initPage;
 

@@ -94,10 +94,29 @@ body {
         order: 4;
     }
 }
-.sort-container {
+#sort-container{
     margin-top: 22px;
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
     gap: 20px;
+}
+.sort-item{
+    width: 100%;
+    padding: 8px;
+}
+[title~="checkbox"]{
+    width: 11px;
+    height: 8px;
+    margin-bottom: 0;
+}
+[title~="filter"]{
+    width: 24px;
+    height: 24px;
+}
+[title~="filter"]{
+    width: 20px;
+    height: 17px;
 }
 #events-container {
     margin-top: 27px;
