@@ -43,8 +43,8 @@ function initBottomRectangles(event) {
     eventLabel.innerHTML = `:זירת האירוע`;
     const img = document.createElement('img');
     img.src = event.event_photo;
-    img.alt = "Event_Photo";
-    img.title = "Event_Photo";
+    img.alt = "Event_Place";
+    img.title = "Event_Place";
     const eventContainer = document.createElement('div');
     eventContainer.classList.add('event-item-container');
     eventContainer.appendChild(img);

@@ -198,11 +198,12 @@ span {
     margin-bottom: 7px;
     border-radius: 8px;
 }
-[title~="Event_Photo"]{
+[title~="Event_Place"]{
     height: 35px;
     width: 35px;
     border-radius: 1px;
 }
+/*********************************************************************************************/
 .icon-container {
     display: flex;
     font-size: 16px;
