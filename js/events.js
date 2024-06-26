@@ -1,7 +1,6 @@
 let eventErea;
 
         function init_member_details(data) {
-            console.log("init_member_details called", data);
             const name = 'נועה לוינסון';
             let user_photo;
             let events;
@@ -14,7 +13,6 @@ let eventErea;
                     break;
                 }
             }
-            console.log("User found:", user);
             const userDetails = document.getElementById("UserImage");
             const photo = document.createElement('img');
             photo.src = user_photo;
@@ -25,11 +23,9 @@ let eventErea;
         }
 
         function initRectangles(user) {
-            console.log("initRectangles called with user:", user);
             eventErea = document.getElementById("events-container");
             eventErea.innerHTML = '';
             user.events.forEach(event => {
-                console.log("Processing event:", event);
                 const eventItem = document.createElement('div');
                 eventItem.classList.add('events-item');
                 const h1 = document.createElement('h1');
@@ -59,7 +55,6 @@ let eventErea;
                     const button = document.createElement('button');
                     button.innerText = 'לחץ כאן';
                     button.addEventListener('click', () => {
-                        console.log(`Redirecting to event_report.html?eventId=${event.id}`);
                         window.location.href = `event_report.html?eventId=${event.id}`;
                     });
                     eventShow.innerHTML = `:צפיה בדוח אירוע / מילוי דוח אירוע `;

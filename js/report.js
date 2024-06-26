@@ -7,7 +7,6 @@ window.onload = () => {
 }
 
 function init_member_details(data) {
-    console.log("init_member_details called", data);
     const userName = 'נועה לוינסון';
     let user_photo;
     let user;
@@ -18,7 +17,6 @@ function init_member_details(data) {
             break;
         }
     }
-    console.log("User found:", user);
     const userDetails = document.getElementById("UserImage");
     const photo = document.createElement('img');
     photo.src = user_photo;
@@ -61,13 +59,11 @@ function initReport(user) {
 function getEventID() {
     const aKeyValue = window.location.search.substring(1).split('&');
     const eventId = aKeyValue[0].split("=")[1];
-    console.log("getEventID:", eventId);
     return eventId;
 }
 
 function showSelectedEvent(user) {
     const selectionEventId = getEventID();
-    console.log("Selected event ID:", selectionEventId);
     const name = 'נועה לוינסון';
     const td = document.createElement('td');
     let EventType;
