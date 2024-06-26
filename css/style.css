@@ -35,15 +35,14 @@ body {
 
 #UserImage {
     background-color: #fff;
-    width: 35px;
-    height: 35px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    background-image: url("../images/noa 1.png");
-    background-size: cover;
-    display: block;
-    background-repeat: no-repeat;
 }
-
+[title~="user_photo"]{
+    width: 30px;
+    height: 30px;
+}
 @media (max-width: 992px) {
     .navbar-brand {
         position: absolute;

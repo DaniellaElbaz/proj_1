@@ -13,6 +13,12 @@ function init_member_details(data){
             break;
             }
     }
+    const userDetails = document.getElementById("UserImage");
+    const photo = document.createElement('img');
+    photo.src = user_photo;
+    photo.alt = "user_photo";
+    photo.title = "user_photo";
+    userDetails.appendChild(photo);
     initRectangles(user);
 }
 function initRectangles(user) {
