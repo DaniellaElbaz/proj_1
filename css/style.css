@@ -94,14 +94,17 @@ body {
         order: 4;
     }
 }
-
+.sort-container {
+    margin-top: 22px;
+    display: flex;
+    gap: 20px;
+}
 #events-container {
     margin-top: 27px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-
 .events-item {
     width: 100%;
     padding: 15px;
