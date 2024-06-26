@@ -1,9 +1,24 @@
 
 let eventErea;
-function initRectangles(data) {
+function init_member_details(data){
+    const name = 'נועה לוינסון';
+    let user_photo;
+    let events;
+    let user;
+    for (const memberKey in data.members) {
+        user = data.members[memberKey];
+        if (user.name == name) {
+            user_photo = user.user_photo;
+            events = user.events;
+            break;
+            }
+    }
+    initRectangles(user);
+}
+function initRectangles(user) {
     eventErea = document.getElementById("events-container");
     eventErea.innerHTML = '';
-    data.events.forEach(event => {
+    user.events.forEach(event => {
         const eventItem = document.createElement('div');
         eventItem.classList.add('events-item');
         const h1 = document.createElement('h1');
@@ -38,7 +53,6 @@ function initRectangles(data) {
     });
 }
 function initBottomRectangles(event) {
-    
     const eventLabel = document.createElement('p');
     eventLabel.innerHTML = `:זירת האירוע`;
     const img = document.createElement('img');
@@ -49,7 +63,6 @@ function initBottomRectangles(event) {
     eventContainer.classList.add('event-item-container');
     eventContainer.appendChild(img);
     eventContainer.appendChild(eventLabel);
-    
     return(eventContainer);
 }
 
@@ -59,7 +72,7 @@ function initPage() {
     eventErea = document.getElementById("events-container");
     fetch("../data/Events.json")
         .then(response => response.json())
-        .then(data => initRectangles(data));
+        .then(data => init_member_details(data));
 }
 
 window.onload = initPage;
