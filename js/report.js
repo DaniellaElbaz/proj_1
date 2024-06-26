@@ -6,9 +6,10 @@ window.onload = () => {
     .then(data => init_member_details(data));
 }
 
-function init_member_details(data){
-    let user_photo;
+function init_member_details(data) {
+    console.log("init_member_details called", data);
     const userName = 'נועה לוינסון';
+    let user_photo;
     let user;
     for (const memberKey in data.members) {
         user = data.members[memberKey];
@@ -17,6 +18,7 @@ function init_member_details(data){
             break;
         }
     }
+    console.log("User found:", user);
     const userDetails = document.getElementById("UserImage");
     const photo = document.createElement('img');
     photo.src = user_photo;
@@ -29,7 +31,7 @@ function init_member_details(data){
 function initReport(user) {
     report = document.getElementById("report");
     report.innerHTML = '';
-    user.events.forEach(event => {
+    
         const reportItem = document.createElement('div');
         reportItem.classList.add('report-item');
         const items = inputFromJsonToTextBox(user);
@@ -53,23 +55,25 @@ function initReport(user) {
         reportItem.appendChild(table);
         
         report.appendChild(reportItem);
-    });
+    
 }
 
-function getEventID(){
+function getEventID() {
     const aKeyValue = window.location.search.substring(1).split('&');
     const eventId = aKeyValue[0].split("=")[1];
+    console.log("getEventID:", eventId);
     return eventId;
 }
 
 function showSelectedEvent(user) {
     const selectionEventId = getEventID();
+    console.log("Selected event ID:", selectionEventId);
     const name = 'נועה לוינסון';
     const td = document.createElement('td');
     let EventType;
     let EventDate;
-    for (const eventKey in user.event) {
-        let evenDetails = user.event[eventKey];
+    for (const eventKey in user.events) {
+        let evenDetails = user.events[eventKey];
         if (evenDetails.id == selectionEventId) {
             EventType = evenDetails.type_event;
             const type = document.createElement('input');
@@ -92,13 +96,13 @@ function showSelectedEvent(user) {
     return td;
 }
 
-function inputFromJsonToTextBox(user){
+function inputFromJsonToTextBox(user) {
     const selectionEventId = getEventID();
     let reportItem = document.createElement('div');
     let EventName;
     let EventPlace;
-    for (const eventKey in user.event) {
-        let evenDetails = user.event[eventKey];
+    for (const eventKey in user.events) {
+        let evenDetails = user.events[eventKey];
         if (evenDetails.id == selectionEventId) {
             EventName = evenDetails.event_name;
             const h1 = document.createElement('h1');
