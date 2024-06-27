@@ -1,11 +1,10 @@
 let report;
-
+const userName = 'נועה לוינסון';
 window.onload = () => {
     fetch("../data/Events.json")
     .then(response => response.json())
     .then(data => init_member_details(data));
 }
-
 function init_member_details(data) {
     const userName = 'נועה לוינסון';
     let user_photo;
@@ -23,10 +22,9 @@ function init_member_details(data) {
     photo.alt = "user_photo";
     photo.title = "user_photo";
     userDetails.appendChild(photo);
-    initReport(user);
+    initReport(user,data);
 }
-
-function initReport(user) {
+function initReport(user,data) {
     report = document.getElementById("report");
     report.innerHTML = '';
     const reportItem = document.createElement('div');
@@ -43,6 +41,10 @@ function initReport(user) {
     report.appendChild(reportItem);
     reportItem.appendChild(inputToTextBox());
     report.appendChild(reportItem);
+    reportItem.appendChild(makeABlackLine());
+    report.appendChild(reportItem);
+    reportItem.appendChild(showMembersEvent(data));
+    report.appendChild(reportItem);
 }
 function makeABlackLine(){
     const img = document.createElement('img');
@@ -57,7 +59,6 @@ function getEventID() {
     const eventId = aKeyValue[0].split("=")[1];
     return eventId;
 }
-
 function showSelectedEvent(user) {
     const selectionEventId = getEventID();
     const name = 'נועה לוינסון';
@@ -136,7 +137,6 @@ function inputFromJsonToTextBox(user) {
 function inputToTextBox() {
     let inputItem = document.createElement('div');
     inputItem.classList.add('report-input');
-
     const when = document.createElement('p');
     when.innerHTML = `?מתי ואיך שמעת שהאירוע התרחש<span style ="color: #DC3545;">*</span>`;
     inputItem.appendChild(when);
@@ -144,7 +144,6 @@ function inputToTextBox() {
     Textwhen.id = "textareaWhen";
     Textwhen.maxLength = 90;
     inputItem.appendChild(whenCount(Textwhen));
-    // Explain input
     const explain = document.createElement('p');
     explain.innerHTML = `הסבר/י על הדרך פעילות שלך באירוע<span style ="color: #DC3545;">*</span>`;
     inputItem.appendChild(explain);
@@ -154,7 +153,6 @@ function inputToTextBox() {
     inputItem.appendChild(explainCount(Textexplain));
     Textwhen.addEventListener('input', () => updateCharCount(Textwhen, "whenCharCount"));
     Textexplain.addEventListener('input', () => updateCharCount(Textexplain, "explainCharCount"));
-    
     return inputItem;
 }
 function whenCount(Textwhen) {
@@ -184,4 +182,42 @@ function updateCharCount(textarea, placeholderId) {
     const maxChars = textarea.maxLength;
     const placeholderElement = document.getElementById(placeholderId);
     placeholderElement.textContent = `${usedChars}/${maxChars}`;
+}
+function showMembersEvent(data) {
+    const selectionEventId = getEventID();
+    let inputName = document.createElement('div');
+    inputName.classList.add('members-input');
+    const names = document.createElement('p');
+    names.textContent = "אדם שתרצה/י לשבח בפועלו";
+    inputName.appendChild(names);
+    const eventMembers = document.createElement('select');
+    for (const member of data.members) {
+        if (member.name == userName) {
+            const option = document.createElement('option');
+            option.value = "לא";
+            option.text = "לא";
+            option.selected = true;
+            eventMembers.appendChild(option);
+        }
+        else{
+            for (const event of member.events) {
+                if (event.id == selectionEventId) {
+                    const option = document.createElement('option');
+                    option.value = member.name;
+                    option.text = member.name;
+                    eventMembers.appendChild(option);
+                }
+            }
+        }
+    }
+    inputName.appendChild(eventMembers);
+    return inputName;
+}
+function initMembersBox(user){
+    let nameMember = user.name;
+    const option = document.createElement('option');
+    option.value = nameMember;
+    option.text = nameMember;
+    option.selected = false;
+    return option;
 }
