@@ -761,3 +761,7 @@ button.red-rectangle {
     position: relative;
     right:10px;
 }
+.text-description p:nth-of-type(2) {
+position: relative;
+left: 7px;
+}
