@@ -187,9 +187,6 @@ function showMembersEvent(data) {
     const selectionEventId = getEventID();
     let inputName = document.createElement('div');
     inputName.classList.add('members-input');
-    const names = document.createElement('p');
-    names.textContent = "אדם שתרצה/י לשבח בפועלו";
-    inputName.appendChild(names);
     const eventMembers = document.createElement('select');
     for (const member of data.members) {
         if (member.name == userName) {
@@ -211,6 +208,9 @@ function showMembersEvent(data) {
         }
     }
     inputName.appendChild(eventMembers);
+    const names = document.createElement('p');
+    names.textContent = "אדם שתרצה/י לשבח בפועלו";
+    inputName.appendChild(names);
     return inputName;
 }
 function initMembersBox(user){

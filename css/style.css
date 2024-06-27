@@ -372,9 +372,26 @@ textarea {
 #textareaWhen {
     height: 64px;
 }
-
 #textareaExplain {
     height: 105px;
+}
+.members-input{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 9px;
+}
+.members-input p{
+    color: #000;
+    margin: 0;
+}
+.members-input select{
+    margin-right: 5px;
+    direction: rtl;
+    width: 135px;
+    border-color: #00000000;
+    height: 20px;
+    border-radius: 7px 7px 7px 7px;
 }
 /*********************************************************************************************/
 .icon-container {
