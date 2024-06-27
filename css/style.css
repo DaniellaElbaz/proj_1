@@ -914,7 +914,11 @@ button.red-rectangle {
     margin-top: 27px;
     position: relative;
     right:10px;
-}
+}.text-description p:nth-of-type(2) {
+    position: relative;
+    left: 12px;
+    }
+
 
 .back-to-eventMap {    
     background-color: #20C997;
