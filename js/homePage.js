@@ -6,8 +6,14 @@ window.onload = () => {
     fetch('../data/reports.json')
         .then(response => response.json())
         .then(reports => {
-            drawFirstPart(reports);
+            drawFirstPart();
             drawSecondPart(reports);
+            drawThirdPart ();
+        });
+        fetch('data/eventsHistory.json')
+        .then(response => response.json())
+        .then(eventsHistory => {
+            addDescriptionElements(eventsHistory);
         });
 };
 function init_member_details(data){
@@ -31,7 +37,7 @@ function init_member_details(data){
     userDetails.appendChild(photo);
 }
 
-function drawFirstPart(reports) {
+function drawFirstPart() {
     const section1 = document.getElementById("first-part");
 
     const iconContainer = document.createElement("div");
@@ -181,13 +187,8 @@ function createLastReportContainer(reports) {
     imgReport.src = "images/report-img.jpeg"
     imgReport.alt = "crash-photo";
     imgReport.className = "accident-photo";
-
-    const textElement = document.createElement("p");
-
-
     lastReportContainer.appendChild(imgReport);
-    lastReportContainer.appendChild(textElement);
-
+    
     const textStyle = createTextStyle(reports);
     lastReportContainer.appendChild(textStyle);
 
@@ -221,4 +222,70 @@ function toggleImage() {
         image.style.display = "none";
     }
 }
+function drawThirdPart() {
+    const section3 = document.getElementById("third-part");
+
+    const historyContainer = document.createElement("div");
+    historyContainer.className = "history-container";
+
+    const rectangle = document.createElement("div");
+    rectangle.className = "rectangle";
+
+    const line = document.createElement("div");
+    line.className = "line";
+
+    const historyText = document.createElement("p");
+    historyText.className = "history-line";
+    historyText.textContent = "לכל היסטוריית האירועים";
+
+    historyContainer.appendChild(rectangle);
+    historyContainer.appendChild(line);
+    historyContainer.appendChild(historyText);
+
+    addTextElements();
+
+    section3.appendChild(historyContainer);
+   
+}
+function addTextElements() {
+    const section3 = document.getElementById("third-part");
+
+    const textContainer = document.createElement("div");
+    textContainer.className = "text-history-table";
+
+    const descriptionText = document.createElement("p");
+    descriptionText.className = "text-item";
+    descriptionText.textContent = " פרטי אירוע";
+
+    const statusText = document.createElement("p");
+    statusText.className = "text-item";
+    statusText.textContent = "סטטוס";
+
+    const eventDetailsText = document.createElement("p");
+    eventDetailsText.className = "text-item";
+    eventDetailsText.textContent = "תיאור ";
+
+    textContainer.appendChild(descriptionText);
+    textContainer.appendChild(statusText);
+    textContainer.appendChild(eventDetailsText);
+
+    section3.appendChild(textContainer);
+}
+
+function addDescriptionElements(eventsHistory) 
+{
+    const section3 = document.getElementById("third-part");
+    const description = document.createElement("div");
+    description.className = "text-description";
+    for (let i = 0; i < eventsHistory.length; i++) {
+        const des = eventsHistory[i];
+        const reportDes = document.createElement("p");
+        reportDes.className = "report-des";
+        reportDes.textContent = des.description;
+        description.appendChild(reportDes);
+    }
+    section3.appendChild(description);
+}
+
+
 
