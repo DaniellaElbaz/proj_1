@@ -364,7 +364,7 @@ textarea {
     position: absolute;
     bottom: 10px;
     left: 10px;
-    font-size: 14px;
+    font-size: 10px;
     color: gray;
     pointer-events: none;
 }
@@ -389,6 +389,25 @@ textarea {
     margin-right: 5px;
     direction: rtl;
     width: 135px;
+    border-color: #00000000;
+    height: 20px;
+    border-radius: 7px 7px 7px 7px;
+}
+.help-input{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    margin-right: 9px;
+}
+.help-input p{
+    color: #000;
+    margin: 0;
+}
+.help-input select{
+    direction: rtl;
+    width: 197px;
+    height: 20px;
     border-color: #00000000;
     height: 20px;
     border-radius: 7px 7px 7px 7px;

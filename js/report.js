@@ -45,6 +45,8 @@ function initReport(user,data) {
     report.appendChild(reportItem);
     reportItem.appendChild(showMembersEvent(data));
     report.appendChild(reportItem);
+    reportItem.appendChild(initMembersBox());
+    report.appendChild(reportItem);
 }
 function makeABlackLine(){
     const img = document.createElement('img');
@@ -162,7 +164,7 @@ function whenCount(Textwhen) {
     const whenCharCount = document.createElement('div');
     whenCharCount.classList.add('textarea-placeholder');
     whenCharCount.id = "whenCharCount";
-    whenCharCount.textContent = `0/${Textwhen.maxLength}`;
+    whenCharCount.textContent = `0/${Textwhen.maxLength} מילים`;
     textareaContainerWhen.appendChild(whenCharCount);
     return textareaContainerWhen;
 }
@@ -173,7 +175,7 @@ function explainCount(Textexplain) {
     const explainCharCount = document.createElement('div');
     explainCharCount.classList.add('textarea-placeholder');
     explainCharCount.id = "explainCharCount";
-    explainCharCount.textContent = `0/${Textexplain.maxLength}`;
+    explainCharCount.textContent = `0/${Textexplain.maxLength} מילים`;
     textareaContainerExplain.appendChild(explainCharCount);
     return textareaContainerExplain;
 }
@@ -213,11 +215,25 @@ function showMembersEvent(data) {
     inputName.appendChild(names);
     return inputName;
 }
-function initMembersBox(user){
-    let nameMember = user.name;
-    const option = document.createElement('option');
-    option.value = nameMember;
-    option.text = nameMember;
-    option.selected = false;
-    return option;
+function initMembersBox() {
+    let inputName = document.createElement('div');
+    inputName.classList.add('help-input');
+    const eventRegrets = document.createElement('select');
+    const options = [
+        { value: " ", text: " " },
+        { value: "נהג בנחישות ועזר לכולם", text: "נהג בנחישות ועזר לכולם" },
+        { value: "הציל חיים רבים", text: "הציל חיים רבים" },
+        { value: "דאג לעדכן את כוחות המשטרה וכוחות הביטחון", text: "דאג לעדכן את כוחות המשטרה וכוחות הביטחון" }
+    ];
+    for (const opt of options) {
+        const option = document.createElement('option');
+        option.value = opt.value;
+        option.text = opt.text;
+        eventRegrets.appendChild(option);
+    }
+    const names = document.createElement('p');
+    names.textContent = "?איך היא/הוא תרם/ה לאירוע";
+    inputName.appendChild(names);
+    inputName.appendChild(eventRegrets);
+    return inputName;
 }
