@@ -211,6 +211,7 @@ span {
     border-radius: 1px;
 }
 #report{
+    width: 100%;
     margin-top: 23px;
     min-height:100vh;
     border-radius: 8px;
@@ -218,7 +219,6 @@ span {
 }
 .report-item {
     width: 100%;
-    margin-top: 9px;
 }
 .report-item h1 {
     font-family: "Inter", sans-serif;
@@ -238,15 +238,14 @@ span {
     text-align: right;
     font-size: 14px;
     margin-top: 13px;
-    opacity: 84%;
     color: #232323;
-    margin-right: 9px;
+    margin-right: 4.5px;
     margin-bottom: 0;
 }
 .report-item input,select{
     width: 148px;
     height: 19px;
-    border-color: #232323;
+    border-color: #383535;
     border-width: 1px;
     border-style: solid;
     font-family: "Inter", sans-serif;
@@ -275,7 +274,7 @@ span {
     border-radius: 7px;
     margin-bottom: 4px;
     cursor: not-allowed;
-    opacity: 70%;
+    opacity: 80%;
 }
 #selectType{
     border-radius: 7px 7px 7px 7px;
@@ -301,7 +300,6 @@ span {
     align-items: center;
 }
 .inline p {
-    margin: 0;
     color: #000;
 }
 .inline input {
@@ -309,19 +307,16 @@ span {
     color:#FFFFFF;
 }
 .report-input{
-    margin-top: 6px;
-    margin: 9px 9px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin: 9px;
+    margin-top: 0;
 }
 .report-input p{
-    width: 207px;
-    height: 20px;
+    margin-top: 0;
+    margin-right: 0;
     color: #000000;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-variation-settings: "slnt" 0;
-    font-weight: 400;
-    font-size: 14px;
-    text-align: right;
 }
 .report-input textarea{
     background: #FFFFFF;
@@ -337,14 +332,49 @@ span {
     font-size: 13px;
     line-height: 1;
     text-align: right;
+    padding: 20px 10px 10px;
+    resize: none;
 }
-#textareaWhen{
+.textarea-container {
+    position: relative;
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    height: 100px; /* Adjust as needed */
+    padding: 20px 10px 10px; /* Top padding for placeholder */
+    font-size: 14px;
+    border: 1px solid #232323;
+    border-radius: 7px;
+    resize: none;
+    background: #FFFFFF;
+    color: #000000;
+    border-color: #00000000;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
+    font-weight: inherit;
+    font-size: 13px;
+    line-height: 1;
+    text-align: right;
+}
+
+.textarea-placeholder {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    font-size: 14px;
+    color: gray;
+    pointer-events: none;
+}
+
+#textareaWhen {
     height: 64px;
-    width: 100%;
 }
-#textareaExplain{
+
+#textareaExplain {
     height: 105px;
-    width: 100%;
 }
 /*********************************************************************************************/
 .icon-container {

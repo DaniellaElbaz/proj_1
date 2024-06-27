@@ -122,7 +122,7 @@ function inputFromJsonToTextBox(user) {
         if (evenDetails.id == selectionEventId) {
             EventName = evenDetails.event_name;
             const h1 = document.createElement('h1');
-            h1.innerText = "דו'ח אירוע " + EventName;
+            h1.innerText = "דו''ח אירוע " + EventName;
             reportItem.appendChild(h1);
             EventPlace = evenDetails.event_place;
             const h2 = document.createElement('h1');
@@ -136,17 +136,52 @@ function inputFromJsonToTextBox(user) {
 function inputToTextBox() {
     let inputItem = document.createElement('div');
     inputItem.classList.add('report-input');
+
     const when = document.createElement('p');
-    when.innerHTML = `?מתי ואיך שמעת שהאירוע התרחש<span style ="color: #DC3545;"> *</span>` ;
+    when.innerHTML = `?מתי ואיך שמעת שהאירוע התרחש<span style ="color: #DC3545;">*</span>`;
     inputItem.appendChild(when);
     const Textwhen = document.createElement('textarea');
-    Textwhen.id = "textareaWhen" ;
-    inputItem.appendChild(Textwhen);
+    Textwhen.id = "textareaWhen";
+    Textwhen.maxLength = 90;
+    inputItem.appendChild(whenCount(Textwhen));
+    // Explain input
     const explain = document.createElement('p');
-    explain.innerHTML = `הסבר/י על הדרך פעילות שלך באירוע <span style ="color: #DC3545;"> *</span>` ;
+    explain.innerHTML = `הסבר/י על הדרך פעילות שלך באירוע<span style ="color: #DC3545;">*</span>`;
     inputItem.appendChild(explain);
     const Textexplain = document.createElement('textarea');
-    Textexplain.id = "textareaExplain" ;
-    inputItem.appendChild(Textexplain);
+    Textexplain.id = "textareaExplain";
+    Textexplain.maxLength = 300;
+    inputItem.appendChild(explainCount(Textexplain));
+    Textwhen.addEventListener('input', () => updateCharCount(Textwhen, "whenCharCount"));
+    Textexplain.addEventListener('input', () => updateCharCount(Textexplain, "explainCharCount"));
+    
     return inputItem;
+}
+function whenCount(Textwhen) {
+    let textareaContainerWhen = document.createElement('div');
+    textareaContainerWhen.classList.add('textarea-container');
+    textareaContainerWhen.appendChild(Textwhen);
+    const whenCharCount = document.createElement('div');
+    whenCharCount.classList.add('textarea-placeholder');
+    whenCharCount.id = "whenCharCount";
+    whenCharCount.textContent = `0/${Textwhen.maxLength}`;
+    textareaContainerWhen.appendChild(whenCharCount);
+    return textareaContainerWhen;
+}
+function explainCount(Textexplain) {
+    let textareaContainerExplain = document.createElement('div');
+    textareaContainerExplain.classList.add('textarea-container');
+    textareaContainerExplain.appendChild(Textexplain);
+    const explainCharCount = document.createElement('div');
+    explainCharCount.classList.add('textarea-placeholder');
+    explainCharCount.id = "explainCharCount";
+    explainCharCount.textContent = `0/${Textexplain.maxLength}`;
+    textareaContainerExplain.appendChild(explainCharCount);
+    return textareaContainerExplain;
+}
+function updateCharCount(textarea, placeholderId) {
+    const usedChars = textarea.value.length;
+    const maxChars = textarea.maxLength;
+    const placeholderElement = document.getElementById(placeholderId);
+    placeholderElement.textContent = `${usedChars}/${maxChars}`;
 }
