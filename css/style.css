@@ -106,6 +106,13 @@ body {
     align-items: center;
     flex-grow: 1;
     margin-left: 55px;
+    
+}
+#search{
+    background-image: url("../images/search.png");
+    background-position: 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
 }
 .sort-item{
     display: flex;
@@ -206,16 +213,12 @@ span {
 #report{
     margin-top: 23px;
     min-height:100vh;
-
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.59);
 }
 .report-item {
     width: 100%;
-    height: 100%;
-    padding: 15px;
-    border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.69);
+    margin-top: 9px;
 }
 
 .report-item h1 {
@@ -224,9 +227,9 @@ span {
     font-variation-settings:"slnt" 0;
     font-size: 16px;
     text-align: right;
-    margin: 0;
-    color: #FFFFFF;
+    color: #000;
     font-weight:bold;
+    margin-right: 9px;
 }
 .report-item p {
     font-family: "Inter", sans-serif;
@@ -235,28 +238,76 @@ span {
     font-weight: 400;
     text-align: right;
     font-size: 14px;
-    margin: 0;
-    width: 61px;
-    height: 20px;
+    margin-top: 13px;
     opacity: 84%;
     color: #232323;
+    margin-right: 9px;
 }
-.report-item table {
-    width: 100%;
-    border-bottom: 1px solid #000;
-    margin-bottom: 4px;
-}
-.report-item input{
-    width: 180px;
-    height: 32px;
+.report-item input,select{
+    width: 148px;
+    height: 19px;
     border-color: #232323;
     border-width: 1px;
     border-style: solid;
-    border-radius: 32px;
-    font-family: "Plaster";
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings:"slnt" 0;
     font-weight: 400;
-    font-size: 14px;
     text-align: right;
+    font-size: 14px;
+    border-radius: 7px;
+    margin-bottom: 4px;
+}
+.report-item input:disabled,
+.report-item select:disabled {
+    width: 148px;
+    height: 19px;
+    background-color: #FFFFFF;
+    color: #000;
+    border-width: 1px;
+    border-style: solid;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
+    font-weight: 400;
+    text-align: right;
+    font-size: 14px;
+    border-radius: 7px;
+    margin-bottom: 4px;
+    cursor: not-allowed;
+    opacity: 70%;
+}
+#selectType{
+    border-radius: 7px 7px 7px 7px;
+    opacity: 61%;
+    border-color: #FFFFFF00;
+    margin-right: 31px;
+    direction: rtl;
+}
+#userName{
+    padding: 4px 8px 4px 8px;
+    color: #000;
+    border-color: #00000000;
+   
+}
+#inputDate{
+    padding: 4px 8px 4px 8px;
+    color: #000;
+    border-color: #00000000;
+    margin-right: 14px;
+}
+.inline {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.inline p {
+    margin: 0;
+    color: #000;
+}
+.inline input {
+    margin-right: 2px;
+    color:#FFFFFF;
 }
 /*********************************************************************************************/
 .icon-container {

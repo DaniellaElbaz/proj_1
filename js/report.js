@@ -29,31 +29,17 @@ function init_member_details(data) {
 function initReport(user) {
     report = document.getElementById("report");
     report.innerHTML = '';
-    
-        const reportItem = document.createElement('div');
-        reportItem.classList.add('report-item');
-        const items = inputFromJsonToTextBox(user);
-        if (items) { 
-            reportItem.appendChild(items);
-        }
-        const table = document.createElement('table');
-        const tr = document.createElement('tr');
-        const td = document.createElement('td');
-        td.innerHTML = `
-            <p> סוג האירוע</p>
-            <p>שם המשתתף/ת</p>
-            <p>תאריך האירוע</p>`;
-        tr.appendChild(td);
-
-        const selectedEvent = showSelectedEvent(user);
-        if (selectedEvent) { 
-            tr.appendChild(selectedEvent);
-        }
-        table.appendChild(tr);
-        reportItem.appendChild(table);
-        
-        report.appendChild(reportItem);
-    
+    const reportItem = document.createElement('div');
+    reportItem.classList.add('report-item');
+    const items = inputFromJsonToTextBox(user);
+    if (items) {
+        reportItem.appendChild(items);
+    }
+    const selectedEvent = showSelectedEvent(user);
+    if (selectedEvent) {
+        reportItem.appendChild(selectedEvent);
+    }
+    report.appendChild(reportItem);
 }
 
 function getEventID() {
@@ -65,31 +51,50 @@ function getEventID() {
 function showSelectedEvent(user) {
     const selectionEventId = getEventID();
     const name = 'נועה לוינסון';
-    const td = document.createElement('td');
+    const eventD = document.createElement('p');
     let EventType;
     let EventDate;
     for (const eventKey in user.events) {
         let evenDetails = user.events[eventKey];
         if (evenDetails.id == selectionEventId) {
             EventType = evenDetails.type_event;
-            const type = document.createElement('input');
-            type.id = "inputType";
-            type.placeholder = EventType;
-            td.appendChild(type);
+            const p = document.createElement('p');
+            p.classList.add('inline');
+            const type = document.createElement('select');
+            type.id = "selectType";
+            const option = document.createElement('option');
+            option.value = EventType;
+            option.text = EventType;
+            option.selected = true;
+            type.disabled = true;
+            type.appendChild(option);
+            p.appendChild(type);
+            p.appendChild(document.createTextNode(":סוג האירוע"));
+            eventD.appendChild(p);
+            const p2 = document.createElement('p');
+            p2.classList.add('inline');
             const nameI = document.createElement('input');
             nameI.id = "userName";
             nameI.placeholder = name;
-            td.appendChild(nameI);
+            nameI.disabled = true;
+            p2.appendChild(nameI);
+            p2.appendChild(document.createTextNode(":שם המשתתף/ת"));
+            eventD.appendChild(p2);
+            const p3 = document.createElement('p');
+            p3.classList.add('inline');
             const dateAndTimeParts = evenDetails.date_and_time.trim().split(" שעה ");
             EventDate = dateAndTimeParts[0];
             const date = document.createElement('input');
             date.id = "inputDate";
             date.placeholder = EventDate;
-            td.appendChild(date);
+            date.disabled = true;
+            p3.appendChild(date);
+            p3.appendChild(document.createTextNode(":תאריך האירוע"));
+            eventD.appendChild(p3);
             break;
         }
     }
-    return td;
+    return eventD;
 }
 
 function inputFromJsonToTextBox(user) {
@@ -113,17 +118,3 @@ function inputFromJsonToTextBox(user) {
     }
     return reportItem;
 }
-
-/*function initBottomRectangles(event) {
-    const eventLabel = document.createElement('p');
-    eventLabel.innerHTML = `:זירת האירוע`;
-    const img = document.createElement('img');
-    img.src = event.event_photo;
-    img.alt = "Event_Place";
-    img.title = "Event_Place";
-    const eventContainer = document.createElement('div');
-    eventContainer.classList.add('event-item-container');
-    eventContainer.appendChild(img);
-    eventContainer.appendChild(eventLabel);
-    return eventContainer;
-}*/
