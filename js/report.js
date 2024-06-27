@@ -41,6 +41,8 @@ function initReport(user) {
     }
     reportItem.appendChild(makeABlackLine());
     report.appendChild(reportItem);
+    reportItem.appendChild(inputToTextBox());
+    report.appendChild(reportItem);
 }
 function makeABlackLine(){
     const img = document.createElement('img');
@@ -132,23 +134,19 @@ function inputFromJsonToTextBox(user) {
     return reportItem;
 }
 function inputToTextBox() {
-    let reportItem = document.createElement('div');
-    reportItem.classList.add('report-input');
-    let EventName;
-    let EventPlace;
-    for (const eventKey in user.events) {
-        let evenDetails = user.events[eventKey];
-        if (evenDetails.id == selectionEventId) {
-            EventName = evenDetails.event_name;
-            const h1 = document.createElement('h1');
-            h1.innerText = "דו'ח אירוע " + EventName;
-            reportItem.appendChild(h1);
-            EventPlace = evenDetails.event_place;
-            const h2 = document.createElement('h1');
-            h2.innerText = "מיקום - " + EventPlace;
-            reportItem.appendChild(h2);
-            break;
-        }
-    }
-    return reportItem;
+    let inputItem = document.createElement('div');
+    inputItem.classList.add('report-input');
+    const when = document.createElement('p');
+    when.innerHTML = `?מתי ואיך שמעת שהאירוע התרחש<span style ="color: #DC3545;"> *</span>` ;
+    inputItem.appendChild(when);
+    const Textwhen = document.createElement('textarea');
+    Textwhen.id = "textareaWhen" ;
+    inputItem.appendChild(Textwhen);
+    const explain = document.createElement('p');
+    explain.innerHTML = `הסבר/י על הדרך פעילות שלך באירוע <span style ="color: #DC3545;"> *</span>` ;
+    inputItem.appendChild(explain);
+    const Textexplain = document.createElement('textarea');
+    Textexplain.id = "textareaExplain" ;
+    inputItem.appendChild(Textexplain);
+    return inputItem;
 }

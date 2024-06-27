@@ -308,6 +308,44 @@ span {
     margin-right: 2px;
     color:#FFFFFF;
 }
+.report-input{
+    margin-top: 6px;
+    margin: 9px 9px;
+}
+.report-input p{
+    width: 207px;
+    height: 20px;
+    color: #000000;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: right;
+}
+.report-input textarea{
+    background: #FFFFFF;
+    color: #000000;
+    border-color: #00000000;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px 3px 3px 3px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
+    font-weight: inherit;
+    font-size: 13px;
+    line-height: 1;
+    text-align: right;
+}
+#textareaWhen{
+    height: 64px;
+    width: 100%;
+}
+#textareaExplain{
+    height: 105px;
+    width: 100%;
+}
 /*********************************************************************************************/
 .icon-container {
     display: flex;
