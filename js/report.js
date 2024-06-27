@@ -1,13 +1,11 @@
 let report;
-
+const userName = 'נועה לוינסון';
 window.onload = () => {
     fetch("../data/Events.json")
     .then(response => response.json())
     .then(data => init_member_details(data));
 }
-
 function init_member_details(data) {
-    console.log("init_member_details called", data);
     const userName = 'נועה לוינסון';
     let user_photo;
     let user;
@@ -18,84 +16,105 @@ function init_member_details(data) {
             break;
         }
     }
-    console.log("User found:", user);
     const userDetails = document.getElementById("UserImage");
     const photo = document.createElement('img');
     photo.src = user_photo;
     photo.alt = "user_photo";
     photo.title = "user_photo";
     userDetails.appendChild(photo);
-    initReport(user);
+    initReport(user,data);
 }
-
-function initReport(user) {
+function initReport(user,data) {
     report = document.getElementById("report");
     report.innerHTML = '';
-    
-        const reportItem = document.createElement('div');
-        reportItem.classList.add('report-item');
-        const items = inputFromJsonToTextBox(user);
-        if (items) { 
-            reportItem.appendChild(items);
-        }
-        const table = document.createElement('table');
-        const tr = document.createElement('tr');
-        const td = document.createElement('td');
-        td.innerHTML = `
-            <p> סוג האירוע</p>
-            <p>שם המשתתף/ת</p>
-            <p>תאריך האירוע</p>`;
-        tr.appendChild(td);
-
-        const selectedEvent = showSelectedEvent(user);
-        if (selectedEvent) { 
-            tr.appendChild(selectedEvent);
-        }
-        table.appendChild(tr);
-        reportItem.appendChild(table);
-        
-        report.appendChild(reportItem);
-    
+    const reportItem = document.createElement('div');
+    reportItem.classList.add('report-item');
+    const items = inputFromJsonToTextBox(user);
+    if (items) {
+        reportItem.appendChild(items);
+    }
+    const selectedEvent = showSelectedEvent(user);
+    if (selectedEvent) {
+        reportItem.appendChild(selectedEvent);
+    }
+    reportItem.appendChild(makeABlackLine());
+    report.appendChild(reportItem);
+    reportItem.appendChild(inputToTextBox());
+    report.appendChild(reportItem);
+    reportItem.appendChild(makeABlackLine());
+    report.appendChild(reportItem);
+    reportItem.appendChild(showMembersEvent(data));
+    report.appendChild(reportItem);
+    reportItem.appendChild(initMembersBox());
+    report.appendChild(reportItem);
 }
-
+function makeABlackLine(){
+    const img = document.createElement('img');
+    img.style.width = '100%';
+    img.style.backgroundColor = 'black';
+    img.style.height = '2px';
+    img.style.border = 'none';
+    return img;
+}
 function getEventID() {
     const aKeyValue = window.location.search.substring(1).split('&');
     const eventId = aKeyValue[0].split("=")[1];
-    console.log("getEventID:", eventId);
     return eventId;
 }
-
 function showSelectedEvent(user) {
     const selectionEventId = getEventID();
-    console.log("Selected event ID:", selectionEventId);
     const name = 'נועה לוינסון';
-    const td = document.createElement('td');
-    let EventType;
-    let EventDate;
+    const eventD = document.createElement('p');
     for (const eventKey in user.events) {
         let evenDetails = user.events[eventKey];
         if (evenDetails.id == selectionEventId) {
-            EventType = evenDetails.type_event;
-            const type = document.createElement('input');
-            type.id = "inputType";
-            type.placeholder = EventType;
-            td.appendChild(type);
+            eventD.appendChild(initSelectBox(evenDetails));
+            const p2 = document.createElement('p');
+            p2.classList.add('inline');
             const nameI = document.createElement('input');
             nameI.id = "userName";
             nameI.placeholder = name;
-            td.appendChild(nameI);
-            const dateAndTimeParts = evenDetails.date_and_time.trim().split(" שעה ");
-            EventDate = dateAndTimeParts[0];
-            const date = document.createElement('input');
-            date.id = "inputDate";
-            date.placeholder = EventDate;
-            td.appendChild(date);
+            nameI.disabled = true;
+            p2.appendChild(nameI);
+            p2.appendChild(document.createTextNode(":שם המשתתף/ת"));
+            eventD.appendChild(p2);
+            eventD.appendChild(initDate(evenDetails));
             break;
         }
     }
-    return td;
+    return eventD;
 }
-
+function initDate(evenDetails){
+    let EventDate;
+    const p = document.createElement('p');
+    p.classList.add('inline');
+    const dateAndTimeParts = evenDetails.date_and_time.trim().split(" שעה ");
+    EventDate = dateAndTimeParts[0];
+    const date = document.createElement('input');
+    date.id = "inputDate";
+    date.placeholder = EventDate;
+    date.disabled = true;
+    p.appendChild(date);
+    p.appendChild(document.createTextNode(":תאריך האירוע"));
+    return p;
+}
+function initSelectBox(evenDetails){
+    let EventType;
+    EventType = evenDetails.type_event;
+    const p = document.createElement('p');
+    p.classList.add('inline');
+    const type = document.createElement('select');
+    type.id = "selectType";
+    const option = document.createElement('option');
+    option.value = EventType;
+    option.text = EventType;
+    option.selected = true;
+    type.disabled = true;
+    type.appendChild(option);
+    p.appendChild(type);
+    p.appendChild(document.createTextNode(":סוג האירוע"));
+    return p;
+}
 function inputFromJsonToTextBox(user) {
     const selectionEventId = getEventID();
     let reportItem = document.createElement('div');
@@ -106,7 +125,7 @@ function inputFromJsonToTextBox(user) {
         if (evenDetails.id == selectionEventId) {
             EventName = evenDetails.event_name;
             const h1 = document.createElement('h1');
-            h1.innerText = "דו'ח אירוע " + EventName;
+            h1.innerText = "דו''ח אירוע " + EventName;
             reportItem.appendChild(h1);
             EventPlace = evenDetails.event_place;
             const h2 = document.createElement('h1');
@@ -117,17 +136,104 @@ function inputFromJsonToTextBox(user) {
     }
     return reportItem;
 }
-
-/*function initBottomRectangles(event) {
-    const eventLabel = document.createElement('p');
-    eventLabel.innerHTML = `:זירת האירוע`;
-    const img = document.createElement('img');
-    img.src = event.event_photo;
-    img.alt = "Event_Place";
-    img.title = "Event_Place";
-    const eventContainer = document.createElement('div');
-    eventContainer.classList.add('event-item-container');
-    eventContainer.appendChild(img);
-    eventContainer.appendChild(eventLabel);
-    return eventContainer;
-}*/
+function inputToTextBox() {
+    let inputItem = document.createElement('div');
+    inputItem.classList.add('report-input');
+    const when = document.createElement('p');
+    when.innerHTML = `?מתי ואיך שמעת שהאירוע התרחש<span style ="color: #DC3545;">*</span>`;
+    inputItem.appendChild(when);
+    const Textwhen = document.createElement('textarea');
+    Textwhen.id = "textareaWhen";
+    Textwhen.maxLength = 90;
+    inputItem.appendChild(whenCount(Textwhen));
+    const explain = document.createElement('p');
+    explain.innerHTML = `הסבר/י על הדרך פעילות שלך באירוע<span style ="color: #DC3545;">*</span>`;
+    inputItem.appendChild(explain);
+    const Textexplain = document.createElement('textarea');
+    Textexplain.id = "textareaExplain";
+    Textexplain.maxLength = 300;
+    inputItem.appendChild(explainCount(Textexplain));
+    Textwhen.addEventListener('input', () => updateCharCount(Textwhen, "whenCharCount"));
+    Textexplain.addEventListener('input', () => updateCharCount(Textexplain, "explainCharCount"));
+    return inputItem;
+}
+function whenCount(Textwhen) {
+    let textareaContainerWhen = document.createElement('div');
+    textareaContainerWhen.classList.add('textarea-container');
+    textareaContainerWhen.appendChild(Textwhen);
+    const whenCharCount = document.createElement('div');
+    whenCharCount.classList.add('textarea-placeholder');
+    whenCharCount.id = "whenCharCount";
+    whenCharCount.textContent = `0/${Textwhen.maxLength} מילים`;
+    textareaContainerWhen.appendChild(whenCharCount);
+    return textareaContainerWhen;
+}
+function explainCount(Textexplain) {
+    let textareaContainerExplain = document.createElement('div');
+    textareaContainerExplain.classList.add('textarea-container');
+    textareaContainerExplain.appendChild(Textexplain);
+    const explainCharCount = document.createElement('div');
+    explainCharCount.classList.add('textarea-placeholder');
+    explainCharCount.id = "explainCharCount";
+    explainCharCount.textContent = `0/${Textexplain.maxLength} מילים`;
+    textareaContainerExplain.appendChild(explainCharCount);
+    return textareaContainerExplain;
+}
+function updateCharCount(textarea, placeholderId) {
+    const usedChars = textarea.value.length;
+    const maxChars = textarea.maxLength;
+    const placeholderElement = document.getElementById(placeholderId);
+    placeholderElement.textContent = `${usedChars}/${maxChars}`;
+}
+function showMembersEvent(data) {
+    const selectionEventId = getEventID();
+    let inputName = document.createElement('div');
+    inputName.classList.add('members-input');
+    const eventMembers = document.createElement('select');
+    for (const member of data.members) {
+        if (member.name == userName) {
+            const option = document.createElement('option');
+            option.value = "לא";
+            option.text = "לא";
+            option.selected = true;
+            eventMembers.appendChild(option);
+        }
+        else{
+            for (const event of member.events) {
+                if (event.id == selectionEventId) {
+                    const option = document.createElement('option');
+                    option.value = member.name;
+                    option.text = member.name;
+                    eventMembers.appendChild(option);
+                }
+            }
+        }
+    }
+    inputName.appendChild(eventMembers);
+    const names = document.createElement('p');
+    names.textContent = "אדם שתרצה/י לשבח בפועלו";
+    inputName.appendChild(names);
+    return inputName;
+}
+function initMembersBox() {
+    let inputName = document.createElement('div');
+    inputName.classList.add('help-input');
+    const eventRegrets = document.createElement('select');
+    const options = [
+        { value: " ", text: " " },
+        { value: "נהג בנחישות ועזר לכולם", text: "נהג בנחישות ועזר לכולם" },
+        { value: "הציל חיים רבים", text: "הציל חיים רבים" },
+        { value: "דאג לעדכן את כוחות המשטרה וכוחות הביטחון", text: "דאג לעדכן את כוחות המשטרה וכוחות הביטחון" }
+    ];
+    for (const opt of options) {
+        const option = document.createElement('option');
+        option.value = opt.value;
+        option.text = opt.text;
+        eventRegrets.appendChild(option);
+    }
+    const names = document.createElement('p');
+    names.textContent = "?איך היא/הוא תרם/ה לאירוע";
+    inputName.appendChild(names);
+    inputName.appendChild(eventRegrets);
+    return inputName;
+}
