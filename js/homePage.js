@@ -19,13 +19,11 @@ window.onload = () => {
 function init_member_details(data){
     const name = 'נועה לוינסון';
     let user_photo;
-    let events;
     let user;
     for (const memberKey in data.members) {
         user = data.members[memberKey];
         if (user.name == name) {
             user_photo = user.user_photo;
-            events = user.events;
             break;
             }
     }

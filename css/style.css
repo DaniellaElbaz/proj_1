@@ -220,7 +220,6 @@ span {
     width: 100%;
     margin-top: 9px;
 }
-
 .report-item h1 {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -242,6 +241,7 @@ span {
     opacity: 84%;
     color: #232323;
     margin-right: 9px;
+    margin-bottom: 0;
 }
 .report-item input,select{
     width: 148px;
@@ -288,7 +288,6 @@ span {
     padding: 4px 8px 4px 8px;
     color: #000;
     border-color: #00000000;
-   
 }
 #inputDate{
     padding: 4px 8px 4px 8px;

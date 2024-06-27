@@ -39,9 +39,17 @@ function initReport(user) {
     if (selectedEvent) {
         reportItem.appendChild(selectedEvent);
     }
+    reportItem.appendChild(makeABlackLine());
     report.appendChild(reportItem);
 }
-
+function makeABlackLine(){
+    const img = document.createElement('img');
+    img.style.width = '100%';
+    img.style.backgroundColor = 'black';
+    img.style.height = '2px';
+    img.style.border = 'none';
+    return img;
+}
 function getEventID() {
     const aKeyValue = window.location.search.substring(1).split('&');
     const eventId = aKeyValue[0].split("=")[1];
@@ -52,25 +60,10 @@ function showSelectedEvent(user) {
     const selectionEventId = getEventID();
     const name = 'נועה לוינסון';
     const eventD = document.createElement('p');
-    let EventType;
-    let EventDate;
     for (const eventKey in user.events) {
         let evenDetails = user.events[eventKey];
         if (evenDetails.id == selectionEventId) {
-            EventType = evenDetails.type_event;
-            const p = document.createElement('p');
-            p.classList.add('inline');
-            const type = document.createElement('select');
-            type.id = "selectType";
-            const option = document.createElement('option');
-            option.value = EventType;
-            option.text = EventType;
-            option.selected = true;
-            type.disabled = true;
-            type.appendChild(option);
-            p.appendChild(type);
-            p.appendChild(document.createTextNode(":סוג האירוע"));
-            eventD.appendChild(p);
+            eventD.appendChild(initSelectBox(evenDetails));
             const p2 = document.createElement('p');
             p2.classList.add('inline');
             const nameI = document.createElement('input');
@@ -80,26 +73,67 @@ function showSelectedEvent(user) {
             p2.appendChild(nameI);
             p2.appendChild(document.createTextNode(":שם המשתתף/ת"));
             eventD.appendChild(p2);
-            const p3 = document.createElement('p');
-            p3.classList.add('inline');
-            const dateAndTimeParts = evenDetails.date_and_time.trim().split(" שעה ");
-            EventDate = dateAndTimeParts[0];
-            const date = document.createElement('input');
-            date.id = "inputDate";
-            date.placeholder = EventDate;
-            date.disabled = true;
-            p3.appendChild(date);
-            p3.appendChild(document.createTextNode(":תאריך האירוע"));
-            eventD.appendChild(p3);
+            eventD.appendChild(initDate(evenDetails));
             break;
         }
     }
     return eventD;
 }
-
+function initDate(evenDetails){
+    let EventDate;
+    const p = document.createElement('p');
+    p.classList.add('inline');
+    const dateAndTimeParts = evenDetails.date_and_time.trim().split(" שעה ");
+    EventDate = dateAndTimeParts[0];
+    const date = document.createElement('input');
+    date.id = "inputDate";
+    date.placeholder = EventDate;
+    date.disabled = true;
+    p.appendChild(date);
+    p.appendChild(document.createTextNode(":תאריך האירוע"));
+    return p;
+}
+function initSelectBox(evenDetails){
+    let EventType;
+    EventType = evenDetails.type_event;
+    const p = document.createElement('p');
+    p.classList.add('inline');
+    const type = document.createElement('select');
+    type.id = "selectType";
+    const option = document.createElement('option');
+    option.value = EventType;
+    option.text = EventType;
+    option.selected = true;
+    type.disabled = true;
+    type.appendChild(option);
+    p.appendChild(type);
+    p.appendChild(document.createTextNode(":סוג האירוע"));
+    return p;
+}
 function inputFromJsonToTextBox(user) {
     const selectionEventId = getEventID();
     let reportItem = document.createElement('div');
+    let EventName;
+    let EventPlace;
+    for (const eventKey in user.events) {
+        let evenDetails = user.events[eventKey];
+        if (evenDetails.id == selectionEventId) {
+            EventName = evenDetails.event_name;
+            const h1 = document.createElement('h1');
+            h1.innerText = "דו'ח אירוע " + EventName;
+            reportItem.appendChild(h1);
+            EventPlace = evenDetails.event_place;
+            const h2 = document.createElement('h1');
+            h2.innerText = "מיקום - " + EventPlace;
+            reportItem.appendChild(h2);
+            break;
+        }
+    }
+    return reportItem;
+}
+function inputToTextBox() {
+    let reportItem = document.createElement('div');
+    reportItem.classList.add('report-input');
     let EventName;
     let EventPlace;
     for (const eventKey in user.events) {
