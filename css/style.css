@@ -761,7 +761,44 @@ button.red-rectangle {
     position: relative;
     right:10px;
 }
-.text-description p:nth-of-type(2) {
-position: relative;
-left: 7px;
+
+.back-to-eventMap {    
+    background-color: #20C997;
+    height: 40px;
+    width: 145px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    font-size: 14px;
+    line-height: 40px;
+    font-family: Inter;
+    color: #fafafa;
+    position: absolute;
+    top: 100px;
+    right: 30px;
+    border-radius: 5px;
+}
+
+.back-icon {
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    right: 31px;
+    top: 108px;
+}
+.eventPic-container{
+    background:linear-gradient(135deg, #E6E6E6, #B3B3B3);
+    width: 308px;
+    height: 207px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 48px;
+    top: 120px;
+}
+.noa-event-map{
+    width: 178px;
+    height: 189px;
 }
