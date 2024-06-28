@@ -4,8 +4,8 @@ window.onload = () => {
     .then(response => response.json())
     .then(data => {
         init_member_details(data);
-        if (!window.eventDetailsDrawn) { // וודא שלא נקרא יותר מפעם אחת
-            drawEventDetailsInScrollBar(data); // קרא פעם אחת בלבד
+        if (!window.eventDetailsDrawn) {
+            drawEventDetailsInScrollBar(data); 
             window.eventDetailsDrawn = true;
         }
     });

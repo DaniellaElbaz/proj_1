@@ -13,7 +13,8 @@
                 "event_place": "כביש 2, סמוך למחלף קיסריה",
                 "event_status": "האירוע הסתיים, 3 הרוגים ו2 פצועים קל",
                 "event_photo": "../images/repportImage 2.jpg",
-                "type_event":"תאונה"
+                "type_event":"תאונה",
+                "distance_event":"400 M"
             },
             {
                 "id": "124",
