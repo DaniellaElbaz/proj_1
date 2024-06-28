@@ -122,6 +122,14 @@ function inputFromJsonToTextBox(user) {
     let reportItem = document.createElement('div');
     let EventName;
     let EventPlace;
+    const buttonBeckFromReport = document.createElement('input');
+    buttonBeckFromReport.type = "button";
+    buttonBeckFromReport.value = "חזרה להיסטורית אירועים";
+    buttonBeckFromReport.onclick = function () {
+        buttonBeck();
+    };
+    buttonBeckFromReport.classList.add('button-beck-report');
+    reportItem.appendChild(buttonBeckFromReport);
     for (const eventKey in user.events) {
         let evenDetails = user.events[eventKey];
         if (evenDetails.id == selectionEventId) {

@@ -4,17 +4,12 @@ function initBottomReport(form) {
     form.method = "post";
     const buttonSend = document.createElement('input');
     buttonSend.type = "button";
-    buttonSend.value = "שלח דוח";
+    buttonSend.value = "הגשת דוח";
     form.appendChild(buttonSend);
     buttonSend.classList.add('button-send-report');
     buttonSend.onclick = function () {
         validateForm();
     };
-    const buttonBeckFromReport = document.createElement('input');
-    buttonBeckFromReport.type = "button";
-    buttonBeckFromReport.value = "חזרה";
-    buttonBeckFromReport.classList.add('button-beck-report');
-    form.appendChild(buttonBeckFromReport);
 }
 function validateForm() {
     let whenText = document.getElementById('textareaWhen').value;
@@ -29,6 +24,12 @@ function validateForm() {
         return false;
     }
     alert("הדוח נשלח בהצלחה!");
+}
+function buttonBeck(){
+    const userConfirmed = confirm(" הזהרה! ביציאה מהדף הדו''ח לא ישמר");
+    if (userConfirmed) {
+        window.location.href = "eventList.html"
+    }
 }
 function showMembersEvent(data) {
     const selectionEventId = getEventID();
