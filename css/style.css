@@ -312,7 +312,6 @@ span {
     position: relative;
     width: 100%;
 }
-
 textarea {
     width: 100%;
     height: 100px;
@@ -332,7 +331,6 @@ textarea {
     line-height: 1;
     text-align: right;
 }
-
 .textarea-placeholder {
     position: absolute;
     bottom: 10px;
@@ -341,7 +339,6 @@ textarea {
     color: gray;
     pointer-events: none;
 }
-
 #textareaWhen {
     height: 64px;
 }
@@ -366,6 +363,26 @@ textarea {
     height: 20px;
     border-radius: 7px 7px 7px 7px;
 }
+.eventShow{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+}
+
+.eventShow button{
+    margin-right: 9px;
+    padding: 2px 15px 2px 15px;
+    background: #408adf;
+    color: #000;
+    border-color: #408adf;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px 3px 3px 3px;
+    font-size: 12px;
+    text-align: center;
+}
+
 .help-input{
     display: flex;
     justify-content: flex-end;

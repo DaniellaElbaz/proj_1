@@ -85,14 +85,17 @@ window.onload = () => {
                 table.appendChild(tr);
                 eventItem.appendChild(table);
                 if (event.event_photo) {
-                    const eventShow = document.createElement('p');
+                    const eventShow = document.createElement('div');
+                    eventShow.classList.add('eventShow');
+                    const eventText= document.createElement('p');
                     const button = document.createElement('button');
                     button.innerText = 'לחץ כאן';
                     button.addEventListener('click', () => {
                         window.location.href = `event_report.html?eventId=${event.id}`;
                     });
-                    eventShow.innerHTML = `:צפיה בדוח אירוע / מילוי דוח אירוע `;
+                    eventText.innerHTML = `:צפיה בדוח אירוע / מילוי דוח אירוע `;
                     eventShow.appendChild(button);
+                    eventShow.appendChild(eventText);
                     eventItem.appendChild(eventShow);
                     eventItem.appendChild(initBottomRectangles(event));
                 }
