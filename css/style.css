@@ -244,7 +244,6 @@ span {
 .report-item input,select{
     width: 148px;
     height: 19px;
-    border-color: #383535;
     border-width: 1px;
     border-style: solid;
     font-family: "Inter", sans-serif;
@@ -272,8 +271,7 @@ span {
     font-size: 14px;
     border-radius: 7px;
     margin-bottom: 4px;
-    cursor: not-allowed;
-    opacity: 80%;
+
 }
 #selectType{
     border-radius: 7px 7px 7px 7px;
@@ -411,6 +409,22 @@ textarea {
     border-color: #00000000;
     height: 20px;
     border-radius: 7px 7px 7px 7px;
+    cursor: none;
+}
+.button-beck-report {
+    width: 94px;
+  height: 36px;
+  padding: 8px 8px 8px 8px;
+  background: #2196F3;
+  border-radius: 3px 3px 3px 3px;
+  width: 75px;
+  height: 18px;
+  color: #FAFAFA;
+  font-family: "Alef";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.3;
+  text-align: center;
 }
 /*********************************************************************************************/
 .icon-container {
