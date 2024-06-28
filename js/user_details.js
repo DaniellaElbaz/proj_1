@@ -70,10 +70,18 @@ const eventPicContainer = document.createElement("div");
     sectionUp.appendChild(eventPicContainer);
 }
 function drawScrollPart() {
-    const scrollSection = document.getElementById("scroll-bar");
+    const downSection = document.getElementById("down-part");
     
+
+
+
     const eventDataContainer = document.createElement("div");
     eventDataContainer.className = "event-data-container";
+
+
+
+
+
 
     const textDetailsContainer = document.createElement("div");
     textDetailsContainer.className = "text-event-details";
@@ -120,16 +128,15 @@ function drawScrollPart() {
     greenButtonRec.className = "green-rec";
     greenButtonRec.innerHTML = "<p>שמור שינויים</p>";
 
-    
-    scrollSection.appendChild(emptyImage);
-    scrollSection.appendChild(cameraIcon);
-    scrollSection.appendChild(imgText);
-    scrollSection.appendChild(photoText);
-    scrollSection.appendChild(eventDataContainer);
-    scrollSection.appendChild(textInfo);
-    scrollSection.appendChild(textDetailsContainer);
-    scrollSection.appendChild(redButtonRec);
-    scrollSection.appendChild(greenButtonRec);
+    downSection.appendChild(emptyImage);
+    downSection.appendChild(cameraIcon);
+    downSection.appendChild(imgText);
+    downSection.appendChild(photoText);
+    downSection.appendChild(eventDataContainer);
+    downSection.appendChild(textInfo);
+    downSection.appendChild(textDetailsContainer);
+    downSection.appendChild(redButtonRec);
+    downSection.appendChild(greenButtonRec);
 
     createEditableRectangle(textDetailsContainer);   
 }
