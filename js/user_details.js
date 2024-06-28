@@ -42,25 +42,32 @@ function init_member_details(data){
 function drawUpPart() {
     const sectionUp = document.getElementById("up");
 
+    const buttonContainer = document.createElement("div");
+    buttonContainer.className = "button-container";
+
     const backToEventMap = document.createElement("button");
     backToEventMap.className = "back-to-eventMap";
     backToEventMap.innerHTML = "<p>לחזרה למפת אירוע</p>";
+    
     const backIcon = document.createElement("img");
-    backIcon.className = "back-icon"
+    backIcon.className = "back-icon";
     backIcon.src = "images/back-icon.png";
     backIcon.alt = "back_icon";
-    sectionUp.appendChild(backToEventMap);
-    sectionUp.appendChild(backIcon);
+    backToEventMap.appendChild(backIcon);
 
-    const eventPicContainer = document.createElement("div");
+    buttonContainer.appendChild(backToEventMap);
+    sectionUp.appendChild(buttonContainer);
+
+
+const eventPicContainer = document.createElement("div");
     eventPicContainer.className = "eventPic-container";
     const noaImg = document.createElement("img");
-    noaImg.className = "noa-event-map"
+    noaImg.className = "noa-event-map";
     noaImg.src = "images/noaNewEvent.png";
     noaImg.alt = "noa-Event-Photo";
     eventPicContainer.appendChild(noaImg);
-    sectionUp.appendChild(eventPicContainer);
 
+    sectionUp.appendChild(eventPicContainer);
 }
 function drawScrollPart() {
     const scrollSection = document.getElementById("scroll-bar");
