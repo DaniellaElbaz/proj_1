@@ -10,6 +10,11 @@ window.onload = () => {
         function fill_sort_container(){
             const sort = document.createElement('div');
             sort.classList.add('sort');
+            const add = document.createElement('div');
+            add.classList.add('add');
+            const addButton = document.createElement('button');
+            addNewButton(addButton);
+            add.appendChild(addButton);
             const sortItem = document.createElement('div');
             sortItem.classList.add('sort-item');
             const sortInput =document.createElement('input');
@@ -31,8 +36,51 @@ window.onload = () => {
             box.alt = "checkbox";
             box.title = "checkbox";
             sortItem.appendChild(box);
+            sortContainer.appendChild(add);
             sortContainer.appendChild(sort);
             sortContainer.appendChild(sortItem);
+        }
+        function addNewButton(addButton) {
+            addButton.onclick = function () {
+                popForm();
+            };
+        }
+        function popForm() {
+            const form = document.createElement("form");
+            const EventNameInput = document.createElement('input');
+            console.log(`שם האירוע  ${EventNameInput.value}`);
+            const EventPlace = document.createElement('input');
+            console.log(`מיקום האירוע  ${EventPlace.value}`);
+            const EventDetails = document.createElement('input');
+            console.log(`פרטי האירוע  ${EventDetails.value}`);
+            const type = document.createElement('select');
+            type.id = "selectType";
+            const options = [
+                { value: " ", text: " " },
+                { value: "תאונה", text: "תאונה" },
+                { value:  "טרור", text: "טרור"},
+                { value:  "שריפה", text:  "שריפה" }
+            ];
+            for (const opt of options) {
+                const option = document.createElement('option');
+                option.value = opt.value;
+                option.text = opt.text;
+                type.appendChild(option);
+            }
+                if(type.value==" "){
+
+                }
+                else{
+                    console.log(`סוג האירוע  ${type.value}`);
+                }
+            const createEvent = document.createElement('button');
+            createEvent.onclick = function () {
+                popForm();
+            };
+            const out = document.createElement('button');
+            out.onclick = function () {
+                popForm();
+            };
         }
         function init_member_details(data) {
             const name = 'נועה לוינסון';

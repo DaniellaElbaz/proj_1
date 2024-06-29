@@ -31,6 +31,12 @@ function buttonBeck(){
         window.location.href = "eventList.html"
     }
 }
+function buttonAdd(){
+    const userConfirmed = confirm(" הזהרה! ביציאה מהדף הדו''ח לא ישמר");
+    if (userConfirmed) {
+        window.location.href = "eventList.html"
+    }
+}
 function showMembersEvent(data) {
     const selectionEventId = getEventID();
     let inputregretsContainer = document.createElement('div');

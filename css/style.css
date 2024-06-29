@@ -116,8 +116,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    margin-left: 55px;
-
 }
 
 #search {
@@ -163,7 +161,47 @@ body {
     font-size: 14px;
     text-align: right;
 }
-
+.popup {
+    font-family: Arial, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.popup .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+.popup #emailInput {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.add{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-right: auto;
+}
+.add button {
+    width: 55px;
+    height: 25px;
+    background-color: #4caf50;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
 #events-container {
     margin-top: 16px;
     display: flex;
