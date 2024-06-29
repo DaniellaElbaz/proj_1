@@ -116,6 +116,9 @@ function drawScrollPart() {
     const greenButtonRec = document.createElement("button");
     greenButtonRec.className = "green-rec";
     greenButtonRec.innerHTML = "<p>שמור שינויים</p>";
+    greenButtonRec.addEventListener("click", () => {
+        showModal("השינויים נשמרו בהצלחה");
+    });
 recContainer.appendChild(greenButtonRec);
 
 const redButtonRec = document.createElement("button");
@@ -132,6 +135,8 @@ recContainer.appendChild(redButtonRec);
     downSection.appendChild(displayText);
     downSection.appendChild(emptyImgContainer);
     downSection.appendChild(recContainer);
+
+    
     
 }
 
@@ -181,14 +186,6 @@ function createEditableRectangle() {
 
     return container;
 }
-
-
-
-
-
-
-
-
 
 function createIconsContainer() {
     const cameraModifyIcons = document.createElement("div");
@@ -319,4 +316,27 @@ const locationText = document.createElement("p");
     textGroup.appendChild(distanceText);
    
     return textGroup;
+}
+
+function showModal(message) {
+    
+    const modalOverlay = document.createElement("div");
+    modalOverlay.className = "modal-overlay";
+
+    const modal = document.createElement("div");
+    modal.className = "modal";
+
+    const modalMessage = document.createElement("p");
+    modalMessage.textContent = message;
+    modal.appendChild(modalMessage);
+
+    const closeButton = document.createElement("button");
+    closeButton.textContent = "סגור";
+    closeButton.addEventListener("click", () => {
+        document.body.removeChild(modalOverlay);
+    });
+    modal.appendChild(closeButton);
+
+    modalOverlay.appendChild(modal);
+    document.body.appendChild(modalOverlay);
 }
