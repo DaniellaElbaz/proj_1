@@ -38,8 +38,8 @@ function init_member_details(data){
 function drawFirstPart() {
     const section1 = document.getElementById("first-part");
 
-    const iconContainer = document.createElement("div");
-    iconContainer.className = "icon-container";
+    const alertParagraphIcon = document.createElement("div");
+    alertParagraphIcon.className = "alert-icon-paragraph";
 
     const icon1 = document.createElement("i");
     icon1.className = "fas fa-exclamation-triangle";
@@ -50,9 +50,9 @@ function drawFirstPart() {
     const icon2 = document.createElement("i");
     icon2.className = "fas fa-exclamation-triangle";
 
-    iconContainer.appendChild(icon1);
-    iconContainer.appendChild(noticeText);
-    iconContainer.appendChild(icon2);
+    alertParagraphIcon.appendChild(icon1);
+   alertParagraphIcon.appendChild(noticeText);
+    alertParagraphIcon.appendChild(icon2);
 
     const eventPhoto = document.createElement("div");
     eventPhoto.className = "event-photo";
@@ -77,7 +77,7 @@ function drawFirstPart() {
     rectangleContainer.appendChild(redButton);
     rectangleContainer.appendChild(greenButton);
 
-    section1.appendChild(iconContainer);
+    section1.appendChild(alertParagraphIcon);
     section1.appendChild(eventPhoto);
     section1.appendChild(rectangleContainer);
 }
@@ -86,6 +86,9 @@ function drawFirstPart() {
 function drawSecondPart(reports) {
     const section2 = document.getElementById("second-part");
 
+    const p2ElementContainer = document.createElement("div");
+    p2ElementContainer.className = "p2-element-container";
+    section2.appendChild(verticalLine);
 
     const realTimeText = createRealTimeText();
     section2.appendChild(realTimeText);
