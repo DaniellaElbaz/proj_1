@@ -185,7 +185,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background: #fff;
-    padding: 20px;
+    padding: 60px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -195,15 +195,22 @@ body {
     right: 10px;
     font-size: 20px;
     cursor: pointer;
-    color: #333;
+    width: 55px;
+    height: 25px;
+    background-color: #4caf50;
+    color: #fff;
 }
 .popup .open {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    bottom: 10px;
+    left: 10px;
     font-size: 20px;
     cursor: pointer;
     color: #333;
+    width: 55px;
+    height: 25px;
+    background-color: #4caf50;
+    color: #fff;
 }
 .popup #newInputName {
     width: 80%;

@@ -53,7 +53,6 @@ window.onload = () => {
             return addButton;
         }
         function popForm(overList) {
-            console.log('pvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv');
             const form = document.createElement("form");
             form.classList.add('popup');
             const EventNameInput = document.createElement('input');
@@ -69,6 +68,11 @@ window.onload = () => {
             form.appendChild(EventDetails);
             const type = document.createElement('select');
             form.appendChild(initSelectType(type));
+            buttonAlert(form,overList);
+            console.log(form);
+            return form;
+        }
+        function buttonAlert(form,overList){
             const createEvent = document.createElement('button');
             createEvent.classList.add('open');
             createEvent.onclick = function () {
@@ -92,8 +96,6 @@ window.onload = () => {
                     }
             };
             form.appendChild(out);
-            console.log(form);
-            return form;
         }
         function initSelectType(type) {
             type.id = "NewSelectType";
