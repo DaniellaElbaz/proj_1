@@ -1026,7 +1026,7 @@ button.red-rectangle {
     display: block;
     position: relative;
     width: 100%;
-    margin-top: 70px;
+    margin-top: 100px;
 }
 
 .back-to-eventMap {
@@ -1041,7 +1041,8 @@ button.red-rectangle {
     display: flex;
     align-items: baseline;
     justify-content: center;
-    margin-bottom: 20px;
+    position: relative;
+    bottom: 80px;
 }
 
 .back-to-eventMap p {
@@ -1082,7 +1083,7 @@ button.red-rectangle {
 }
 
 #down-part {
-    margin-top: 30px;
+    margin-top: 60px;
     max-height: 600px;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -1094,7 +1095,7 @@ button.red-rectangle {
 
 #down-part::-webkit-scrollbar {
     width: 20px;
-    height: 600px;
+    height: 400px;
     position: relative;
     top: 300px;
     background-color: #f5f5f5;
@@ -1147,17 +1148,6 @@ button.red-rectangle {
     right: 60px;
     bottom: 160px;
 }
-
-.editable-rectangle {
-    background-color: #F8F9FA;
-    width: 80%;
-    height: 50px;
-    position: relative;
-    right: 60px;
-    bottom: 160px;
-    border-radius: 10px;
-}
-
 .camera-modify-icons-container {
     display: flex;
     flex-direction: column;
@@ -1171,6 +1161,8 @@ button.red-rectangle {
 .modify-icon {
     height: 25px;
     width: 25px;
+    position: relative;
+    bottom: 10px;
 }
 
 .camera-icon {
@@ -1201,7 +1193,6 @@ button.red-rectangle {
     position: relative;
     white-space: nowrap;
     bottom: 100px;
-    left: 10px;
 }
 
 .text-shoot {
@@ -1225,9 +1216,9 @@ button.red-rectangle {
 
 .empty-image {
     position: relative;
-    width: 55%;
-    height: 45%;
-    bottom: 120px;
+    width: 170px;
+    height: 120px;
+    bottom: 90px;
 
 
 }
@@ -1235,15 +1226,13 @@ button.red-rectangle {
     display: flex;
     align-items: center;
     justify-content:space-between;
-    gap:30px;
     position: relative;
-    bottom: 160px;
 }
 
 .green-rec {
     background-color: #5ED09B;
-    height: 32px;
-    width: 99px;
+    height: 48px;
+    width: 135px;
     border: none;
     font-size: 14px;
     font-family: 'Mouqaps', 'Alef', sans-serif;
@@ -1253,8 +1242,8 @@ button.red-rectangle {
 
 .red-rec {
     background-color: #DC3545;
-    height: 32px;
-    width: 99px;
+    height: 48px;
+    width: 135px;
     border: none;
     font-size: 14px;
     font-family: 'Mouqaps', 'Alef', sans-serif;
@@ -1307,4 +1296,35 @@ button.red-rectangle {
     bottom: 120px;
     right: 60px
 
+}
+.char-count-text {
+   display: flex;
+   position: absolute;
+    bottom: 1px;
+    left: 5px;
+    color: #999;
+    font-size: 12px;
+}
+
+
+.char-count {
+    position: absolute;
+    left: 12px;
+    top: 290px;
+    color:#999;
+    font-size: 13px;
+}
+.editable-rectangle-container{
+    display: flex;
+     justify-content: left;
+
+}
+.editable-rectangle {
+    background-color: #F8F9FA;
+    width: 84%;
+    height: 70px;
+    position: relative;
+    bottom: 160px;
+    left: 10px;
+    border-radius: 10px;
 }

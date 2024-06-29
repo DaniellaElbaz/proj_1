@@ -132,14 +132,60 @@ recContainer.appendChild(redButtonRec);
     downSection.appendChild(displayText);
     downSection.appendChild(emptyImgContainer);
     downSection.appendChild(recContainer);
+    
 }
 
 function createEditableRectangle() {
+    const container = document.createElement("div");
+    container.className = "editable-rectangle-container";
+
     const editableRectangle = document.createElement("div");
     editableRectangle.contentEditable = true;
     editableRectangle.className = "editable-rectangle";
-    return editableRectangle;
+    editableRectangle.style.direction = "rtl"; 
+
+   
+    const charCount = document.createElement("div");
+    charCount.className = "char-count";
+    charCount.textContent = "0/31 תווים";
+
+    container.appendChild(editableRectangle);
+    container.appendChild(charCount);
+
+   
+    editableRectangle.addEventListener("input", () => {
+        let content = editableRectangle.textContent.trim();
+        const charLimit = 31;
+
+        if (content.length > charLimit) {
+            content = content.substring(0, charLimit);
+            editableRectangle.textContent = content;
+        }
+
+        charCount.textContent = `${content.length}/${charLimit} תווים`;
+    });
+
+    
+    editableRectangle.addEventListener("keydown", (event) => {
+        let content = editableRectangle.textContent.trim();
+        const charLimit = 31;
+
+        
+        if (event.key !== 'Backspace' && event.key !== 'Delete' && content.length >= charLimit) {
+            event.preventDefault();
+        }
+    });
+
+    return container;
 }
+
+
+
+
+
+
+
+
 
 function createIconsContainer() {
     const cameraModifyIcons = document.createElement("div");
