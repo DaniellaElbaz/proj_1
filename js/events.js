@@ -16,7 +16,7 @@ window.onload = () => {
             add.classList.add('add');
             const addButton = document.createElement('button');
             addButton.classList.add('open');
-            addButton.innerText='הוספת אירוע';
+            addButton.innerText='אירוע';
             add.appendChild(addButton);
             addButton.onclick = function () {
                 addNewButton();

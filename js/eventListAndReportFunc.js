@@ -31,19 +31,25 @@ function NewEventCheck() {
         alert("חייב למלא מתי ואיפה האירוע  ");
         return false;
     }
-
+    else{
+        console.log(`מיקום וזמן האירוע  ${EventNameInput.value}`);
+    }
     let EventPlace = document.getElementById('textareaExplainE').value;
     if (EventPlace.trim() === "") {
         alert("חייב להסביר על האירוע");
         return false;
     }
-
+    else{
+        console.log(`פרטי האירוע  ${EventPlace.value}`);
+    }
     let type = document.getElementById('NewSelectType').value;
-    if (type.trim() === " ") {
+    if (type.trim() === "") {
         alert("חייב למלא סוג אירוע");
         return false;
     }
-
+    else{
+          console.log(`סוג האירוע  ${type.value}`);
+    }
     const userConfirmed = confirm("האם אתה בטוח שתרצה לדווח?");
     if (userConfirmed) {
         alert("הדוח נשלח בהצלחה!");
@@ -51,37 +57,6 @@ function NewEventCheck() {
     } else {
         return false;
     }
-}
-function NewEventjhjCheck() {
-    let EventNameInput = document.getElementById('textareaWhenE').value;
-    if (EventNameInput.trim() === "") {
-        alert("חייב למלא מתי ואיפה האירוע  ");
-        return false;
-    }
-    //else{
-      //  console.log(`מיקום וזמן האירוע  ${EventNameInput.value}`);
-   // }
-    let EventPlace = document.getElementById('textareaExplainE').value;
-    if (EventPlace.trim() === "") {
-        alert("חייב  להסביר על האירוע");
-        return false;
-    }
-    //else{
-     //   console.log(`פרטי האירוע  ${EventPlace.value}`);
-    //}
-    let type = document.getElementById('NewSelectType').value;
-    if (type.trim() === " ") {
-        alert("חייב למלא סוג אירוע");
-        return false;
-    }
-   // else{
-      //  console.log(`סוג האירוע  ${type.value}`);
-   // }
-   const userConfirmed = confirm(" האם אתה בטוח שתרצה לדווח?");
-   if (userConfirmed) {
-       alert("הדוח נשלח בהצלחה!");
-      window.location.href = "eventList.html";
-   }
 }
 function buttonBeck(){
     const userConfirmed = confirm(" הזהרה! ביציאה מהדף הדו''ח לא ישמר");
@@ -171,8 +146,8 @@ function initMembersBox(inputDetails) {
 function buttonSend() {
     const createEvent = document.createElement('button');
     createEvent.classList.add('newEvent');
-    createEvent.innerText = "שלח אירוע"; // Add text to the button
-    createEvent.type = "button"; // Ensure it's a button, not a submit input
+    createEvent.innerText = "שלח אירוע";
+    createEvent.type = "button";
     createEvent.onclick = function () {
         const isFormValid = NewEventCheck();
         if (!isFormValid) {
