@@ -570,7 +570,7 @@ button.red-rectangle {
     align-items: center;
     flex-direction: column;
     position: relative;
-    top: 100px;
+    top: 85px;
 }
 
 .p2-element-container {
@@ -799,8 +799,6 @@ background: #FFFFFF75;
     justify-content: center;
     flex-direction: column;
     position: relative;
-    top: 40px;
-
 }
 
 .history-container {
