@@ -15,7 +15,12 @@ window.onload = () => {
             const add = document.createElement('div');
             add.classList.add('add');
             const addButton = document.createElement('button');
-            add.appendChild(addNewButton(addButton));
+            addButton.classList.add('open');
+            addButton.innerText='הוספת אירוע';
+            add.appendChild(addButton);
+            addButton.onclick = function () {
+                addNewButton();
+            }
             sortContainer.appendChild(add);
             const sortInput =document.createElement('input');
             sortInput.placeholder="חיפוש";
@@ -39,16 +44,11 @@ window.onload = () => {
             sortContainer.appendChild(sort);
             sortContainer.appendChild(sortItem);
         }
-        function addNewButton(addButton) {
-            addButton.classList.add('open');
-            addButton.innerText='הוספת אירוע';
-            addButton.onclick = function () {
+        function addNewButton() {
                 const overList = document.createElement("div");
                 overList.classList.add('popupOverlay');
                 overList.appendChild(popForm(overList));
                 document.body.appendChild(overList);
-            };
-            return addButton;
         }
         function init_member_details(data) {
             const name = 'נועה לוינסון';
@@ -147,7 +147,8 @@ window.onload = () => {
             addList.appendChild(addListItem);
             addListItem.appendChild(initSelectBox())
             addList.appendChild(addListItem);
-           
+            addListItem.appendChild(buttonSend());
+            addList.appendChild(addListItem);
             form.appendChild(addList);
             return form;
         }
@@ -155,7 +156,7 @@ window.onload = () => {
             const p = document.createElement('p');
             p.classList.add('inline');
             const type = document.createElement('select');
-            type.id = "selectType";
+            type.id = "NewSelectType";
             const options = [
                 { value: " ", text: " " },
                 { value: "תאונה", text: "תאונה" },
@@ -179,8 +180,7 @@ window.onload = () => {
         }
         function inputTitleAddEvent() {
             const addListItem = document.createElement("div");
-            addListItem.classList.add('addListItem');
-            addListItem.appendChild(buttonSend());
+            addListItem.classList.add('heder');
             const h1 = document.createElement('h1');
             h1.innerText = " יצירת אירוע חדש" ;
             addListItem.appendChild(h1);
@@ -190,7 +190,7 @@ window.onload = () => {
             let inputItem = document.createElement('div');
             inputItem.classList.add('report-input');
             const when = document.createElement('p');
-            when.innerHTML = `?מתי ואיך שמעת שהאירוע התרחש<span style ="color: #DC3545;">*</span>`;
+            when.innerHTML = `?מתי ואיפה האירוע <span style ="color: #DC3545;">*</span>`;
             inputItem.appendChild(when);
             const Textwhen = document.createElement('textarea');
             Textwhen.id = "textareaWhenE";

@@ -8,11 +8,8 @@ function initBottomReport(form) {
     form.appendChild(buttonSend);
     buttonSend.classList.add('button-send-report');
     buttonSend.onclick = function () {
-        if(validateForm())
-            {
-                alert("הדוח נשלח בהצלחה!");
-            }
-    };
+        validateForm();
+    }
 }
 function validateForm() {
     let whenText = document.getElementById('textareaWhen').value;
@@ -26,39 +23,65 @@ function validateForm() {
         alert("חייב למלא איך פעלת באירוע");
         return false;
     }
-    let EventNameInput = document.getElementById('newInputName').value;
+    alert("הדוח נשלח בהצלחה!");
+}
+function NewEventCheck() {
+    let EventNameInput = document.getElementById('textareaWhenE').value;
     if (EventNameInput.trim() === "") {
-        alert("חייב למלא שם אירוע");
+        alert("חייב למלא מתי ואיפה האירוע  ");
         return false;
     }
-    else{
-        console.log(`שם האירוע  ${EventNameInput.value}`);
-    }
-    let EventPlace = document.getElementById('newInputPlace').value;
+
+    let EventPlace = document.getElementById('textareaExplainE').value;
     if (EventPlace.trim() === "") {
-        alert("חייב למלא מיקום");
+        alert("חייב להסביר על האירוע");
         return false;
     }
-    else{
-        console.log(`מיקום האירוע  ${EventPlace.value}`);
-    }
-    let EventDetails = document.getElementById('newInputDetails').value;
-    if (EventDetails.trim() === "") {
-        alert("חייב למלא פרטי אירוע");
-        return false;
-    }
-    else{
-        console.log(`פרטי האירוע  ${EventDetails.value}`);
-    }
+
     let type = document.getElementById('NewSelectType').value;
-    if (type.trim() === "") {
+    if (type.trim() === " ") {
         alert("חייב למלא סוג אירוע");
         return false;
     }
-    else{
-        console.log(`סוג האירוע  ${type.value}`);
+
+    const userConfirmed = confirm("האם אתה בטוח שתרצה לדווח?");
+    if (userConfirmed) {
+        alert("הדוח נשלח בהצלחה!");
+        window.location.href = "eventList.html";
+    } else {
+        return false;
     }
-    return true;
+}
+function NewEventjhjCheck() {
+    let EventNameInput = document.getElementById('textareaWhenE').value;
+    if (EventNameInput.trim() === "") {
+        alert("חייב למלא מתי ואיפה האירוע  ");
+        return false;
+    }
+    //else{
+      //  console.log(`מיקום וזמן האירוע  ${EventNameInput.value}`);
+   // }
+    let EventPlace = document.getElementById('textareaExplainE').value;
+    if (EventPlace.trim() === "") {
+        alert("חייב  להסביר על האירוע");
+        return false;
+    }
+    //else{
+     //   console.log(`פרטי האירוע  ${EventPlace.value}`);
+    //}
+    let type = document.getElementById('NewSelectType').value;
+    if (type.trim() === " ") {
+        alert("חייב למלא סוג אירוע");
+        return false;
+    }
+   // else{
+      //  console.log(`סוג האירוע  ${type.value}`);
+   // }
+   const userConfirmed = confirm(" האם אתה בטוח שתרצה לדווח?");
+   if (userConfirmed) {
+       alert("הדוח נשלח בהצלחה!");
+      window.location.href = "eventList.html";
+   }
 }
 function buttonBeck(){
     const userConfirmed = confirm(" הזהרה! ביציאה מהדף הדו''ח לא ישמר");
@@ -145,23 +168,22 @@ function initMembersBox(inputDetails) {
     inputDetails.appendChild(eventRegrets);
     return inputDetails;
 }
-function buttonSend(){
+function buttonSend() {
     const createEvent = document.createElement('button');
-    createEvent.classList.add('open');
+    createEvent.classList.add('newEvent');
+    createEvent.innerText = "שלח אירוע"; // Add text to the button
+    createEvent.type = "button"; // Ensure it's a button, not a submit input
     createEvent.onclick = function () {
-        if(validateForm()){
-            const userConfirmed = confirm(" האם אתה בטוח שתרצה לדווח?");
-            if (userConfirmed) {
-                alert("הדוח נשלח בהצלחה!");
-                window.location.href = "eventList.html";
-            }
+        const isFormValid = NewEventCheck();
+        if (!isFormValid) {
+            event.preventDefault();
         }
     };
     return createEvent;
 }
 function buttonExit(){
     const out = document.createElement('button');
-    out.classList.add('close');
+    out.classList.add('exitEvent');
     out.onclick = function () {
         const userConfirmed = confirm(" האם אתה בטוח שתרצה לצאת מהדיווח?");
             if (userConfirmed) {

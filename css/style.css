@@ -183,36 +183,44 @@ body {
 }
 .popup p{
     color: #000;
+    margin: 0;
 }
-.popup .close {
+.exitEvent {
+    background-image: url("../images/exit.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    text-align: right;
+    border: 1px solid #ddd;
+    width: 23px;
+    height: 23px;
+    margin-right: 0;
+    color: #f50404;
+}
+.newEvent {
+    border: 1px solid #ddd;
     font-size: 20px;
     cursor: pointer;
     width: 55px;
     height: 25px;
     background-color: #4caf50;
     color: #fff;
-}
-.popup .open {
 
-    font-size: 20px;
-    cursor: pointer;
-    color: #333;
-    width: 55px;
-    height: 25px;
-    background-color: #4caf50;
-    color: #fff;
 }
 .addList {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     text-align: right;
+    height: 100%;
 }
 .addListItem{
-    height: 50%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    height: 100%;
 }
 .popup #newInputName {
     width: 80%;
