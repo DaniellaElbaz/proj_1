@@ -13,8 +13,7 @@ window.onload = () => {
             const add = document.createElement('div');
             add.classList.add('add');
             const addButton = document.createElement('button');
-            addNewButton(addButton);
-            add.appendChild(addButton);
+            add.appendChild(addNewButton(addButton));
             const sortItem = document.createElement('div');
             sortItem.classList.add('sort-item');
             const sortInput =document.createElement('input');
@@ -41,19 +40,62 @@ window.onload = () => {
             sortContainer.appendChild(sortItem);
         }
         function addNewButton(addButton) {
+            addButton.classList.add('open');
+            addButton.innerText='הוספת אירוע';
             addButton.onclick = function () {
-                popForm();
+                const overList = document.createElement("div");
+                overList.classList.add('popupOverlay');
+                overList.style.display='block';
+                overList.appendChild(popForm(overList));
+                document.body.appendChild(overList);
             };
+            console.log('pvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv');
+            return addButton;
         }
-        function popForm() {
+        function popForm(overList) {
+            console.log('pvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv');
             const form = document.createElement("form");
+            form.classList.add('popup');
             const EventNameInput = document.createElement('input');
             EventNameInput.id="newInputName";
+            form.appendChild(EventNameInput);
+            console.log(form);
             const EventPlace = document.createElement('input');
             EventPlace.id="newInputPlace";
+            form.appendChild(EventPlace);
+            console.log(form);
             const EventDetails = document.createElement('input');
             EventDetails.id="newInputDetails";
+            form.appendChild(EventDetails);
             const type = document.createElement('select');
+            form.appendChild(initSelectType(type));
+            const createEvent = document.createElement('button');
+            createEvent.classList.add('open');
+            createEvent.onclick = function () {
+                if(validateForm()){
+                    const userConfirmed = confirm(" האם אתה בטוח שתרצה לדווח?");
+                    if (userConfirmed) {
+                        alert("הדוח נשלח בהצלחה!");
+                        window.location.href = "eventList.html";
+                    }
+                }
+            };
+            form.appendChild(createEvent);
+            console.log(form);
+            const out = document.createElement('button');
+            out.classList.add('close');
+            out.onclick = function () {
+                const userConfirmed = confirm(" האם אתה בטוח שתרצה לצאת מהדיווח?");
+                    if (userConfirmed) {
+                        overList.style.display='non';
+                        window.location.href = "eventList.html";
+                    }
+            };
+            form.appendChild(out);
+            console.log(form);
+            return form;
+        }
+        function initSelectType(type) {
             type.id = "NewSelectType";
             const options = [
                 { value: " ", text: " " },
@@ -67,14 +109,7 @@ window.onload = () => {
                 option.text = opt.text;
                 type.appendChild(option);
             }
-            const createEvent = document.createElement('button');
-            createEvent.onclick = function () {
-                validateForm();
-            };
-            const out = document.createElement('button');
-            out.onclick = function () {
-                popForm();
-            };
+            return type;
         }
         function init_member_details(data) {
             const name = 'נועה לוינסון';
