@@ -95,6 +95,15 @@ function drawScrollPart() {
     const displayText = createTextContainer();
 
 
+    const emptyImgContainer = document.createElement("div");
+    emptyImgContainer.className = "empty-img-container";
+
+    const emptyImage = document.createElement("img");
+    emptyImage.className = "empty-image";
+    emptyImage.src = "images/empty-image.png";
+    emptyImage.alt = "empty_image";
+    emptyImgContainer.appendChild(emptyImage);
+
     const recContainer = document.createElement("div");
     recContainer.className = "rec-container";
 
@@ -111,24 +120,7 @@ function drawScrollPart() {
     downSection.appendChild(rectangleText);
     downSection.appendChild(displayIcons);
     downSection.appendChild(displayText);
-    downSection.appendChild(emptyImage);
-}
-
-function drawHiddenSection(){
-  const hiddenSection = document.getElementById("hidden-section");
-
-    const emptyImgContainer = document.createElement("div");
-    emptyImgContainer.className = "empty-img-container";
-
-    const emptyImage = document.createElement("img");
-    emptyImage.className = "empty-image";
-    emptyImage.src = "images/empty-image.png";
-    emptyImage.alt = "empty_image";
-    emptyImgContainer.appendChild(emptyImage);
-    
-
-    hiddenSection.appendChild(emptyImgContainer);
-
+    downSection.appendChild(emptyImgContainer);
 }
 
 function createEditableRectangle() {
