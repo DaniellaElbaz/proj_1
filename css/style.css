@@ -169,9 +169,21 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 80%;
+    flex-wrap: nowrap;
+    max-width: 80%; /* Prevent it from becoming too wide */
+    max-height: 60%; /* Prevent it from becoming too tall */
+    overflow: auto;
+}
+
+.popup input,
+.popup select,
+.popup button {
+    margin: 10px 0;
+    box-sizing: border-box;
 }
 .popupOverlay {
-   
+    display: none;
     display: flex;
     justify-content: center;
     position: fixed;
@@ -182,8 +194,11 @@ body {
     background: rgba(0, 0, 0, 0.5);
 }
 .popup {
-    height: 70%;
-    padding: 10px 10px;
+    width: auto; /* Allow the width to be determined by the content */
+    max-width: 80%; /* Prevent it from becoming too wide */
+    max-height: 80%; /* Prevent it from becoming too tall */
+    overflow: auto; /* Add scroll if content overflows */
+    padding: 9px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .popup p{
@@ -220,11 +235,17 @@ body {
 }
 .addListItem{
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
     align-items: flex-end;
     text-align: right;
     height: 100%;
+}
+.addListItem textarea{
+    width: 100%;
+    height: 70px;
+}
+.New-input{
+    width: 100%;
 }
 .popup #newInputName {
     width: 80%;
@@ -248,7 +269,6 @@ body {
     border-radius: 4px;
 }
 .add{
-   
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;

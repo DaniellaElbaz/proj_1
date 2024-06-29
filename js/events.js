@@ -204,7 +204,7 @@ window.onload = () => {
         }
         function inputEventTextBox(form) {
             let inputItem = document.createElement('div');
-            inputItem.classList.add('report-input');
+            inputItem.classList.add('New-input');
             const when = document.createElement('p');
             when.innerHTML = `?מתי ואיפה האירוע <span style ="color: #DC3545;">*</span>`;
             inputItem.appendChild(when);
