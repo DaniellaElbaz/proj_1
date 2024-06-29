@@ -568,13 +568,20 @@ button.red-rectangle {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #FFFFFF75;
+    flex-direction: column;
+    margin-top: 125px;
+}
+
+.p2-element-container {
+background: #FFFFFF75;
     border-radius: 8px;
     height: 290px;
     width: 360px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
-    top: 150px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .report-time {
@@ -584,21 +591,26 @@ button.red-rectangle {
     font-weight: bold;
     font-family: "Inter";
     line-height: 1;
+    left: 50px;
 }
 
 .real-time-text {
     position: relative;
     font-size: 13px;
     color: #000000;
-    font-family: Inter;
+    font-family: 'Inter';
     font-weight: 635;
     line-height: 15.73px;
+    display: flex;
+    justify-content: right;
+    left: 20px;
+    
 }
 
 .report-container {
     position: relative;
     padding: 10px;
-    margin-left: 11%;
+    margin-left: 4%;
     margin-top: 1%;
     margin-bottom: 6%;
     background: #FFFFFFB8;
@@ -659,9 +671,8 @@ button.red-rectangle {
     width: 18px;
     height: 1px;
     background-color: black;
-    position: absolute;
-    top: -10%;
-    left: 60%;
+    display: flex;
+    justify-content: left;
     transform: rotate(35deg);
 
 
@@ -685,10 +696,10 @@ button.red-rectangle {
 
 .alert-icon {
     position: relative;
-    right: 100%;
     width: 24px;
     height: 24px;
-    right: 131%;
+    display: flex;
+    right: 100%;
 }
 
 .report-text {
@@ -720,9 +731,7 @@ button.red-rectangle {
     white-space: nowrap;
     position: relative;
     font-variation-settings: 'slnt' 0;
-    color: #2F7FF8;
-    left: 45%;
-    bottom: 185%;
+    color: #2F7FF8;;
     text-decoration: underline;
     font-weight: bold;
 }
@@ -731,15 +740,11 @@ button.red-rectangle {
     position: relative;
     width: 58px;
     height: 40px;
-    bottom: 265%;
-    right: 2%;
-
-
 }
 
 #text-with-image {
     position: relative;
-    top: 74%;
+    top: 221px;
 }
 
 #text-with-image button {

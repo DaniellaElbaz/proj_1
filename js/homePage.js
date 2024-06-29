@@ -88,14 +88,15 @@ function drawSecondPart(reports) {
 
     const p2ElementContainer = document.createElement("div");
     p2ElementContainer.className = "p2-element-container";
-    section2.appendChild(verticalLine);
 
     const realTimeText = createRealTimeText();
-    section2.appendChild(realTimeText);
+    p2ElementContainer.appendChild(realTimeText);
+section2.appendChild(p2ElementContainer);
 
     const verticalLine = document.createElement("div");
     verticalLine.className = "vertical-line";
-    section2.appendChild(verticalLine);
+    
+    p2ElementContainer.appendChild(verticalLine);
 
 
     const startTime = new Date();
@@ -104,14 +105,13 @@ function drawSecondPart(reports) {
 
     for (let i = 0; i < 3; i++) {
         const reportContainer = createReportContainer(startTime, i);
-        section2.appendChild(reportContainer);
+        p2ElementContainer.appendChild(reportContainer);
     }
 
 
     const lastReportContainer = createLastReportContainer(reports);
-    section2.appendChild(lastReportContainer);
+    p2ElementContainer.appendChild(lastReportContainer);
 }
-
 
 function createRealTimeText() {
     const realTimeText = document.createElement("div");
