@@ -165,9 +165,36 @@ function buttonExit(){
     out.onclick = function () {
         const userConfirmed = confirm(" האם אתה בטוח שתרצה לצאת מהדיווח?");
             if (userConfirmed) {
-               
                 window.location.href = "eventList.html";
             }
     };
    return out;
+}
+function whenCount(Textwhen) {
+    let textareaContainerWhen = document.createElement('div');
+    textareaContainerWhen.classList.add('textarea-container');
+    textareaContainerWhen.appendChild(Textwhen);
+    const whenCharCount = document.createElement('div');
+    whenCharCount.classList.add('textarea-placeholder');
+    whenCharCount.id = "whenCharCount";
+    whenCharCount.textContent = `0/${Textwhen.maxLength} מילים`;
+    textareaContainerWhen.appendChild(whenCharCount);
+    return textareaContainerWhen;
+}
+function explainCount(Textexplain) {
+    let textareaContainerExplain = document.createElement('div');
+    textareaContainerExplain.classList.add('textarea-container');
+    textareaContainerExplain.appendChild(Textexplain);
+    const explainCharCount = document.createElement('div');
+    explainCharCount.classList.add('textarea-placeholder');
+    explainCharCount.id = "explainCharCount";
+    explainCharCount.textContent = `0/${Textexplain.maxLength} מילים`;
+    textareaContainerExplain.appendChild(explainCharCount);
+    return textareaContainerExplain;
+}
+function updateCharCount(textarea, placeholderId) {
+    const usedChars = textarea.value.length;
+    const maxChars = textarea.maxLength;
+    const placeholderElement = document.getElementById(placeholderId);
+    placeholderElement.textContent = `${usedChars}/${maxChars}`;
 }

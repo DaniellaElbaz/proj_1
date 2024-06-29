@@ -113,9 +113,8 @@ body {
 
 .sort {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-grow: 1;
 }
 
 #search {
@@ -130,7 +129,6 @@ body {
     justify-content: flex-start;
     align-items: flex-end;
     padding: 0;
-    margin-right: auto;
 }
 
 [title~="checkbox"] {
@@ -166,8 +164,6 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 9px;
-    height: 50%;
 }
 .popupOverlay {
    
@@ -181,17 +177,14 @@ body {
     background: rgba(0, 0, 0, 0.5);
 }
 .popup {
-    padding: 10px;
-    width: 50%;
-   
+    height: 70%;
+    padding: 10px 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .popup p{
     color: #000;
 }
 .popup .close {
-    top: 10px;
-    right: 10px;
     font-size: 20px;
     cursor: pointer;
     width: 55px;
@@ -200,9 +193,7 @@ body {
     color: #fff;
 }
 .popup .open {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
+
     font-size: 20px;
     cursor: pointer;
     color: #333;
@@ -212,23 +203,16 @@ body {
     color: #fff;
 }
 .addList {
-    margin-top: 16px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     flex-direction: column;
-}
-.addList input {
-
-}
-.addList p {
-    
+    text-align: right;
 }
 .addListItem{
-    margin-top: 16px;
+    height: 50%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
 }
 .popup #newInputName {
     width: 80%;
@@ -255,7 +239,6 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    margin-right: auto;
 }
 .add button {
     width: 55px;
