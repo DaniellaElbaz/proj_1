@@ -497,7 +497,7 @@ align-items: center;
 justify-content: center;
 flex-direction: column;
 position: relative;
-top: 80px;
+top: 100px;
 }
 
 .alert-icon-paragraph{
@@ -569,7 +569,8 @@ button.red-rectangle {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 125px;
+    position: relative;
+    top: 150px;
 }
 
 .p2-element-container {
@@ -759,8 +760,25 @@ background: #FFFFFF75;
     position: relative;
     z-index: 1;
     left: 54%;
-    bottom: 23px;
+    bottom: 17px;
     text-decoration: underline;
+}
+
+.history-link {
+    color: #2F7FF8;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 9.68px;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    z-index: 1;
+    text-decoration: underline;
+    white-space: nowrap;
 }
 
 #hidden-image {
@@ -779,58 +797,45 @@ background: #FFFFFF75;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    position: relative;
+    top: 90px;
+
 }
 
 .history-container {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-
-.rectangle {
     width: 360px;
     height: 130px;
     background-color: #FFFFFFB0;
     border-radius: 5px;
     position: relative;
-    left: 225px;
+
 }
+
+
+
 
 .line {
-    position: relative;
-    right: 133px;
-    bottom: 15px;
+    position: absolute; 
+    width: 100%;
     height: 3px;
-    width: 356px;
+    top: 40%; 
+    transform: translateY(-50%); 
     background-color: #FFFFFF;
     border: 1px 0px 0px 0px;
-
-
 }
 
-.history-line {
-    color: #2F7FF8;
-    font-family: 'Inter', sans-serif;
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 10px;
-    font-weight: 635;
-    line-height: 12.1px;
-    font-variation-settings: 'slnt' 0;
-    z-index: 1;
-    position: relative;
-    white-space: nowrap;
-    right: 230px;
-    bottom: 50px;
-}
 
 .text-history-table {
     display: flex;
     justify-content: space-around;
     position: relative;
-    left: 382px;
-    bottom: 30px;
+    justify-content:center;
+    right: 255px;
+    top: 55px;
     z-index: 1;
 }
 
@@ -847,11 +852,9 @@ background: #FFFFFF75;
 
 .text-description {
     display: flex;
-    justify-content: space-around;
-    position: relative;
-    right: 620px;
-    top: 24px;
-    text-align: right;
+    position: absolute;
+    top: 60px;
+    
 }
 
 .report-des {
@@ -860,24 +863,27 @@ background: #FFFFFF75;
     padding: 10px;
     font-family: 'Inter', sans-serif;
     color: #FFFFFF;
-    margin: 0 42px;
+    margin: 0 2px;
 }
 
 .text-description p:nth-of-type(1) {
     white-space: nowrap;
     margin-top: 27px;
+    position: relative;
+    right: 30px;
 }
 
 .text-description p:nth-of-type(3) {
     white-space: nowrap;
     margin-top: 27px;
     position: relative;
-    right: 10px;
+    left: 30px;
 }
 
 .text-description p:nth-of-type(2) {
     position: relative;
-    left: 12px;
+    left: 18px;
+    margin-top: 18px;
 }
 
 #up {

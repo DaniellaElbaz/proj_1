@@ -229,9 +229,6 @@ function drawThirdPart() {
     const historyContainer = document.createElement("div");
     historyContainer.className = "history-container";
 
-    const rectangle = document.createElement("div");
-    rectangle.className = "rectangle";
-
     const line = document.createElement("div");
     line.className = "line";
 
@@ -240,10 +237,8 @@ function drawThirdPart() {
     historyLink.textContent = "לכל היסטוריית האירועים";
     historyLink.href = "eventList.html";
 
-    historyContainer.appendChild(rectangle);
     historyContainer.appendChild(line);
     historyContainer.appendChild(historyLink);
-
     addTextElements();
 
     section3.appendChild(historyContainer);
@@ -274,20 +269,34 @@ function addTextElements() {
     section3.appendChild(textContainer);
 }
 
-function addDescriptionElements(eventsHistory) 
-{
+function addDescriptionElements(eventsHistory) {
     const section3 = document.getElementById("third-part");
     const description = document.createElement("div");
     description.className = "text-description";
+
     for (let i = 0; i < eventsHistory.length; i++) {
         const des = eventsHistory[i];
         const reportDes = document.createElement("p");
         reportDes.className = "report-des";
-        reportDes.textContent = des.description;
+
+        if (des.description === "הסתיים: הסתיים ללא נפגעים") {
+            const words = des.description.split(" ");
+            words.forEach(word => {
+                const span = document.createElement("span");
+                span.textContent = word;
+                span.style.display = "block";
+                reportDes.appendChild(span);
+            });
+        } else {
+            reportDes.textContent = des.description;
+        }
+
         description.appendChild(reportDes);
     }
+
     section3.appendChild(description);
 }
+
 
 
 
