@@ -1307,7 +1307,7 @@ button.red-rectangle {
 }
 
 
-.char-count {
+.word-count {
     position: absolute;
     left: 12px;
     top: 290px;
@@ -1317,6 +1317,7 @@ button.red-rectangle {
 .editable-rectangle-container{
     display: flex;
      justify-content: left;
+     width: 100%;
 
 }
 .editable-rectangle {

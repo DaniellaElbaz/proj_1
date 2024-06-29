@@ -145,33 +145,36 @@ function createEditableRectangle() {
     editableRectangle.style.direction = "rtl"; 
 
    
-    const charCount = document.createElement("div");
-    charCount.className = "char-count";
-    charCount.textContent = "0/31 תווים";
+    const wordCount = document.createElement("div");
+    wordCount.className = "word-count";
+    wordCount.textContent = "0/31 מילים";
 
     container.appendChild(editableRectangle);
-    container.appendChild(charCount);
+    container.appendChild(wordCount);
 
    
     editableRectangle.addEventListener("input", () => {
         let content = editableRectangle.textContent.trim();
-        const charLimit = 31;
+        const words = content.split(/\s+/).filter(word => word.length > 0);
+        const wordLimit = 31;
 
-        if (content.length > charLimit) {
-            content = content.substring(0, charLimit);
+        if (words.length > wordLimit) {
+            content = words.slice(0, wordLimit).join(" ");
             editableRectangle.textContent = content;
         }
 
-        charCount.textContent = `${content.length}/${charLimit} תווים`;
+        wordCount.textContent = `${words.length}/${wordLimit} מילים`;
     });
 
     
     editableRectangle.addEventListener("keydown", (event) => {
         let content = editableRectangle.textContent.trim();
-        const charLimit = 31;
+        const words = content.split(/\s+/).filter(word => word.length > 0);
+        const wordLimit = 31;
+
 
         
-        if (event.key !== 'Backspace' && event.key !== 'Delete' && content.length >= charLimit) {
+        if (event.key !== 'Backspace' && event.key !== 'Delete' && words.length >= wordLimit) {
             event.preventDefault();
         }
     });
