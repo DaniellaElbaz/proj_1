@@ -48,13 +48,13 @@ window.onload = () => {
         function popForm() {
             const form = document.createElement("form");
             const EventNameInput = document.createElement('input');
-            console.log(`שם האירוע  ${EventNameInput.value}`);
+            EventNameInput.id="newInputName";
             const EventPlace = document.createElement('input');
-            console.log(`מיקום האירוע  ${EventPlace.value}`);
+            EventPlace.id="newInputPlace";
             const EventDetails = document.createElement('input');
-            console.log(`פרטי האירוע  ${EventDetails.value}`);
+            EventDetails.id="newInputDetails";
             const type = document.createElement('select');
-            type.id = "selectType";
+            type.id = "NewSelectType";
             const options = [
                 { value: " ", text: " " },
                 { value: "תאונה", text: "תאונה" },
@@ -67,15 +67,9 @@ window.onload = () => {
                 option.text = opt.text;
                 type.appendChild(option);
             }
-                if(type.value==" "){
-
-                }
-                else{
-                    console.log(`סוג האירוע  ${type.value}`);
-                }
             const createEvent = document.createElement('button');
             createEvent.onclick = function () {
-                popForm();
+                validateForm();
             };
             const out = document.createElement('button');
             out.onclick = function () {

@@ -8,7 +8,10 @@ function initBottomReport(form) {
     form.appendChild(buttonSend);
     buttonSend.classList.add('button-send-report');
     buttonSend.onclick = function () {
-        validateForm();
+        if(validateForm())
+            {
+                alert("הדוח נשלח בהצלחה!");
+            }
     };
 }
 function validateForm() {
@@ -23,7 +26,39 @@ function validateForm() {
         alert("חייב למלא איך פעלת באירוע");
         return false;
     }
-    alert("הדוח נשלח בהצלחה!");
+    let EventNameInput = document.getElementById('newInputName').value;
+    if (EventNameInput.trim() === "") {
+        alert("חייב למלא שם אירוע");
+        return false;
+    }
+    else{
+        console.log(`שם האירוע  ${EventNameInput.value}`);
+    }
+    let EventPlace = document.getElementById('newInputPlace').value;
+    if (EventPlace.trim() === "") {
+        alert("חייב למלא מיקום");
+        return false;
+    }
+    else{
+        console.log(`מיקום האירוע  ${EventPlace.value}`);
+    }
+    let EventDetails = document.getElementById('newInputDetails').value;
+    if (EventDetails.trim() === "") {
+        alert("חייב למלא פרטי אירוע");
+        return false;
+    }
+    else{
+        console.log(`פרטי האירוע  ${EventDetails.value}`);
+    }
+    let type = document.getElementById('NewSelectType').value;
+    if (type.trim() === "") {
+        alert("חייב למלא סוג אירוע");
+        return false;
+    }
+    else{
+        console.log(`סוג האירוע  ${type.value}`);
+    }
+    return true;
 }
 function buttonBeck(){
     const userConfirmed = confirm(" הזהרה! ביציאה מהדף הדו''ח לא ישמר");
