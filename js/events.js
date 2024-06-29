@@ -125,11 +125,27 @@ window.onload = () => {
             img.src = event.event_photo;
             img.alt = "Event_Place";
             img.title = "Event_Place";
+            const imgDelete = document.createElement('img');
+            imgDelete.classList = "delete-icon";
+            imgDelete.src = "../images/delete.png";
+            imgDelete.title = "delete";
+            imgDelete.alt = "delete";
+            imgDelete.addEventListener('click', function() {
+                const userConfirmed = confirm("האם אתה בטוח שתרצה למחוק את האירוע?");
+                if (userConfirmed) {
+                    alert("הדוח נמחק בהצלחה!");
+                    window.location.href = "eventList.html";
+                }
+            });
             const eventContainer = document.createElement('div');
             eventContainer.classList.add('event-item-container');
+            const iconEventContainer = document.createElement('div');
+            iconEventContainer.classList.add('iconEventContainer');
+            iconEventContainer.appendChild(imgDelete);
             eventContainer.appendChild(img);
             eventContainer.appendChild(eventLabel);
-            return eventContainer;
+            iconEventContainer.appendChild(eventContainer);
+            return iconEventContainer;
         }
         function popForm(overList) {
             const form = document.createElement("form");
@@ -211,4 +227,3 @@ window.onload = () => {
             Textexplain.addEventListener('input', () => updateCharCount(Textexplain, "explainCharCount"));
             return inputItem;
         }
-       
