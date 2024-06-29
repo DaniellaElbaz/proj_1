@@ -72,50 +72,36 @@ const eventPicContainer = document.createElement("div");
 function drawScrollPart() {
     const downSection = document.getElementById("down-part");
     
-
-
-
     const eventDataContainer = document.createElement("div");
     eventDataContainer.className = "event-data-container";
 
-
-
-
-
-
-    const textDetailsContainer = document.createElement("div");
-    textDetailsContainer.className = "text-event-details";
-
-    const textPersonalDetails = document.createElement("div");
-    textPersonalDetails.className = "text-personal-details";
-
+    const userDetailsContainer = document.createElement("div");
+    userDetailsContainer.className = "user-details-container";
+    
     const textInfo = document.createElement("p");
     textInfo.className = "text-info";
     textInfo.textContent= "פרטים אישיים";
+    userDetailsContainer.appendChild(textInfo);
 
     const TextGeneralInfo = document.createElement("p");
     TextGeneralInfo.className = "text-general-info";
     TextGeneralInfo.textContent= "נא הזן תיאור כללי:";
-    textDetailsContainer.appendChild(TextGeneralInfo);
+    userDetailsContainer.appendChild(TextGeneralInfo);
 
-    const photoText = document.createElement("p");
-    photoText.className = "text-uniqe";
-    photoText.textContent= "תמונה לזיהוי:";
+    const rectangleText =  createEditableRectangle();  
+    
+    const displayIcons = createIconsContainer();
+    
+    const displayText = createTextContainer();
 
-    const imgText = document.createElement("p");
-    imgText.className = "text-shoot";
-    imgText.textContent= "צלם";
-
-
-    const cameraIcon = document.createElement("img");
-    cameraIcon.className = "camera-icon"
-    cameraIcon.src = "images/camera-icon.png";
-    cameraIcon.alt = "camera_icon";
+    const emptyImgTextContainer = document.createElement("div");
+    emptyImgTextContainer.className = "empty-img-text-container";
 
     const emptyImage = document.createElement("img");
     emptyImage.className = "empty-image";
     emptyImage.src = "images/empty-image.png";
     emptyImage.alt = "empty_image";
+
 
     const recContainer = document.createElement("div");
     recContainer.className = "rec-container";
@@ -128,24 +114,60 @@ function drawScrollPart() {
     greenButtonRec.className = "green-rec";
     greenButtonRec.innerHTML = "<p>שמור שינויים</p>";
 
-    downSection.appendChild(emptyImage);
-    downSection.appendChild(cameraIcon);
-    downSection.appendChild(imgText);
-    downSection.appendChild(photoText);
     downSection.appendChild(eventDataContainer);
-    downSection.appendChild(textInfo);
-    downSection.appendChild(textDetailsContainer);
-    downSection.appendChild(redButtonRec);
-    downSection.appendChild(greenButtonRec);
-
-    createEditableRectangle(textDetailsContainer);   
+    downSection.appendChild(userDetailsContainer);
+    downSection.appendChild(rectangleText);
+    downSection.appendChild(displayIcons);
+    downSection.appendChild(displayText);
+    downSection.appendChild(emptyImage);
 }
-function createEditableRectangle(parentElement) {
+
+
+function createEditableRectangle() {
     const editableRectangle = document.createElement("div");
     editableRectangle.contentEditable = true;
     editableRectangle.className = "editable-rectangle";
-    parentElement.appendChild(editableRectangle);
+    return editableRectangle;
 }
+
+function createIconsContainer() {
+    const cameraModifyIcons = document.createElement("div");
+    cameraModifyIcons.className = "camera-modify-icons-container";
+
+    const modifyImage = document.createElement("img");
+    modifyImage.className = "modify-icon";
+    modifyImage.src = "images/modify-icon.png";
+    modifyImage.alt = "modify_icon";
+    
+    const cameraIcon = document.createElement("img");
+    cameraIcon.className = "camera-icon"
+    cameraIcon.src = "images/camera-icon.png";
+    cameraIcon.alt = "camera_icon";
+    
+    cameraModifyIcons.appendChild(modifyImage);
+    cameraModifyIcons.appendChild(cameraIcon);
+    return cameraModifyIcons;
+}
+function createTextContainer() {
+
+    const textContainer = document.createElement("div");
+    textContainer.className = "text-container";
+
+const photoText = document.createElement("p");
+    photoText.className = "text-uniqe";
+    photoText.textContent= "תמונה לזיהוי:";
+
+    const imgText = document.createElement("p");
+    imgText.className = "text-shoot";
+    imgText.textContent= "צלם";
+  
+    textContainer.appendChild(photoText);
+    textContainer.appendChild(imgText);
+   
+    return textContainer;
+}
+
+
 
 function drawEventDetailsInScrollBar(data) {
     const scrollSection = document.getElementById("scroll-bar");

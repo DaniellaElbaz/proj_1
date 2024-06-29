@@ -944,8 +944,7 @@ button.red-rectangle {
 #up{
     display: block;
     position: relative;
-    left: 5%;
-    width: 95%;
+    width: 100%;
     margin-top: 70px;
 }
 
@@ -961,6 +960,7 @@ button.red-rectangle {
     display: flex;
     align-items:baseline;
     justify-content: center;
+    margin-bottom: 20px;
 }
 .back-to-eventMap p {
     font-size: 14px; 
@@ -992,25 +992,12 @@ button.red-rectangle {
     width: 178px;
     height: 189px;
 }
-.event-data-container{
-    background:linear-gradient(135deg, #E6E6E6, #B3B3B3);
-    display: flex;
-    width: 100%;
-    height: 180px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    bottom: 25%;
-    border-radius: 10px;
-    
-}
 #down-part {
     margin-top: 30px;
-    max-height: 1000px; 
+    max-height: 400px; 
      overflow-y: scroll; 
     overflow-x: hidden; 
-    height: 450px;
+    height: 900px;
     position: relative; 
     box-sizing: border-box; 
     direction: rtl;
@@ -1024,39 +1011,72 @@ button.red-rectangle {
     border-radius: 10px; 
     background-image: linear-gradient(#808080, #ffffff); 
 }
+.event-data-container{
+    width: 100%;
+   height: 140px;
+   background: linear-gradient(135deg, #E6E6E6, #B3B3B3);
+   display: flex;
+   
+}
+
+.user-details-container{
+    display: block;
+}
+
 .text-info{
 color: #F8F9FA !important;
 font-size: 18px;
 font-family: 'Mouqaps', 'Alef', sans-serif;
-position: relative;
 white-space: nowrap;
-bottom: 60px;
-left: 7%;
-
+display: flex;
+margin-top: 15px;
+justify-content: center;
 }
 .text-general-info{
     color: #F8F9FA;
     font-size: 14px;
     font-family: 'Mouqaps', 'Alef', sans-serif;
     white-space: nowrap;
+    justify-content: right;
     position: relative;
-    left: 190%;
+    right: 60px;
 }
 .editable-rectangle{
     background-color: #F8F9FA;
+    width: 80%;
+    height: 50px;
     position: relative;
-    height: 60px;
-    left: 200%;
-    top: 30x;
-    width: 280%;
+    right: 60px ;
     border-radius: 10px;
+}
+.camera-modify-icons-container{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    position: relative;
+    bottom: 16px;
+    margin-right: 15px;
+
+}
+.modify-icon{
+    height: 25px;
+    width: 25px;
 }
 .camera-icon{
     height: 25px;
     width: 25px;
+}
+
+.text-container{
+    display: block;
     position: relative;
-    top: 28%;
-    left: 2%;
+    right: 60px;
+    bottom: 70px;
+}
+.text-uniqe, .text-shoot {
+    margin: 0; 
+    padding: 0;
+    margin-bottom: 10px;
 }
 .text-uniqe{
     color: #F8F9FA !important;
@@ -1064,8 +1084,6 @@ left: 7%;
     font-family: 'Mouqaps', 'Alef', sans-serif;
     position: relative;
     white-space: nowrap;
-    top: 25%;
-    left: 8%;
     }
     .text-shoot{
         color: #F8F9FA !important;
@@ -1078,12 +1096,11 @@ left: 7%;
         right: 21
         }
             .empty-image {
-                width: 100%; 
-                max-width: 200px; 
-                height: 20%; 
                 position: absolute;
-                top: 80%;
-                left: 20%;
+                width: 25%;  
+                height: 20%; 
+                left: 130px;
+                
             }
             
         
