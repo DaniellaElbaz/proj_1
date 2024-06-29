@@ -145,3 +145,29 @@ function initMembersBox(inputDetails) {
     inputDetails.appendChild(eventRegrets);
     return inputDetails;
 }
+function buttonSend(){
+    const createEvent = document.createElement('button');
+    createEvent.classList.add('open');
+    createEvent.onclick = function () {
+        if(validateForm()){
+            const userConfirmed = confirm(" האם אתה בטוח שתרצה לדווח?");
+            if (userConfirmed) {
+                alert("הדוח נשלח בהצלחה!");
+                window.location.href = "eventList.html";
+            }
+        }
+    };
+    return createEvent;
+}
+function buttonExit(){
+    const out = document.createElement('button');
+    out.classList.add('close');
+    out.onclick = function () {
+        const userConfirmed = confirm(" האם אתה בטוח שתרצה לצאת מהדיווח?");
+            if (userConfirmed) {
+               
+                window.location.href = "eventList.html";
+            }
+    };
+   return out;
+}

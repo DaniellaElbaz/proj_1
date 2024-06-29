@@ -162,15 +162,17 @@ body {
     text-align: right;
 }
 .popupOverlay form{
+    background-color: #ddd;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     flex-direction: column;
     margin: 9px;
-    margin-top: 0;
-    margin-bottom: 0;
+    height: 50%;
 }
 .popupOverlay {
-    display: none;
+   
+    display: flex;
+    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -179,18 +181,15 @@ body {
     background: rgba(0, 0, 0, 0.5);
 }
 .popup {
-    font-family: Arial, sans-serif;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    padding: 60px;
-    border-radius: 8px;
+    padding: 10px;
+    width: 50%;
+   
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+.popup p{
+    color: #000;
+}
 .popup .close {
-    position: absolute;
     top: 10px;
     right: 10px;
     font-size: 20px;
@@ -211,6 +210,25 @@ body {
     height: 25px;
     background-color: #4caf50;
     color: #fff;
+}
+.addList {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.addList input {
+
+}
+.addList p {
+    
+}
+.addListItem{
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .popup #newInputName {
     width: 80%;

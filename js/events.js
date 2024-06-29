@@ -45,60 +45,50 @@ window.onload = () => {
             addButton.onclick = function () {
                 const overList = document.createElement("div");
                 overList.classList.add('popupOverlay');
-                overList.style.display='block';
                 overList.appendChild(popForm(overList));
                 document.body.appendChild(overList);
             };
-            console.log('pvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv');
             return addButton;
         }
         function popForm(overList) {
             const form = document.createElement("form");
             form.classList.add('popup');
+            const addList = document.createElement("div");
+            addList.classList.add('addList');
+            const addListItem = document.createElement("div");
+            addListItem.classList.add('addListItem');
+            const eventD = document.createElement('p');
             const EventNameInput = document.createElement('input');
             EventNameInput.id="newInputName";
-            form.appendChild(EventNameInput);
+            eventD.innerHTML="שם אירוע:";
+            addListItem.appendChild(EventNameInput);
+            addListItem.appendChild(eventD);
+            addList.appendChild(addListItem);
             console.log(form);
             const EventPlace = document.createElement('input');
             EventPlace.id="newInputPlace";
-            form.appendChild(EventPlace);
+            eventD.innerHTML="שם המיקום:";
+            addListItem.appendChild(EventPlace);
+            addListItem.appendChild(eventD);
+            addList.appendChild(addListItem);
             console.log(form);
             const EventDetails = document.createElement('input');
             EventDetails.id="newInputDetails";
-            form.appendChild(EventDetails);
+            eventD.innerHTML="פרטים נוספים:";
+            addListItem.appendChild(EventDetails);
+            addListItem.appendChild(eventD);
             const type = document.createElement('select');
-            form.appendChild(initSelectType(type));
+            type.id = "NewSelectType";
+            eventD.innerHTML="סוג האירוע:";
+            addListItem.appendChild(initSelectType(type));
+            addListItem.appendChild(eventD);
+            addList.appendChild(addListItem);
+            form.appendChild(addList);
             buttonAlert(form,overList);
             console.log(form);
             return form;
         }
-        function buttonAlert(form,overList){
-            const createEvent = document.createElement('button');
-            createEvent.classList.add('open');
-            createEvent.onclick = function () {
-                if(validateForm()){
-                    const userConfirmed = confirm(" האם אתה בטוח שתרצה לדווח?");
-                    if (userConfirmed) {
-                        alert("הדוח נשלח בהצלחה!");
-                        window.location.href = "eventList.html";
-                    }
-                }
-            };
-            form.appendChild(createEvent);
-            console.log(form);
-            const out = document.createElement('button');
-            out.classList.add('close');
-            out.onclick = function () {
-                const userConfirmed = confirm(" האם אתה בטוח שתרצה לצאת מהדיווח?");
-                    if (userConfirmed) {
-                        overList.style.display='non';
-                        window.location.href = "eventList.html";
-                    }
-            };
-            form.appendChild(out);
-        }
         function initSelectType(type) {
-            type.id = "NewSelectType";
             const options = [
                 { value: " ", text: " " },
                 { value: "תאונה", text: "תאונה" },
@@ -182,16 +172,76 @@ window.onload = () => {
             });
         }
 
-        function initBottomRectangles(event) {
-            const eventLabel = document.createElement('p');
-            eventLabel.innerHTML = `:זירת האירוע`;
-            const img = document.createElement('img');
-            img.src = event.event_photo;
-            img.alt = "Event_Place";
-            img.title = "Event_Place";
-            const eventContainer = document.createElement('div');
-            eventContainer.classList.add('event-item-container');
-            eventContainer.appendChild(img);
-            eventContainer.appendChild(eventLabel);
-            return eventContainer;
+        function initReport(overList) {
+            const form = document.createElement("form");
+            form.classList.add('popup');
+            const addList = document.createElement("div");
+            addList.classList.add('addList');
+            const addListItem = document.createElement("div");
+            addListItem.classList.add('addListItem');
+            addListItem.appendChild(inputTitleAddEvent(form));
+            addList.appendChild(addListItem);
+            addListItem.appendChild(inputEventTextBox());
+            addList.appendChild(addListItem);
+            addListItem.appendChild(initSelectBox)
+            addList.appendChild(addListItem);
+            addListItem.appendChild(buttonExit());
+            addList.appendChild(addListItem);
+            overList.style.display='non';
+        }
+        function initSelectBox(){
+            const p = document.createElement('p');
+            p.classList.add('inline');
+            const type = document.createElement('select');
+            type.id = "selectType";
+            const options = [
+                { value: " ", text: " " },
+                { value: "תאונה", text: "תאונה" },
+                { value:  "טרור", text: "טרור"},
+                { value:  "שריפה", text:  "שריפה" }
+            ];
+            for (const opt of options) {
+                const option = document.createElement('option');
+                option.value = opt.value;
+                option.text = opt.text;
+                type.appendChild(option);
+            }
+            type.appendChild(options);
+            p.appendChild(type);
+            p.appendChild(document.createTextNode(":סוג האירוע"));
+            return p;
+        }
+        function inputTitleAddEvent() {
+            const addListItem = document.createElement("div");
+            addListItem.classList.add('addListItem');
+            addListItem.appendChild(buttonSend());
+            const h1 = document.createElement('h1');
+            h1.innerText = " מילוי דו''ח אירוע " ;
+            addListItem.appendChild(h1);
+            return addListItem;
+        }
+        function inputEventTextBox() {
+            let inputItem = document.createElement('div');
+            inputItem.classList.add('report-input');
+            const when = document.createElement('p');
+            when.innerHTML = `?מתי ואיך שמעת שהאירוע התרחש<span style ="color: #DC3545;">*</span>`;
+            inputItem.appendChild(when);
+            const Textwhen = document.createElement('textarea');
+            Textwhen.id = "textareaWhen";
+            Textwhen.name="whenText";
+            Textwhen.maxLength = 90;
+            form.appendChild(Textwhen);
+            inputItem.appendChild(whenCount(Textwhen));
+            const explain = document.createElement('p');
+            explain.innerHTML = `הסבר/י על האירוע<span style ="color: #DC3545;">*</span>`;
+            inputItem.appendChild(explain);
+            const Textexplain = document.createElement('textarea');
+            Textexplain.id = "textareaExplain";
+            Textexplain.name="explainText";
+            Textexplain.maxLength = 300;
+            form.appendChild(Textexplain);
+            inputItem.appendChild(explainCount(Textexplain));
+            Textwhen.addEventListener('input', () => updateCharCount(Textwhen, "whenCharCount"));
+            Textexplain.addEventListener('input', () => updateCharCount(Textexplain, "explainCharCount"));
+            return inputItem;
         }
