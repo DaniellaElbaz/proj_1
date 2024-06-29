@@ -4,8 +4,8 @@ window.onload = () => {
     .then(response => response.json())
     .then(data => {
         init_member_details(data);
-        if (!window.eventDetailsDrawn) { // וודא שלא נקרא יותר מפעם אחת
-            drawEventDetailsInScrollBar(data); // קרא פעם אחת בלבד
+        if (!window.eventDetailsDrawn) { 
+            drawEventDetailsInScrollBar(data);
             window.eventDetailsDrawn = true;
         }
     });
@@ -74,10 +74,16 @@ function drawScrollPart() {
     
     const eventDataContainer = document.createElement("div");
     eventDataContainer.className = "event-data-container";
-
+    const eventIconsGroup = createIconsGroup();
+    const textGroup = createTextGroup();
     const userDetailsContainer = document.createElement("div");
     userDetailsContainer.className = "user-details-container";
     
+    const textEventInfo = document.createElement("p");
+    textEventInfo.className = "text-event-info";
+    textEventInfo.textContent= "פרטי אירוע";
+    userDetailsContainer.appendChild(textEventInfo);
+
     const textInfo = document.createElement("p");
     textInfo.className = "text-info";
     textInfo.textContent= "פרטים אישיים";
@@ -107,20 +113,25 @@ function drawScrollPart() {
     const recContainer = document.createElement("div");
     recContainer.className = "rec-container";
 
-    const redButtonRec = document.createElement("button");
-    redButtonRec.className = "red-rec";
-    redButtonRec.innerHTML = "<p>בטל שינויים</p>";
-
     const greenButtonRec = document.createElement("button");
     greenButtonRec.className = "green-rec";
     greenButtonRec.innerHTML = "<p>שמור שינויים</p>";
+recContainer.appendChild(greenButtonRec);
+
+const redButtonRec = document.createElement("button");
+redButtonRec.className = "red-rec";
+redButtonRec.innerHTML = "<p>בטל שינויים</p>";
+recContainer.appendChild(redButtonRec);
 
     downSection.appendChild(eventDataContainer);
+    downSection.appendChild(eventIconsGroup);
+    downSection.appendChild(textGroup);
     downSection.appendChild(userDetailsContainer);
     downSection.appendChild(rectangleText);
     downSection.appendChild(displayIcons);
     downSection.appendChild(displayText);
     downSection.appendChild(emptyImgContainer);
+    downSection.appendChild(recContainer);
 }
 
 function createEditableRectangle() {
@@ -170,7 +181,7 @@ const photoText = document.createElement("p");
 
 
 function drawEventDetailsInScrollBar(data) {
-    const scrollSection = document.getElementById("scroll-bar");
+    const scrollSection = document.getElementById("down-part");
     
     const eventDataContainer = document.createElement("div");
     eventDataContainer.className = "event-text-container";
@@ -188,16 +199,16 @@ function drawEventDetailsInScrollBar(data) {
                 eventElement.className = 'event';
 
                 const eventPlace = document.createElement('p');
-                eventPlace.textContent = `מקום האירוע: ${event.event_place}`;
+                eventPlace.textContent = event.event_place;
                 eventElement.appendChild(eventPlace);
 
                 const eventName = document.createElement('p');
-                eventName.textContent = `פרטים כללים: ${event.event_name}`;
+                eventName.textContent = event.event_name;
                 eventElement.appendChild(eventName);
 
 
                 const eventDistance = document.createElement('p');
-                eventDistance.textContent = `מרחק : ${event.distance_event}`;
+                eventDistance.textContent = event.distance_event;
                 eventElement.appendChild(eventDistance);
 
                 eventDataContainer.appendChild(eventElement);
@@ -208,4 +219,55 @@ function drawEventDetailsInScrollBar(data) {
     }
 
     scrollSection.appendChild(eventDataContainer);
+}
+
+function createIconsGroup() {
+    
+    const eventIconsGroup = document.createElement("div");
+    eventIconsGroup.className = "events-icons-group";
+
+    const locationIcon = document.createElement("img");
+    locationIcon.className = "location-icon";
+    locationIcon.src = "images/location-icon.png";
+    locationIcon.alt = "location_icon";
+    eventIconsGroup.appendChild(locationIcon);
+
+    const infoIcon = document.createElement("img");
+    infoIcon.className = "info-icon"
+    infoIcon.src = "images/info-icon.png";
+    infoIcon.alt = "info_icon";
+    eventIconsGroup.appendChild(infoIcon);
+
+    const distanceIcon = document.createElement("img");
+    distanceIcon.className = "distance-icon"
+    distanceIcon.src = "images/distance-icon.png";
+    distanceIcon.alt = "distance_icon";
+    eventIconsGroup.appendChild(distanceIcon);
+
+    
+   
+    return eventIconsGroup;
+}
+
+function createTextGroup() {
+
+    const textGroup = document.createElement("div");
+    textGroup.className = "text-group";
+
+const locationText = document.createElement("p");
+    locationText.className = "text-location";
+    locationText.textContent= "מקום האירוע-";
+    textGroup.appendChild(locationText);
+
+    const detailsGeneralText = document.createElement("p");
+    detailsGeneralText.className = "text-general";
+    detailsGeneralText.textContent= "פרטים כללים-";
+    textGroup.appendChild(detailsGeneralText);
+  
+    const distanceText = document.createElement("p");
+    distanceText.className = "distance-text";
+    distanceText.textContent= "מרחק-";
+    textGroup.appendChild(distanceText);
+   
+    return textGroup;
 }

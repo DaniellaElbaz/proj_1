@@ -232,13 +232,14 @@ function drawThirdPart() {
     const line = document.createElement("div");
     line.className = "line";
 
-    const historyText = document.createElement("p");
-    historyText.className = "history-line";
-    historyText.textContent = "לכל היסטוריית האירועים";
+      const historyLink = document.createElement("a");
+    historyLink.className = "history-link";
+    historyLink.textContent = "לכל היסטוריית האירועים";
+    historyLink.href = "eventList.html";
 
     historyContainer.appendChild(rectangle);
     historyContainer.appendChild(line);
-    historyContainer.appendChild(historyText);
+    historyContainer.appendChild(historyLink);
 
     addTextElements();
 
