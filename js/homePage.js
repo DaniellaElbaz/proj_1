@@ -38,8 +38,8 @@ function init_member_details(data){
 function drawFirstPart() {
     const section1 = document.getElementById("first-part");
 
-    const iconContainer = document.createElement("div");
-    iconContainer.className = "icon-container";
+    const alertParagraphIcon = document.createElement("div");
+    alertParagraphIcon.className = "alert-icon-paragraph";
 
     const icon1 = document.createElement("i");
     icon1.className = "fas fa-exclamation-triangle";
@@ -50,9 +50,9 @@ function drawFirstPart() {
     const icon2 = document.createElement("i");
     icon2.className = "fas fa-exclamation-triangle";
 
-    iconContainer.appendChild(icon1);
-    iconContainer.appendChild(noticeText);
-    iconContainer.appendChild(icon2);
+    alertParagraphIcon.appendChild(icon1);
+   alertParagraphIcon.appendChild(noticeText);
+    alertParagraphIcon.appendChild(icon2);
 
     const eventPhoto = document.createElement("div");
     eventPhoto.className = "event-photo";
@@ -77,7 +77,7 @@ function drawFirstPart() {
     rectangleContainer.appendChild(redButton);
     rectangleContainer.appendChild(greenButton);
 
-    section1.appendChild(iconContainer);
+    section1.appendChild(alertParagraphIcon);
     section1.appendChild(eventPhoto);
     section1.appendChild(rectangleContainer);
 }
@@ -86,13 +86,17 @@ function drawFirstPart() {
 function drawSecondPart(reports) {
     const section2 = document.getElementById("second-part");
 
+    const p2ElementContainer = document.createElement("div");
+    p2ElementContainer.className = "p2-element-container";
 
     const realTimeText = createRealTimeText();
-    section2.appendChild(realTimeText);
+    p2ElementContainer.appendChild(realTimeText);
+section2.appendChild(p2ElementContainer);
 
     const verticalLine = document.createElement("div");
     verticalLine.className = "vertical-line";
-    section2.appendChild(verticalLine);
+    
+    p2ElementContainer.appendChild(verticalLine);
 
 
     const startTime = new Date();
@@ -101,14 +105,13 @@ function drawSecondPart(reports) {
 
     for (let i = 0; i < 3; i++) {
         const reportContainer = createReportContainer(startTime, i);
-        section2.appendChild(reportContainer);
+        p2ElementContainer.appendChild(reportContainer);
     }
 
 
     const lastReportContainer = createLastReportContainer(reports);
-    section2.appendChild(lastReportContainer);
+    p2ElementContainer.appendChild(lastReportContainer);
 }
-
 
 function createRealTimeText() {
     const realTimeText = document.createElement("div");
@@ -226,9 +229,6 @@ function drawThirdPart() {
     const historyContainer = document.createElement("div");
     historyContainer.className = "history-container";
 
-    const rectangle = document.createElement("div");
-    rectangle.className = "rectangle";
-
     const line = document.createElement("div");
     line.className = "line";
 
@@ -237,10 +237,8 @@ function drawThirdPart() {
     historyLink.textContent = "לכל היסטוריית האירועים";
     historyLink.href = "eventList.html";
 
-    historyContainer.appendChild(rectangle);
     historyContainer.appendChild(line);
     historyContainer.appendChild(historyLink);
-
     addTextElements();
 
     section3.appendChild(historyContainer);
@@ -271,20 +269,34 @@ function addTextElements() {
     section3.appendChild(textContainer);
 }
 
-function addDescriptionElements(eventsHistory) 
-{
+function addDescriptionElements(eventsHistory) {
     const section3 = document.getElementById("third-part");
     const description = document.createElement("div");
     description.className = "text-description";
+
     for (let i = 0; i < eventsHistory.length; i++) {
         const des = eventsHistory[i];
         const reportDes = document.createElement("p");
         reportDes.className = "report-des";
-        reportDes.textContent = des.description;
+
+        if (des.description === "הסתיים: הסתיים ללא נפגעים") {
+            const words = des.description.split(" ");
+            words.forEach(word => {
+                const span = document.createElement("span");
+                span.textContent = word;
+                span.style.display = "block";
+                reportDes.appendChild(span);
+            });
+        } else {
+            reportDes.textContent = des.description;
+        }
+
         description.appendChild(reportDes);
     }
+
     section3.appendChild(description);
 }
+
 
 
 

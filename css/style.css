@@ -627,18 +627,26 @@ textarea {
 }
 
 /*********************************************************************************************/
-.icon-container {
+
+#first-part{
+
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+position: relative;
+top: 50px;
+}
+
+.alert-icon-paragraph{
     display: flex;
     font-size: 16px;
     color: #FFC107;
     white-space: nowrap;
-    margin-left: 81px;
-    margin-right: 80px;
-    margin-top: 71px;
-
+    position: relative;
 }
 
-.icon-container p {
+.alert-icon-paragraph p {
     margin: 0;
     margin-left: 10px;
     margin-right: 10px;
@@ -646,45 +654,39 @@ textarea {
 
 .event-photo {
     display: flex;
-
 }
 
 .event-photo img {
     width: 146px;
     height: 120px;
-    margin-left: 125px;
 }
 
 .rectangle-container {
     display: flex;
-    margin-left: 58px;
-    gap: 20px;
+    position: relative;
+    gap: 40px;
 }
 
 button.green-rectangle {
     width: 110px;
     height: 37px;
-    margin-top: 5px;
     border-radius: 5px;
     background: #58D256;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 27px;
     position: relative;
 }
 
 button.red-rectangle {
     width: 110px;
     height: 37px;
-    margin-top: 5px;
     border-radius: 5px;
     background: #ED173D;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    left: 1%;
 }
 
 .rectangle-container p {
@@ -700,189 +702,54 @@ button.red-rectangle {
     margin: 0;
 }
 
-@media only screen and (min-width: 350px) and (max-width: 387px) {
-    #first-part {
-        position: relative;
-        right: 22px;
-    }
-
-    #second-part {
-        position: relative;
-        right: 32px;
-    }
-}
-
-@media only screen and (min-width: 389px) and (max-width: 400px) {
-    #first-part {
-        position: relative;
-        right: 22px;
-        bottom: 25px;
-    }
-
-    #second-part {
-        position: relative;
-        right: 21px;
-        bottom: 30px;
-    }
-
-    #third-part {
-        position: relative;
-        right: 3px;
-        bottom: 39px;
-    }
-
-}
-
-@media only screen and (min-width: 460px) and (max-width: 800px) {
-    #first-part {
-        position: relative;
-        left: 155px;
-        top: 30px;
-    }
-
-    #second-part {
-        position: relative;
-        top: 50px;
-        left: 155px;
-    }
-
-    #third-part {
-        position: relative;
-        right: 17px;
-        top: 70px;
-    }
-}
-
-@media only screen and (min-width: 801px) and (max-width: 1000px) {
-    #first-part {
-        position: relative;
-        left: 155px;
-        top: 30px;
-    }
-
-    #second-part {
-        position: relative;
-        top: 50px;
-        left: 155px;
-    }
-
-    #third-part {
-        position: relative;
-        right: 29px;
-        top: 70px;
-    }
-}
-
-@media only screen and (min-width: 1000px) and (max-width: 1025px) {
-    #first-part {
-        position: relative;
-        left: 250px;
-        top: 30px;
-    }
-
-    #second-part {
-        position: relative;
-        top: 50px;
-        left: 250px;
-    }
-
-    #third-part {
-        position: relative;
-        right: 34px;
-        top: 70px;
-    }
-}
-
-@media only screen and (min-width: 1025px) and (max-width:1900px) {
-    #first-part {
-        position: relative;
-        left: 400px;
-        top: 5px;
-    }
-
-    #second-part {
-        position: relative;
-        top: 20px;
-        left: 390px;
-    }
-
-    #third-part {
-        position: relative;
-        right: 30px;
-        top: 4px;
-    }
-}
-
-@media only screen and (min-width: 1900px) and (max-width:2500px) {
-    #first-part {
-        position: relative;
-        left: 700px;
-        top: 5px;
-    }
-
-    #second-part {
-        position: relative;
-        top: 20px;
-        left: 700px;
-    }
-
-    #third-part {
-        position: relative;
-        left: 8px;
-        top: 4px;
-    }
-
-    .report-des {
-        font-size: 13px;
-        margin-bottom: 10px;
-        padding: 10px;
-        font-family: "Inter";
-        color: #FFFFFF;
-        margin: 0 2px;
-    }
-}
-
-
 #second-part {
-    padding: 20px;
-    background: #FFFFFF75;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     position: relative;
-    margin-top: 50px;
-    margin-left: 12px;
+    top: 85px;
+}
+
+.p2-element-container {
+background: #FFFFFF75;
     border-radius: 8px;
     height: 290px;
     width: 360px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 60px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .report-time {
     font-size: 10px;
     position: relative;
-    margin-right: 10px;
     color: black;
     font-weight: bold;
     font-family: "Inter";
     line-height: 1;
-    left: 100%;
+    left: 50px;
 }
 
 .real-time-text {
     position: relative;
-    bottom: 13%;
-    left: 63%;
     font-size: 13px;
     color: #000000;
-    font-family: Inter;
+    font-family: 'Inter';
     font-weight: 635;
     line-height: 15.73px;
-    margin-left: 50px;
+    display: flex;
+    justify-content: right;
+    left: 20px;
+    
 }
 
 .report-container {
     position: relative;
     padding: 10px;
-    margin-left: 11%;
+    margin-left: 4%;
     margin-top: 1%;
     margin-bottom: 6%;
     background: #FFFFFFB8;
@@ -892,8 +759,6 @@ button.red-rectangle {
     height: 45px;
     display: flex;
     align-items: center;
-    bottom: 13%;
-    right: 10%;
 }
 
 
@@ -945,9 +810,8 @@ button.red-rectangle {
     width: 18px;
     height: 1px;
     background-color: black;
-    position: absolute;
-    top: -10%;
-    left: 60%;
+    display: flex;
+    justify-content: left;
     transform: rotate(35deg);
 
 
@@ -971,10 +835,10 @@ button.red-rectangle {
 
 .alert-icon {
     position: relative;
-    right: 100%;
     width: 24px;
     height: 24px;
-    right: 131%;
+    display: flex;
+    right: 100%;
 }
 
 .report-text {
@@ -1006,9 +870,7 @@ button.red-rectangle {
     white-space: nowrap;
     position: relative;
     font-variation-settings: 'slnt' 0;
-    color: #2F7FF8;
-    left: 45%;
-    bottom: 185%;
+    color: #2F7FF8;;
     text-decoration: underline;
     font-weight: bold;
 }
@@ -1017,15 +879,11 @@ button.red-rectangle {
     position: relative;
     width: 58px;
     height: 40px;
-    bottom: 265%;
-    right: 2%;
-
-
 }
 
 #text-with-image {
     position: relative;
-    top: 74%;
+    top: 221px;
 }
 
 #text-with-image button {
@@ -1040,8 +898,25 @@ button.red-rectangle {
     position: relative;
     z-index: 1;
     left: 54%;
-    bottom: 23px;
+    bottom: 17px;
     text-decoration: underline;
+}
+
+.history-link {
+    color: #2F7FF8;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 9.68px;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    z-index: 1;
+    text-decoration: underline;
+    white-space: nowrap;
 }
 
 #hidden-image {
@@ -1056,61 +931,47 @@ button.red-rectangle {
 }
 
 #third-part {
+    margin-top: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    position: relative;
 }
 
 .history-container {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-
-.rectangle {
     width: 360px;
     height: 130px;
     background-color: #FFFFFFB0;
     border-radius: 5px;
     position: relative;
-    left: 225px;
+
 }
+
+
+
 
 .line {
-    position: relative;
-    right: 133px;
-    bottom: 15px;
+    position: absolute; 
+    width: 100%;
     height: 3px;
-    width: 356px;
+    top: 40%; 
+    transform: translateY(-50%); 
     background-color: #FFFFFF;
     border: 1px 0px 0px 0px;
-
-
 }
 
-.history-line {
-    color: #2F7FF8;
-    font-family: 'Inter', sans-serif;
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 10px;
-    font-weight: 635;
-    line-height: 12.1px;
-    font-variation-settings: 'slnt' 0;
-    z-index: 1;
-    position: relative;
-    white-space: nowrap;
-    right: 230px;
-    bottom: 50px;
-}
 
 .text-history-table {
     display: flex;
     justify-content: space-around;
     position: relative;
-    left: 382px;
-    bottom: 30px;
+    justify-content:center;
+    right: 255px;
+    top: 55px;
     z-index: 1;
 }
 
@@ -1119,7 +980,7 @@ button.red-rectangle {
     white-space: nowrap;
     margin: 0 50px;
     position: relative;
-    left: 250px;
+    left: 255px;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     color: #FFFFFF;
@@ -1127,11 +988,9 @@ button.red-rectangle {
 
 .text-description {
     display: flex;
-    justify-content: space-around;
-    position: relative;
-    right: 620px;
-    top: 24px;
-    text-align: right;
+    position: absolute;
+    top: 60px;
+    
 }
 
 .report-des {
@@ -1140,24 +999,27 @@ button.red-rectangle {
     padding: 10px;
     font-family: 'Inter', sans-serif;
     color: #FFFFFF;
-    margin: 0 42px;
+    margin: 0 2px;
 }
 
 .text-description p:nth-of-type(1) {
     white-space: nowrap;
     margin-top: 27px;
+    position: relative;
+    right: 69px;
 }
 
 .text-description p:nth-of-type(3) {
     white-space: nowrap;
     margin-top: 27px;
     position: relative;
-    right: 10px;
+    left: 78px;
 }
 
 .text-description p:nth-of-type(2) {
     position: relative;
-    left: 12px;
+    left: 25px;
+    margin-top: 8px;
 }
 
 #up {
@@ -1445,7 +1307,7 @@ button.red-rectangle {
 }
 
 
-.char-count {
+.word-count {
     position: absolute;
     left: 12px;
     top: 290px;
@@ -1455,6 +1317,7 @@ button.red-rectangle {
 .editable-rectangle-container{
     display: flex;
      justify-content: left;
+     width: 100%;
 
 }
 .editable-rectangle {
@@ -1465,4 +1328,42 @@ button.red-rectangle {
     bottom: 160px;
     left: 10px;
     border-radius: 10px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    height: 12%;
+    display: flex;
+    justify-content: center;
+    z-index: 1001; 
+}
+
+.modal {
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    display: block;
+    position: relative;
+    left: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 80%; 
+    width: 300px; 
+}
+
+.modal button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal button:hover {
+    background-color: #45a049;
 }

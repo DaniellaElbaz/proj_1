@@ -116,6 +116,9 @@ function drawScrollPart() {
     const greenButtonRec = document.createElement("button");
     greenButtonRec.className = "green-rec";
     greenButtonRec.innerHTML = "<p>שמור שינויים</p>";
+    greenButtonRec.addEventListener("click", () => {
+        showModal("השינויים נשמרו בהצלחה");
+    });
 recContainer.appendChild(greenButtonRec);
 
 const redButtonRec = document.createElement("button");
@@ -132,6 +135,8 @@ recContainer.appendChild(redButtonRec);
     downSection.appendChild(displayText);
     downSection.appendChild(emptyImgContainer);
     downSection.appendChild(recContainer);
+
+    
     
 }
 
@@ -145,47 +150,42 @@ function createEditableRectangle() {
     editableRectangle.style.direction = "rtl"; 
 
    
-    const charCount = document.createElement("div");
-    charCount.className = "char-count";
-    charCount.textContent = "0/31 תווים";
+    const wordCount = document.createElement("div");
+    wordCount.className = "word-count";
+    wordCount.textContent = "0/31 מילים";
 
     container.appendChild(editableRectangle);
-    container.appendChild(charCount);
+    container.appendChild(wordCount);
 
    
     editableRectangle.addEventListener("input", () => {
         let content = editableRectangle.textContent.trim();
-        const charLimit = 31;
+        const words = content.split(/\s+/).filter(word => word.length > 0);
+        const wordLimit = 31;
 
-        if (content.length > charLimit) {
-            content = content.substring(0, charLimit);
+        if (words.length > wordLimit) {
+            content = words.slice(0, wordLimit).join(" ");
             editableRectangle.textContent = content;
         }
 
-        charCount.textContent = `${content.length}/${charLimit} תווים`;
+        wordCount.textContent = `${words.length}/${wordLimit} מילים`;
     });
 
     
     editableRectangle.addEventListener("keydown", (event) => {
         let content = editableRectangle.textContent.trim();
-        const charLimit = 31;
+        const words = content.split(/\s+/).filter(word => word.length > 0);
+        const wordLimit = 31;
+
 
         
-        if (event.key !== 'Backspace' && event.key !== 'Delete' && content.length >= charLimit) {
+        if (event.key !== 'Backspace' && event.key !== 'Delete' && words.length >= wordLimit) {
             event.preventDefault();
         }
     });
 
     return container;
 }
-
-
-
-
-
-
-
-
 
 function createIconsContainer() {
     const cameraModifyIcons = document.createElement("div");
@@ -316,4 +316,27 @@ const locationText = document.createElement("p");
     textGroup.appendChild(distanceText);
    
     return textGroup;
+}
+
+function showModal(message) {
+    
+    const modalOverlay = document.createElement("div");
+    modalOverlay.className = "modal-overlay";
+
+    const modal = document.createElement("div");
+    modal.className = "modal";
+
+    const modalMessage = document.createElement("p");
+    modalMessage.textContent = message;
+    modal.appendChild(modalMessage);
+
+    const closeButton = document.createElement("button");
+    closeButton.textContent = "סגור";
+    closeButton.addEventListener("click", () => {
+        document.body.removeChild(modalOverlay);
+    });
+    modal.appendChild(closeButton);
+
+    modalOverlay.appendChild(modal);
+    document.body.appendChild(modalOverlay);
 }
