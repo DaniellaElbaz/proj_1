@@ -16,6 +16,7 @@ div {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    overflow-y: auto;
     background: linear-gradient(to bottom right, #000, #BB1717);
 }
 
@@ -30,6 +31,7 @@ body {
 #wrapper {
     margin: 23px 23px;
     min-height: 100vh;
+    overflow: hidden;
 }
 
 #logo {
@@ -1211,7 +1213,7 @@ textarea {
 }
 
 .my-text-info {
-    color: #F8F9FA !important;
+    color: #F8F9FA;
     font-size: 20px;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -1281,7 +1283,7 @@ textarea {
 }
 
 .text-explore {
-    color: #F8F9FA !important;
+    color: #F8F9FA ;
     font-size: 23px;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -1294,7 +1296,7 @@ textarea {
 
 
 .text-uniqe {
-    color: #F8F9FA !important;
+    color: #F8F9FA ;
     font-size: 20px;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -1305,7 +1307,7 @@ textarea {
 }
 
 .text-shoot {
-    color: #F8F9FA !important;
+    color: #F8F9FA;
     font-size: 23px;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -1337,7 +1339,7 @@ textarea {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    bottom: 330px;
+    bottom: 350px;
 }
 
 .green-rec {
