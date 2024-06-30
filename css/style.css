@@ -712,7 +712,9 @@ textarea {
 }
 
 .rectangle-container p {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
@@ -750,7 +752,9 @@ textarea {
     position: relative;
     color: black;
     font-weight: bold;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     line-height: 1;
     left: 55px;
 }
@@ -759,7 +763,9 @@ textarea {
     position: relative;
     font-size: 13px;
     color: #000000;
-    font-family: 'Inter';
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     font-weight: 635;
     line-height: 15.73px;
     display: flex;
@@ -870,7 +876,9 @@ textarea {
     direction: rtl;
     color: #000000;
     padding: 17px;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     font-size: 15px;
     font-weight: bold;
     line-height: 12.1px;
@@ -887,7 +895,9 @@ textarea {
 }
 
 .click-photo {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     font-size: 12px;
     font-weight: 635;
     line-height: 9.68px;
@@ -896,7 +906,6 @@ textarea {
     position: relative;
     font-variation-settings: 'slnt' 0;
     color: #2F7FF8;
-    ;
     text-decoration: underline;
     font-weight: bold;
 }
@@ -915,7 +924,9 @@ textarea {
 
 #text-with-image button {
     color: #2F7FF8;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     font-size: 14px;
     font-weight: bold;
     line-height: 9.68px;
@@ -931,7 +942,9 @@ textarea {
 
 .history-link {
     color: #2F7FF8;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     font-size: 14px;
     font-weight: bold;
     line-height: 9.68px;
@@ -977,10 +990,6 @@ textarea {
     position: relative;
 
 }
-
-
-
-
 .line {
     position: absolute;
     width: 100%;
@@ -990,8 +999,6 @@ textarea {
     background-color: #FFFFFF;
     border: 1px 0px 0px 0px;
 }
-
-
 .text-history-table {
     display: flex;
     justify-content: space-around;
@@ -1008,7 +1015,9 @@ textarea {
     margin: 0 50px;
     position: relative;
     left: 255px;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     font-size: 16px;
     color: #FFFFFF;
 }
@@ -1017,14 +1026,14 @@ textarea {
     display: flex;
     position: absolute;
     top: 60px;
-
 }
-
 .report-des {
     font-size: 12px;
     margin-bottom: 10px;
     padding: 10px;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     color: #FFFFFF;
     margin: 0 2px;
 }
@@ -1115,7 +1124,9 @@ textarea {
     width: 145px;
     border: none;
     line-height: 40px;
-    font-family: 'Mouqaps', 'Alef', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     color: #fafafa;
     border-radius: 5px;
     display: flex;
@@ -1126,7 +1137,9 @@ textarea {
 .back-to-eventMap p {
     font-size: 17px;
     color: #fafafa;
-    font-family: 'Alef', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     display: flex;
     position: relative;
     right: 2px;
@@ -1176,9 +1189,7 @@ textarea {
     background: linear-gradient(135deg, #B3B3B3, #E6E6E6);
     opacity: 90%;
     border-radius: 10px;
-
     display: flex;
-
 }
 
 .user-details-container {
@@ -1188,7 +1199,9 @@ textarea {
 .text-event-info {
     color: #000000;
     font-size: 19px;
-    font-family: 'Mouqaps', 'Alef', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     white-space: nowrap;
     display: flex;
     position: relative;
@@ -1200,7 +1213,9 @@ textarea {
 .my-text-info {
     color: #F8F9FA !important;
     font-size: 20px;
-    font-family: 'Mouqaps', 'Alef', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     white-space: nowrap;
     display: flex;
     position: relative;
@@ -1211,7 +1226,9 @@ textarea {
 .text-general-info {
     color: #F8F9FA;
     font-size: 20px;
-    font-family: 'Mouqaps', 'Alef', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     white-space: nowrap;
     justify-content: right;
     position: relative;
@@ -1226,9 +1243,7 @@ textarea {
     margin-right: 10px;
     bottom: 226px;
     gap: 30px;
-
 }
-
 .modify-icon {
     height: 25px;
     width: 25px;
@@ -1268,7 +1283,9 @@ textarea {
 .text-explore {
     color: #F8F9FA !important;
     font-size: 23px;
-    font-family: 'Mouqaps', 'Alef', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     position: relative;
     white-space: nowrap;
     bottom: 80px;
@@ -1279,7 +1296,9 @@ textarea {
 .text-uniqe {
     color: #F8F9FA !important;
     font-size: 20px;
-    font-family: 'Mouqaps', 'Alef', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     position: relative;
     white-space: nowrap;
     bottom: 110px;
@@ -1288,7 +1307,9 @@ textarea {
 .text-shoot {
     color: #F8F9FA !important;
     font-size: 23px;
-    font-family: 'Mouqaps', 'Alef', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     position: relative;
     white-space: nowrap;
     bottom: 90px;
@@ -1325,7 +1346,9 @@ textarea {
     width: 135px;
     border: none;
     font-size: 17px;
-    font-family: 'Mouqaps', 'Alef', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     color: #fafafa;
     border-radius: 5px;
     display: flex;
@@ -1341,7 +1364,9 @@ textarea {
     width: 135px;
     border: none;
     font-size: 17px;
-    font-family: 'Mouqaps', 'Alef', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     color: #fafafa;
     border-radius: 5px;
     display: flex;
@@ -1353,7 +1378,9 @@ textarea {
 .event {
     margin-bottom: 10px;
     font-size: 17px;
-    font-family: 'Mouqaps', 'Alef', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     margin-top: 15px;
     position: relative;
     right: 110px;
@@ -1368,7 +1395,9 @@ textarea {
     right: 15%;
     bottom: 66%;
     border-radius: 10px;
-    font-family: 'Mouqaps', 'Alef', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     color: #000000;
     font-size: 14px;
     align-items: baseline;
@@ -1389,7 +1418,9 @@ textarea {
 
 .text-group {
     border-radius: 10px;
-    font-family: 'Mouqaps', 'Alef', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
     color: #000000;
     font-size: 17px;
     position: relative;
