@@ -347,8 +347,10 @@ function showModal(message) {
 
     const closeButton = document.createElement("button");
     closeButton.textContent = "סגור";
+    
     closeButton.addEventListener("click", () => {
         document.body.removeChild(modalOverlay);
+        window.location.href = "index.html";
     });
     modal.appendChild(closeButton);
 

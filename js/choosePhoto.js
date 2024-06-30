@@ -25,7 +25,7 @@ function openImageSelectionModal(data) {
     modal.className = "custom-modal";
 
     const modalMessage = document.createElement("p");
-    modalMessage.textContent = "בחר/י תמונה:";
+    modalMessage.textContent = ":בחר/י תמונה";
     modal.appendChild(modalMessage);
 
     const imagesContainer = document.createElement("div");

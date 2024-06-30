@@ -1046,7 +1046,7 @@ textarea {
 .text-description p:nth-of-type(2) {
     position: relative;
     left: 25px;
-    margin-top: 8px;
+    margin-top: 18px;
 }
 
 @media (max-width: 376px) {

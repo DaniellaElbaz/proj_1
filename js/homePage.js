@@ -284,7 +284,7 @@ function addDescriptionElements(eventsHistory) {
         const reportDes = document.createElement("p");
         reportDes.className = "report-des";
 
-        if (des.description === "הסתיים: הסתיים ללא נפגעים") {
+        if (des.description === "הסתיים ללא נפגעים") {
             const words = des.description.split(" ");
             words.forEach(word => {
                 const span = document.createElement("span");
