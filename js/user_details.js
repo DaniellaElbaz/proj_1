@@ -45,10 +45,11 @@ function drawUpPart() {
     const buttonContainer = document.createElement("div");
     buttonContainer.className = "button-container";
 
-    const backToEventMap = document.createElement("button");
+    const backToEventMap = document.createElement("a");
     backToEventMap.className = "back-to-eventMap";
     backToEventMap.innerHTML = "<p>לחזרה למפת אירוע</p>";
-    
+    backToEventMap.href = "index.html";
+
     const backIcon = document.createElement("img");
     backIcon.className = "back-icon";
     backIcon.src = "images/back.png";
