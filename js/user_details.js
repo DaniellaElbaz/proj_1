@@ -51,7 +51,7 @@ function drawUpPart() {
     
     const backIcon = document.createElement("img");
     backIcon.className = "back-icon";
-    backIcon.src = "images/back-icon.png";
+    backIcon.src = "images/back.png";
     backIcon.alt = "back_icon";
     backToEventMap.appendChild(backIcon);
 
