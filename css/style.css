@@ -1060,18 +1060,19 @@ textarea {
         position: relative;
         top: 10px;
     }
+
     #first-part {
         display: flex;
-        position:relative;
+        position: relative;
         top: 10px;
-        
+
     }
 }
 
-@media (min-width: 760px) and (max-width: 819px) {
+@media (min-width: 760px) and (max-width: 1000px) {
     #third-part {
         position: relative;
-        top: 200px;
+        top: 230px;
     }
 
     #second-part {
@@ -1080,28 +1081,26 @@ textarea {
         top: 120px;
     }
 }
-@media (min-width: 820px) and(max-width: 1000px)
- {
-    #third-part {
-        display: flex ;
+
+@media (min-width: 1200px) {
+    #first-part {
+        display: flex;
         position: relative;
-        bottom : 500px; 
+        top: 10px;
     }
 
     #second-part {
         display: flex;
         position: relative;
-        top: px;
+        top: 16px;
     }
-    #first-part {
+
+    #third-part {
         display: flex;
-        position:relative;
-        top: 0px;
-        
+        position: relative;
+        top: 10px;
     }
 }
-
-
 
 
 #up {
@@ -1127,7 +1126,7 @@ textarea {
 .back-to-eventMap p {
     font-size: 17px;
     color: #fafafa;
-    font-family:  'Alef', sans-serif;
+    font-family: 'Alef', sans-serif;
     display: flex;
     position: relative;
     right: 2px;
@@ -1147,7 +1146,7 @@ textarea {
 }
 
 .eventPic-container {
-    background: linear-gradient(135deg, #B3B3B3,#E6E6E6);
+    background: linear-gradient(135deg, #B3B3B3, #E6E6E6);
     opacity: 90%;
     width: 100%;
     height: 260px;
