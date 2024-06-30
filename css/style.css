@@ -1244,6 +1244,11 @@ background: #FFFFFF75;
     font-family: 'Mouqaps', 'Alef', sans-serif;
     color: #fafafa;
     border-radius: 5px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    text-align: center;
+    line-height: 48px;
 }
 
 .red-rec {
@@ -1255,6 +1260,10 @@ background: #FFFFFF75;
     font-family: 'Mouqaps', 'Alef', sans-serif;
     color: #fafafa;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .event {

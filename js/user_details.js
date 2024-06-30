@@ -123,9 +123,11 @@ function drawScrollPart() {
     });
 recContainer.appendChild(greenButtonRec);
 
-const redButtonRec = document.createElement("button");
+const redButtonRec = document.createElement("a");
 redButtonRec.className = "red-rec";
-redButtonRec.innerHTML = "<p>בטל שינויים</p>";
+redButtonRec.innerHTML = "<a>בטל שינויים</a>";
+ redButtonRec.href = "index.html";
+redButtonRec.style.textDecoration = 'none';
 recContainer.appendChild(redButtonRec);
 
     downSection.appendChild(eventDataContainer);

@@ -73,9 +73,7 @@ function selectImage(imageSrc, modalOverlay) {
             addCancelSelectionButton(imageContainer, modalOverlay);
             document.body.removeChild(modalOverlay);
         }
-    } else {
-        console.error("Image container not found");
-    }
+    } 
 }
 
 function addCancelSelectionButton(imageContainer, modalOverlay) {
