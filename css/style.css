@@ -1076,9 +1076,8 @@ background: #FFFFFF75;
 }
 
 .noa-event-map {
-    background-color: t;
-    width: 60%;
-    height: 90%;
+    width: 200px;
+    height: 230px;
 }
 
 #down-part {
@@ -1110,12 +1109,12 @@ background: #FFFFFF75;
     white-space: nowrap;
     display: flex;
     position: relative;
-    bottom: 270px;
+    bottom: 287px;
     right: 145px;
     font-weight: bold;
 }
 
-.text-info {
+.my-text-info {
     color: #F8F9FA !important;
     font-size: 18px;
     font-family: 'Mouqaps', 'Alef', sans-serif;
@@ -1150,21 +1149,28 @@ background: #FFFFFF75;
     height: 25px;
     width: 25px;
     position: relative;
-    bottom: 10px;
+    top: 10px;
 }
 
 .camera-icon {
     height: 25px;
     width: 25px;
     position: relative;
-    top: 20px;
+    top: 60px;
+}
+.explore-icon{
+    height: 25px;
+    width: 25px;
+    position: relative;
+    top: 45px;
+    
 }
 
 .text-container {
     display: block;
     position: relative;
     right: 60px;
-    bottom: 120px;
+    bottom: 140px;
 }
 
 .text-uniqe,
@@ -1173,6 +1179,17 @@ background: #FFFFFF75;
     padding: 0;
     margin-bottom: 10px;
 }
+
+.text-explore{
+    color: #F8F9FA !important;
+    font-size: 14px;
+    font-family: 'Mouqaps', 'Alef', sans-serif;
+    position: relative;
+    white-space: nowrap;
+    bottom: 100px;
+    text-decoration: underline;
+}
+
 
 .text-uniqe {
     color: #F8F9FA !important;
@@ -1199,23 +1216,21 @@ background: #FFFFFF75;
     align-items: center;
     margin-right: 60px;
     position: relative;
-    bottom: 80px;
+    bottom: 330px;
+    right: 50px;
 }
 
 .empty-image {
     position: relative;
     width: 170px;
     height: 120px;
-    bottom: 90px;
-
-
 }
 .rec-container{
     display: flex;
     align-items: center;
     justify-content:space-between;
     position: relative;
-    bottom : 100px;
+    bottom : 270px;
 }
 
 .green-rec {
@@ -1261,6 +1276,7 @@ background: #FFFFFF75;
     font-family: 'Mouqaps', 'Alef', sans-serif;
     color:#000000;
     font-size: 14px;
+    align-items: baseline;
 }
 
 
@@ -1270,9 +1286,9 @@ background: #FFFFFF75;
     width: 25px;
     height: 25px;
     position: relative;
-    bottom:110px;
+    bottom:115px;
     margin-right: 10px;
-    gap: 10px;
+    gap: 15px;
     
 }
 .text-group {
@@ -1281,15 +1297,13 @@ background: #FFFFFF75;
     color:#000000;
     font-size: 14px;
     position: relative;
-    bottom: 120px;
+    bottom: 130px;
     right: 60px
 
 }
 .char-count-text {
    display: flex;
    position: absolute;
-    bottom: 1px;
-    left: 5px;
     color: #999;
     font-size: 12px;
 }
@@ -1298,7 +1312,7 @@ background: #FFFFFF75;
 .word-count {
     position: absolute;
     left: 12px;
-    top: 290px;
+    top: 310px;
     color:#999;
     font-size: 13px;
 }
@@ -1313,7 +1327,7 @@ background: #FFFFFF75;
     width: 84%;
     height: 70px;
     position: relative;
-    bottom: 160px;
+    bottom: 150px;
     left: 10px;
     border-radius: 10px;
 }

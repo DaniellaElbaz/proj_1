@@ -85,7 +85,7 @@ function drawScrollPart() {
     userDetailsContainer.appendChild(textEventInfo);
 
     const textInfo = document.createElement("p");
-    textInfo.className = "text-info";
+    textInfo.className = "my-text-info";
     textInfo.textContent= "פרטים אישיים";
     userDetailsContainer.appendChild(textInfo);
 
@@ -200,9 +200,15 @@ function createIconsContainer() {
     cameraIcon.className = "camera-icon"
     cameraIcon.src = "images/camera-icon.png";
     cameraIcon.alt = "camera_icon";
+
+    const exploreIcon = document.createElement("img");
+    exploreIcon.className = "explore-icon"
+    exploreIcon.src = "images/add-image.png";
+    exploreIcon.alt = "add_image_icon";
     
     cameraModifyIcons.appendChild(modifyImage);
     cameraModifyIcons.appendChild(cameraIcon);
+    cameraModifyIcons.appendChild(exploreIcon);
     return cameraModifyIcons;
 }
 function createTextContainer() {
@@ -217,9 +223,14 @@ const photoText = document.createElement("p");
     const imgText = document.createElement("p");
     imgText.className = "text-shoot";
     imgText.textContent= "צלם";
+
+    const imgExplore = document.createElement("p");
+    imgExplore.className = "text-explore";
+    imgExplore.textContent= "עיון";
   
     textContainer.appendChild(photoText);
     textContainer.appendChild(imgText);
+    textContainer.appendChild(imgExplore);
    
     return textContainer;
 }
