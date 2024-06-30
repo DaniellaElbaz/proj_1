@@ -665,9 +665,10 @@ top: 50px;
     display: flex;
     position: relative;
     gap: 40px;
+    margin-top: 20px;
 }
 
-button.green-rectangle {
+.green-rectangle {
     width: 110px;
     height: 37px;
     border-radius: 5px;
@@ -678,7 +679,7 @@ button.green-rectangle {
     position: relative;
 }
 
-button.red-rectangle {
+.red-rectangle {
     width: 110px;
     height: 37px;
     border-radius: 5px;
@@ -879,6 +880,7 @@ background: #FFFFFF75;
     position: relative;
     width: 58px;
     height: 40px;
+    bottom: 65px;
 }
 
 #text-with-image {

@@ -47,8 +47,9 @@ function drawUpPart() {
 
     const backToEventMap = document.createElement("a");
     backToEventMap.className = "back-to-eventMap";
-    backToEventMap.innerHTML = "<p>לחזרה למפת אירוע</p>";
+    backToEventMap.innerHTML = "<p>לחזרה לדף הבית</p>";
     backToEventMap.href = "index.html";
+    backToEventMap.style.textDecoration = 'none';
 
     const backIcon = document.createElement("img");
     backIcon.className = "back-icon";

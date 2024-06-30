@@ -66,13 +66,18 @@ function drawFirstPart() {
     const rectangleContainer = document.createElement("div");
     rectangleContainer.className = "rectangle-container";
 
-    const redButton = document.createElement("button");
+    const redButton = document.createElement("a");
     redButton.className = "red-rectangle";
     redButton.innerHTML = "<p>סירוב</p>";
+    redButton.href = "eventList.html";
+    redButton.style.textDecoration = 'none';
 
-    const greenButton = document.createElement("button");
+
+    const greenButton = document.createElement("a");
     greenButton.className = "green-rectangle";
     greenButton.innerHTML = "<p>קבלת אירוע</p>";
+    greenButton.href = "userDetails.html";
+    greenButton.style.textDecoration = 'none';
 
     rectangleContainer.appendChild(redButton);
     rectangleContainer.appendChild(greenButton);
