@@ -19,15 +19,21 @@ body {
     overflow-y: auto;
     background: linear-gradient(to bottom right, #000, #BB1717);
 }
-
+.navbar .container-fluid {
+    --bs-gutter-x: 0;
+}
 .navbar-brand {
     color: #fff;
 }
-
+.navbar-nav:hover{
+    color: #fff;
+}
 .navbar-nav .nav-link.active {
     color: #fff;
 }
-
+.navbar-collapse:hover{
+    color: #fff;
+}
 #wrapper {
     margin: 23px 23px;
     min-height: 100vh;
