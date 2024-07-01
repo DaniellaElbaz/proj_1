@@ -70,7 +70,6 @@ window.onload = () => {
             userDetails.appendChild(photo);
             initRectangles(user);
         }
-
         function initRectangles(user) {
             eventErea = document.getElementById("events-container");
             eventErea.innerHTML = '';
@@ -83,8 +82,7 @@ window.onload = () => {
                 const table = document.createElement('table');
                 const tr = document.createElement('tr');
                 const td = document.createElement('td');
-                td.innerHTML = `
-                    <p style="font-size:12px;">תאריך: <span style="font-size:12px;">${event.date_and_time}</span></p>
+                td.innerHTML = `<p style="font-size:12px;">תאריך: <span style="font-size:12px;">${event.date_and_time}</span></p>
                     <p style="margin-right: 18px;">מקום האירוע: <span style="font-size:12px;">${event.event_place}</span></p>
                     <p style="margin-right: 18px;">סטטוס: <span style="font-size:12px;">${event.event_status}</span></p>`;
                 if (event.event_map) {
@@ -105,9 +103,7 @@ window.onload = () => {
                     const eventText= document.createElement('p');
                     const button = document.createElement('button');
                     button.innerText = 'לחץ כאן';
-                    button.addEventListener('click', () => {
-                        window.location.href = `event_report.html?eventId=${event.id}`;
-                    });
+                    button.addEventListener('click', () => { window.location.href = `event_report.html?eventId=${event.id}`;});
                     eventText.innerHTML = `:צפיה בדוח אירוע / מילוי דוח אירוע `;
                     eventShow.appendChild(button);
                     eventShow.appendChild(eventText);
@@ -117,7 +113,6 @@ window.onload = () => {
                 eventErea.appendChild(eventItem);
             });
         }
-
         function initBottomRectangles(event) {
             const eventLabel = document.createElement('p');
             eventLabel.innerHTML = `:זירת האירוע`;

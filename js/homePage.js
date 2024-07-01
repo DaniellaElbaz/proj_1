@@ -5,14 +5,14 @@ window.onload = () => {
     fetch('../data/reports.json')
         .then(response => response.json())
         .then(reports => {
-            drawFirstPart(); 
-            drawSecondPart(reports); 
-            drawThirdPart(); 
+            drawFirstPart();
+            drawSecondPart(reports);
+            drawThirdPart();
         });
     fetch('data/eventsHistory.json')
         .then(response => response.json())
         .then(eventsHistory => {
-            addDescriptionElements(eventsHistory); 
+            addDescriptionElements(eventsHistory);
         });
          document.getElementById("text-with-image").addEventListener("click", toggleImage);
 };
