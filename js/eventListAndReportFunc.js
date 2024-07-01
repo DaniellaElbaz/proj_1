@@ -23,43 +23,42 @@ function validateForm() {
         alert("חייב למלא איך פעלת באירוע");
         return false;
     }
-    let requestDetails = document.getElementById('requestDetails');
-    let eventNameRequest = `GET http://127.0.0.1:5500/event_report.html?eventId=123?eventWhen=${encodeURIComponent(whenText)}`;
-    requestDetails.innerHTML +=`<p>${eventNameRequest}</p>`;
-    let eventPlaceRequest = `GET http://127.0.0.1:5500/eventList.html?eventexplain=${encodeURIComponent(explainText)}`;
-    requestDetails.innerHTML += `<p>${eventPlaceRequest}</p>`;
-    window.location.href = "eventList.html";
-    alert("הדוח נשלח בהצלחה!");
+    let eventNameRequest = `GET http://127.0.0.1:5500/eventList.html?eventId=123&eventWhen=${encodeURIComponent(whenText)}`;
+    console.info(`Request for Event Name and Time: ${eventNameRequest}`);
 
+    let eventPlaceRequest = `GET http://127.0.0.1:5500/eventList.html?eventExplain=${encodeURIComponent(explainText)}`;
+    console.info(`Request for Event Explanation and Type: ${eventPlaceRequest}`);
+    alert("הדוח נשלח בהצלחה!");
+    window.location.href = "eventList.html";
 }
 function NewEventCheck() {
-    let requestDetails = document.getElementById('requestDetails');
     let EventNameInput = document.getElementById('textareaWhenE').value;
     if (EventNameInput.trim() === "") {
         alert("חייב למלא מתי ואיפה האירוע  ");
         return false;
-    } else {
-        let eventNameRequest = `GET http://127.0.0.1:5500/eventList.html?eventName=${encodeURIComponent(EventNameInput)}`;
-        requestDetails.innerHTML += `<p>${eventNameRequest}</p>`;
     }
-    let EventPlace = document.getElementById('textareaExplainE').value;
-    if (EventPlace.trim() === "") {
+    else{
+        let eventNameRequest = `GET http://127.0.0.1:5500/eventList.html?eventId=123&eventWhen=${encodeURIComponent(EventNameInput)}`;
+        console.info(`מיקום וזמן האירוע  ${eventNameRequest}`);
+    }
+    let EventExplain = document.getElementById('textareaExplainE').value;
+    if (EventExplain.trim() === "") {
         alert("חייב להסביר על האירוע");
         return false;
-    } else {
-        let eventPlaceRequest = `GET http://127.0.0.1:5500/eventList.html?eventPlace=${encodeURIComponent(EventPlace)}`;
-        requestDetails.innerHTML += `<p>${eventPlaceRequest}</p>`;
     }
-
+    else{
+        let EventExplainRequest = `GET http://127.0.0.1:5500/eventList.html?eventId=123&eventexplain=${encodeURIComponent(EventExplain)}`;
+        console.info(`פרטי האירוע  ${EventExplainRequest}`);
+    }
     let type = document.getElementById('NewSelectType').value;
     if (type.trim() === "") {
         alert("חייב למלא סוג אירוע");
         return false;
-    } else {
-        let typeRequest = `GET http://127.0.0.1:5500/eventList.html?type=${encodeURIComponent(type)}`;
-        requestDetails.innerHTML += `<p>${typeRequest}</p>`;
     }
-
+    else{
+        let EventTypeRequest = `GET http://127.0.0.1:5500/eventList.html?eventId=123&eventtype=${encodeURIComponent(type)}`;
+          console.info(`סוג האירוע  ${EventTypeRequest}`);
+    }
     const userConfirmed = confirm("האם אתה בטוח שתרצה לדווח?");
     if (userConfirmed) {
         alert("הדוח נשלח בהצלחה!");
@@ -68,7 +67,6 @@ function NewEventCheck() {
         return false;
     }
 }
-
 function buttonBeck(){
     const userConfirmed = confirm(" הזהרה! ביציאה מהדף הדו''ח לא ישמר");
     if (userConfirmed) {
@@ -112,6 +110,7 @@ function showMembersEvent(data) {
     inputDetails.classList.add('help-input');
     eventMembers.addEventListener('change', function() {
         openRegrets = isValueSelectedNotNo(eventMembers);
+
         inputDetails.innerHTML="";
         initMembersBox(inputDetails);
     });
