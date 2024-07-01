@@ -671,31 +671,24 @@ textarea {
     font-size: 16px;
     color: #FFC107;
     white-space: nowrap;
-    position: relative;
 }
-
 .alert-icon-paragraph p {
     margin: 0;
     margin-left: 10px;
     margin-right: 10px;
 }
-
 .event-photo {
     display: flex;
 }
-
 .event-photo img {
     width: 146px;
     height: 120px;
 }
-
 .rectangle-container {
     display: flex;
-    position: relative;
     gap: 40px;
     margin-top: 20px;
 }
-
 .green-rectangle {
     width: 110px;
     height: 37px;
@@ -704,7 +697,6 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 .red-rectangle {
@@ -715,14 +707,13 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 .rectangle-container p {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-variation-settings: "slnt" 0;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 16.94px;
     color: #FFFFFF;
@@ -751,7 +742,6 @@ textarea {
     position: relative;
     align-items: center;
     justify-content: center;
-    position: relative;
 }
 
 .report-time {
@@ -777,7 +767,7 @@ textarea {
     line-height: 15.73px;
     display: flex;
     justify-content: right;
-    left: 20px;
+    left: 4%;
 
 }
 
@@ -876,7 +866,7 @@ textarea {
     width: 24px;
     height: 24px;
     display: flex;
-    right: 100%;
+    right: 96%;
 }
 
 .report-text {
@@ -1064,60 +1054,6 @@ textarea {
     left: 25px;
     margin-top: 18px;
 }
-
-@media (max-width: 376px) {
-    #third-part {
-        position: relative;
-        top: 1px;
-    }
-
-    #second-part {
-        display: flex;
-        position: relative;
-        top: 10px;
-    }
-
-    #first-part {
-        display: flex;
-        position: relative;
-        top: 10px;
-
-    }
-}
-
-@media (min-width: 760px) and (max-width: 1000px) {
-    #third-part {
-        position: relative;
-        top: 230px;
-    }
-
-    #second-part {
-        display: flex;
-        position: relative;
-        top: 120px;
-    }
-}
-
-@media (min-width: 1200px) {
-    #first-part {
-        display: flex;
-        position: relative;
-        top: 10px;
-    }
-
-    #second-part {
-        display: flex;
-        position: relative;
-        top: 16px;
-    }
-
-    #third-part {
-        display: flex;
-        position: relative;
-        top: 10px;
-    }
-}
-
 
 #up {
     display: block;
@@ -1567,4 +1503,20 @@ textarea {
     height: 15px;
     display: flex;
     align-items: center;
+}
+.new-accept-button{
+    background:#58D256;;
+    height: 48px;
+    width: 160px;
+    border: none;
+    font-size: 17px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
+    color: #fafafa;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
 }

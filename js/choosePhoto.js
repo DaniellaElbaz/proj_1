@@ -2,10 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch("../data/noaIdPic.json")
         .then(response => response.json())
         .then(data => {
-            console.log("Events Data:", data);
             addImageSelectionListeners(data);
         })
-        .catch(error => console.error("Error fetching noaIdPic.json:", error));
 });
 function addImageSelectionListeners(data) {
     const exploreIcon = document.querySelector('.explore-icon');
