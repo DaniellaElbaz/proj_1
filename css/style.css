@@ -698,6 +698,7 @@ textarea {
 .rectangle-container {
     display: flex;
     gap: 40px;
+    align-items: baseline;
     margin-top: 20px;
 }
 .green-rectangle {
@@ -731,6 +732,8 @@ textarea {
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
+    margin-top: 13px;
 }
 
 #second-part {
