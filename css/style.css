@@ -1018,7 +1018,6 @@ textarea {
 }
 
 .text-item {
-    margin: 0 10px;
     white-space: nowrap;
     margin: 0 50px;
     position: relative;
@@ -1064,6 +1063,45 @@ textarea {
     position: relative;
     left: 25px;
     margin-top: 18px;
+}
+@media (max-width: 390px) {
+
+
+    .real-time-text {
+        position: relative;
+        left: 1px;
+    }
+    .alert-icon {
+        position: relative;
+        right: 90%;
+    }
+    .report-container{
+        position: relative;
+        right: 2%;
+    }
+    .vertical-line {
+        position: absolute;
+        top: 10%;
+        right: 10%;
+    }
+    #first-part{
+        position: relative;
+        top: 5px;
+    }
+    #second-part{
+        position: relative;
+        top: 1px;
+    }
+    #third-part{
+        position: relative;
+        top: 10px;
+    }
+    .text-item{
+        margin: 0 40px;
+    }
+    .text-description p:nth-of-type(3) {
+        margin-right: 10px;
+    }
 }
 
 #up {
