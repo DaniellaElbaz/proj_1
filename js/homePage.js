@@ -5,15 +5,16 @@ window.onload = () => {
     fetch('../data/reports.json')
         .then(response => response.json())
         .then(reports => {
-            drawFirstPart();
-            drawSecondPart(reports);
-            drawThirdPart ();
+            drawFirstPart(); 
+            drawSecondPart(reports); 
+            drawThirdPart(); 
         });
-        fetch('data/eventsHistory.json')
+    fetch('data/eventsHistory.json')
         .then(response => response.json())
         .then(eventsHistory => {
-            addDescriptionElements(eventsHistory);
+            addDescriptionElements(eventsHistory); 
         });
+         document.getElementById("text-with-image").addEventListener("click", toggleImage);
 };
 function init_member_details(data){
     const name = 'נועה לוינסון';
@@ -24,7 +25,7 @@ function init_member_details(data){
         if (user.name == name) {
             user_photo = user.user_photo;
             break;
-            }
+        }
     }
     const userDetails = document.getElementById("UserImage");
     const photo = document.createElement('img');
@@ -44,7 +45,7 @@ function drawFirstPart() {
     const icon2 = document.createElement("i");
     icon2.className = "fas fa-exclamation-triangle";
     alertParagraphIcon.appendChild(icon1);
-   alertParagraphIcon.appendChild(noticeText);
+    alertParagraphIcon.appendChild(noticeText);
     alertParagraphIcon.appendChild(icon2);
     const eventPhoto = document.createElement("div");
     eventPhoto.className = "event-photo";
@@ -57,8 +58,10 @@ function drawFirstPart() {
     const redButton = document.createElement("a");
     redButton.className = "red-rectangle";
     redButton.innerHTML = "<p>סירוב</p>";
-    redButton.href = "eventList.html";
     redButton.style.textDecoration = 'none';
+    redButton.addEventListener("click", function() {
+        changeButton(redButton,greenButton); // 
+    });
     const greenButton = document.createElement("a");
     greenButton.className = "green-rectangle";
     greenButton.innerHTML = "<p>קבלת אירוע</p>";
@@ -70,13 +73,18 @@ function drawFirstPart() {
     section1.appendChild(eventPhoto);
     section1.appendChild(rectangleContainer);
 }
+function changeButton(redButton,greenButton) {
+    redButton.style.display = "none";
+    greenButton.classList.add('new-accept-button'); 
+    greenButton.innerHTML = "<p>אירוע פעיל, באפשרותך להכנס בכל רגע נתון</p>";
+}
 function drawSecondPart(reports) {
     const section2 = document.getElementById("second-part");
     const p2ElementContainer = document.createElement("div");
     p2ElementContainer.className = "p2-element-container";
     const realTimeText = createRealTimeText();
     p2ElementContainer.appendChild(realTimeText);
-section2.appendChild(p2ElementContainer);
+    section2.appendChild(p2ElementContainer);
     const verticalLine = document.createElement("div");
     verticalLine.className = "vertical-line";
     p2ElementContainer.appendChild(verticalLine);
@@ -161,9 +169,6 @@ function createTextStyle(reports) {
     }
     return textStyle;
 }
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("text-with-image").addEventListener("click", toggleImage);
-});
 function toggleImage() {
     const image = document.getElementById("hidden-image");
     if (image.style.display === "none") {
@@ -178,7 +183,7 @@ function drawThirdPart() {
     historyContainer.className = "history-container";
     const line = document.createElement("div");
     line.className = "line";
-      const historyLink = document.createElement("a");
+    const historyLink = document.createElement("a");
     historyLink.className = "history-link";
     historyLink.textContent = "לכל היסטוריית האירועים";
     historyLink.href = "eventList.html";
