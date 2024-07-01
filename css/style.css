@@ -725,14 +725,12 @@ textarea {
     font-optical-sizing: auto;
     font-variation-settings: "slnt" 0;
     font-size: 16px;
-    font-weight: 400;
     line-height: 16.94px;
     color: #FFFFFF;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 0;
 }
 
 #second-part {
@@ -1069,7 +1067,7 @@ textarea {
 
     .real-time-text {
         position: relative;
-        left: 1px;
+        left: 3px;
     }
     .alert-icon {
         position: relative;
@@ -1077,7 +1075,7 @@ textarea {
     }
     .report-container{
         position: relative;
-        right: 2%;
+        right: 3%;
     }
     .vertical-line {
         position: absolute;
@@ -1103,7 +1101,6 @@ textarea {
         margin-right: 10px;
     }
 }
-
 #up {
     display: block;
     position: relative;
