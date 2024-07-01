@@ -319,6 +319,7 @@ body {
     direction: rtl;
     border: 1px solid #ddd;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 #events-container {
@@ -577,6 +578,7 @@ textarea {
     border-color: #00000000;
     height: 20px;
     border-radius: 7px 7px 7px 7px;
+    cursor:pointer;
 }
 
 .eventShow {
@@ -618,9 +620,11 @@ textarea {
     height: 20px;
     border-color: #00000000;
     border-radius: 7px 7px 7px 7px;
-    cursor: none;
+    cursor:pointer;
 }
-
+.help-input select:disabled {
+    cursor:none;
+}
 .button-send-report {
     width: 94px;
     height: 36px;
