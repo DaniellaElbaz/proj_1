@@ -657,8 +657,7 @@ textarea {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    position: relative;
-    top: 50px;
+    margin-top: 50px;
 }
 
 .alert-icon-paragraph {
