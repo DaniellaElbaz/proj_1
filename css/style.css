@@ -762,7 +762,7 @@ textarea {
     line-height: 15.73px;
     display: flex;
     justify-content: right;
-    left: 20px;
+    left: 4%;
 
 }
 
@@ -861,7 +861,7 @@ textarea {
     width: 24px;
     height: 24px;
     display: flex;
-    right: 100%;
+    right: 96%;
 }
 
 .report-text {
@@ -1049,60 +1049,6 @@ textarea {
     left: 25px;
     margin-top: 18px;
 }
-
-@media (max-width: 376px) {
-    #third-part {
-        position: relative;
-        top: 1px;
-    }
-
-    #second-part {
-        display: flex;
-        position: relative;
-        top: 10px;
-    }
-
-    #first-part {
-        display: flex;
-        position: relative;
-        top: 10px;
-
-    }
-}
-
-@media (min-width: 760px) and (max-width: 1000px) {
-    #third-part {
-        position: relative;
-        top: 230px;
-    }
-
-    #second-part {
-        display: flex;
-        position: relative;
-        top: 120px;
-    }
-}
-
-@media (min-width: 1200px) {
-    #first-part {
-        display: flex;
-        position: relative;
-        top: 10px;
-    }
-
-    #second-part {
-        display: flex;
-        position: relative;
-        top: 16px;
-    }
-
-    #third-part {
-        display: flex;
-        position: relative;
-        top: 10px;
-    }
-}
-
 
 #up {
     display: block;
