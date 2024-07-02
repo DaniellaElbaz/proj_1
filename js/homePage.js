@@ -9,7 +9,7 @@ window.onload = () => {
             drawSecondPart(reports);
             drawThirdPart();
         });
-    fetch('data/eventsHistory.json')
+    fetch('../data/eventsHistory.json')
         .then(response => response.json())
         .then(eventsHistory => {
             addDescriptionElements(eventsHistory);
