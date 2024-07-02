@@ -971,7 +971,7 @@ textarea {
 #hidden-image {
     display: none;
     position: absolute;
-    bottom: -500%;
+    bottom: 10px;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: opacity 0.3s ease;
