@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function addImageSelectionListeners(data) {
     const exploreIcon = document.querySelector('.explore-icon');
     if (exploreIcon) {
-        exploreIcon.addEventListener('click', () => {g
+        exploreIcon.addEventListener('click', () => {
             openImageSelectionModal(data);
         });
     }
