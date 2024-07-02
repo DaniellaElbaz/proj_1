@@ -1,5 +1,5 @@
 window.onload = () => {
-    fetch("../data/Events.json")
+    fetch("data/Events.json")
         .then(response => response.json())
         .then(data => {
             init_member_details(data);
@@ -8,7 +8,7 @@ window.onload = () => {
                 window.eventDetailsDrawn = true;
             }
         });
-    fetch('../data/reports.json')
+    fetch("data/reports.json")
         .then(response => response.json())
     drawUpPart();
     drawScrollPart();

@@ -1,15 +1,15 @@
 window.onload = () => {
-    fetch("../data/Events.json")
+    fetch("data/Events.json")
     .then(response => response.json())
     .then(data => init_member_details(data));
-    fetch('../data/reports.json')
+    fetch("data/reports.json")
         .then(response => response.json())
         .then(reports => {
             drawFirstPart();
             drawSecondPart(reports);
             drawThirdPart();
         });
-    fetch('../data/eventsHistory.json')
+    fetch("data/eventsHistory.json")
         .then(response => response.json())
         .then(eventsHistory => {
             addDescriptionElements(eventsHistory);

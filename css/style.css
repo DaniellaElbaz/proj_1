@@ -779,20 +779,20 @@ textarea {
     line-height: 15.73px;
     display: flex;
     justify-content: right;
-    left: 4%;
+    left: 10px;
 
 }
 
 .report-container {
     position: relative;
     padding: 10px;
-    margin-left: 4%;
+    margin-left: 6%;
     margin-top: 1%;
     margin-bottom: 6%;
     background: #FFFFFFB8;
     border: 1px solid #ccc;
     border-radius: 3px;
-    width: 290px;
+    width: 285px;
     height: 45px;
     display: flex;
     align-items: center;
@@ -884,7 +884,7 @@ textarea {
 .report-text {
     direction: rtl;
     color: #000000;
-    padding: 17px;
+    padding: 16px;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-variation-settings: "slnt" 0;
@@ -897,8 +897,8 @@ textarea {
     display: flex;
     flex-direction: column;
     position: relative;
-    bottom: 520%;
-    right: 25%;
+    bottom: 125px;
+    right: 70px;
     text-align: justify;
     white-space: nowrap;
 }
@@ -1384,7 +1384,7 @@ textarea {
     width: 95%;
     height: 180px;
     position: absolute;
-    right: 15%;
+    right: 35px;
     bottom: 66%;
     border-radius: 10px;
     font-family: "Inter", sans-serif;
@@ -1417,7 +1417,7 @@ textarea {
     font-size: 17px;
     position: relative;
     bottom: 135px;
-    right: 60px
+    right: 45px
 }
 
 .char-count-text {

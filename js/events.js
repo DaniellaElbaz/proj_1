@@ -3,7 +3,7 @@ const sortContainer=document.getElementById('sort-container');
 window.onload = () => {
     fill_sort_container();
     eventErea = document.getElementById("events-container");
-    fetch("../data/Events.json")
+    fetch("data/Events.json")
         .then(response => response.json())
         .then(data => init_member_details(data));
 };
@@ -27,17 +27,17 @@ window.onload = () => {
             sortInput.id="search";
             sort.appendChild(sortInput);
             const clock = document.createElement('img');
-            clock.src = "../images/clock_down.png";
+            clock.src = "images/clock_down.png";
             clock.alt = "clock";
             clock.title = "clock";
             sortItem.appendChild(clock);
             const filter = document.createElement('img');
-            filter.src = "../images/un_filter.png";
+            filter.src = "images/un_filter.png";
             filter.alt = "filter";
             filter.title = "filter";
             sortItem.appendChild(filter);
             const box = document.createElement('img');
-            box.src = "../images/checkbox.png";
+            box.src = "images/checkbox.png";
             box.alt = "checkbox";
             box.title = "checkbox";
             sortItem.appendChild(box);
@@ -122,7 +122,7 @@ window.onload = () => {
             img.title = "Event_Place";
             const imgDelete = document.createElement('img');
             imgDelete.classList = "delete-icon";
-            imgDelete.src = "../images/delete.png";
+            imgDelete.src = "images/delete.png";
             imgDelete.title = "delete";
             imgDelete.alt = "delete";
             imgDelete.addEventListener('click', function() {

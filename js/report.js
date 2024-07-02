@@ -3,7 +3,7 @@ const form = document.createElement("form");
 const userName = 'נועה לוינסון';
 window.onload = () => {
     form.classList.add('manege-necessary-data');
-    fetch("../data/Events.json")
+    fetch("data/Events.json")
     .then(response => response.json())
     .then(data => init_member_details(data));
     initBottomReport(form);

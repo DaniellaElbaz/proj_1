@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch("../data/noaIdPic.json")
+    fetch("data/noaIdPic.json")
         .then(response => response.json())
         .then(data => {
             addImageSelectionListeners(data);
